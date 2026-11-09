@@ -10,6 +10,7 @@
 | se_course_policy | banned / limited / allowed / integrated / not_found | integrated = AI use is taught or required in the course |
 | themes | list of: academic_integrity, learning_outcomes, career_readiness, specific_tools, equity_access, privacy_security, assessment_redesign, ai_literacy | themes explicitly present |
 | evidence | dict field→verbatim excerpt | one excerpt per non-trivial code |
+| source_date | dict section→int year / "undated" / null | per source section (dept_statement, university_guidance, intro_course, se_course): the most recent year among that section's `source_date:` lines in `data/raw/`; "undated" if none of its sources is dated; null if the section has no URL. Copied from the raw file, never inferred. Used in Phase 2 to report policy recency |
 | confidence | high / medium / low | Claude's confidence in its coding |
 | notes | str | |
 Coding rules: code only from text in `data/raw/`. If unsure, use `unclear` and `low`. Do not infer from reputation.

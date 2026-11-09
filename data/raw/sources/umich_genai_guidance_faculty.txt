@@ -1,0 +1,79 @@
+niversity of Michigan’s GenAI offerings
+With the rise of numerous GenAI-based tools, it is important to know how to choose a tool that works best for you. Tools provided by the University of Michigan, such as U-M GPT are private, secure, accessible, equitable, and free for faculty. Data you share while using these tools will not be used for training these models, and hence are not at risk of being leaked. Look for the umich.edu domain in the page link to verify that you are using a U-M website.
+
+U-M Generative AI Training and Events
+Extensive Generative AI training is available at U-M at varying levels. Register for the ITS/TCC Generative AI workshop series or watch the series on demand. For additional events, visit the GenAI events page. Resources and training are also available for prompt literacy.
+
+Learn more about the many AI-focused initiatives, centers, and resources across U-M:
+
+AI Institutes at Michigan (AIIM)
+MIDAS
+AI Lab
+AI & Digital Health Innovation
+
+Academic/Teaching Implications
+Because large language models can write so quickly and competently, they can assist students in completing many common types of assessments. Text outputs from language models can be used to answer essay questions, write papers, and reply to discussion board posts, simulating recall and understanding with little effort or engagement. How quickly can GenAI answer an essay question? Faster than you’d think.
+
+Language models generalize and summarize existing knowledge based on probability predictions of word sequences rather than copying it verbatim, and so it may be impossible to identify their use with certainty. While detection tools like Turnitin or GPTZero may report probability of AI authorship, they are easily circumvented and cannot provide definitive proof of cheating. False positives and negatives are possible, and even likely. U-M does not recommend the use of AI-detection technology at this time given their high error rate.
+
+It can be expected that U-M students are aware of these tools and many are using them for academic and non-academic purposes. Given the rapid evolution of the technology and its adaptation, this page is focused on offering near-term recommendations. Our response to GenAI should be consistent with our core values of fairness, diversity, equity, inclusion, accessibility, research veracity, and ethical integrity.
+
+GenAI will create new opportunities across the entire spectrum of research activities, ranging from the natural sciences, social science, economics and political sciences, humanities, engineering, biomedical and clinical sciences, as well as the creative arts. Visit the Resources for Research page for more information.
+
+As instructors look to future semesters, we recommend the following tasks to prepare.
+
+Note: these tasks are also discussed in the Getting Started with Generative Artificial Intelligence: U-M Instructor guide
+
+Evaluate if you need to make changes to your course and assessment practices
+AI augmentation refers to the utilization of artificial intelligence to assist, expedite, enhance, and in some cases, substitute for humans in accomplishing tasks. AI augmentation will significantly alter the education landscape, we will need to re-evaluate teaching strategies to take advantage of the opportunities and mitigate risks.
+
+Further, the rapid integration of AI in various sectors of society requires a re-evaluation of curriculum design to prepare students for a future where AI will be ubiquitous. Given the rapid evolution of the technology and its adaptation, this section is focused on offering near-term recommendations.
+
+Key components of courses will have to be reviewed in relation to GenAI capacities and risks. Instructors should at minimum be able to answer the following questions about each course:
+
+Should GenAI be used in the course or not—and why or why not?
+If GenAI is to be used, how is the use to be documented?
+Should course learning objectives be revised?
+Should GenAI competencies be taught in the specific disciplinary context?
+Should assessments be revised?
+Read more about redesigning assessments
+
+Read more about GenAI Implications for Writing and Other Disciplines
+
+Explore a book guide on methods to incorporate Chatbots into class assignments.
+
+Find additional resources on GenAI considerations for teaching and learning on the Academic Technology@Michigan site.
+
+Draft a syllabus statement
+First familiarize yourself with any revised academic integrity policies from your school/college. Then draft a statement in your syllabus on acceptable uses of GenAI in your classroom.
+
+Read more about course policies and example syllabi statements
+
+Talk with Students about Generative AI Early and Often
+We encourage instructors to set aside time early in the term to tell students directly about course policies regarding GenAI usage, reasons for this decision, and what potential consequences may look like when policies are not followed. We also suggest instructors include language about GenAI in the class orientation content of Canvas courses. Use the following pointers to hold a conversation with your students about the ethical and practical implications of GenAI for this course, the discipline, and beyond:
+
+Talk about and evaluate capabilities of GenAI as a group/class
+Motivate students to exceed outputs of GenAI
+Set expectations early, ideally on day one of class, and provide regular reminders
+Policies will vary between campuses, departments, and even individual classes. Each instructor must clearly articulate their own expectations and policies for GenAI use.
+When developing your policies, think about what you actually care about, what you actually want to assess, etc.
+Maximize trust of students to use the tools effectively and ethically, without relying on them entirely
+Ethics guidance on GenAI for students
+Be explicit about GenAI policies within syllabus language (“In this course…”)
+In courses that allow GenAI on some, but not all assignments, be sure to communicate the expectations in each assignment (“For this assignment…”)
+Course Policies & Syllabi Statements
+Recommended Course Policies, Evals, Strategies to Promote Academic Honesty
+Set and define course policies for disclosure and citation of genAI use
+MLA Citing Generative AI
+APA How to Cite ChatGPT
+Introduction to Academic Integrity (U-M Library page)
+Academic Misconduct Policies
+Current definitions of academic misconduct may not take account of the new technologies and should be revised as necessary. The same is true of Honor Codes and the policies followed by the Academic Judiciary. The Library’s website offers a basic definition of plagiarism: “Plagiarism: presenting others' work without adequate acknowledgement of its source, as though it were one’s own.” LSA’s website details a range of misconduct, including cheating, plagiarism, falsification of documents, and unacceptable collaboration. The College of Engineering has an Honor Code that defines misconduct. These and other schools’ and colleges’ policies should be updated this summer to take into account the potential and risks of GenAI in instructional contexts.
+
+Common approaches to updating academic misconduct policies are to consider GenAI as prohibited help from another “person” (e.g., UCLA), or as a “source” that should be acknowledged (e.g., UW Madison). The “person” approach misleadingly attributes sentience and a reasoning capacity to GenAI. The “source” approach is more workable.
+
+Treating GenAI as a source that should be acknowledged is more complicated than citing a print book or online article. Unauthorized GenAI use may constitute cheating (a student presenting chatbot outputs as their own original work) and/or plagiarism (copying output from a source without acknowledging that source). U-M schools and colleges will have to determine what misconduct policies will work in their contexts, in consultation with Academic Judiciary bodies.
+
+Some American schools’ academic misconduct policies recommend that instructors use AI-detection tools. This committee finds the detecting tools unreliable and capable of false positives, so we recommend against that approach.
+
+The use of GenAI in coursework is banned at some universities. This approach is impossible to enforce perfectly, partly because detecting tools are (at present) untrustworthy, and partly because GenAI can be used undetectably at any stage in composing processes, such as prompting chatbots to generate ideas, an abstract, an outline, or an essay draft. If GenAI is to be banned in specific contexts, it is vital to ensure that the instruction protects equity and accessibility for students.

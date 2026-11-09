@@ -5,6 +5,7 @@ url: not_found
 
 ## university_guidance
 url: https://teaching.cornell.edu/generative-artificial-intelligence/ai-academic-integrity
+source_date: 2026 "Updates for Fall 2026"
 > To best support student learning and reduce violations of academic integrity, be sure to clearly communicate your policies regarding the use of generative AI in your syllabus, in assignment instructions, and verbally in class. When generative AI is permitted, clarify expectations for documentation and attribution, as well as what aspects of the work should be produced by the students themselves.
 
 > Instructors should use their initial impressions of potential violations involving generative AI as a starting point for deeper inquiry, supported by objective and verifiable evidence, before proceeding with academic integrity hearings.
@@ -12,6 +13,7 @@ url: https://teaching.cornell.edu/generative-artificial-intelligence/ai-academic
 ## intro_course
 course: CS 1110 Introduction to Computing, Fall 2026; CS 2110 Object-Oriented Programming and Data Structures, Fall 2026
 url: https://www.cs.cornell.edu/courses/cs1110/2026fa/assessment/integrity
+source_date: 2026 "CS 1110 Fall 2026"
 > You may not submit work the work of others and claim it as your own. This can be the work of other people in the class. This can be the work of generative AI (e.g. code generated that you did write other than via a natural language prompt). If you did not do the work yourself, you must be honest about it, or it is an academic integrity violation.
 
 > Getting help from anyone or anything else is not allowed. You may not get aid on assignment from a current or former student of CS 1110. You may not get aid from online forums. You may not get aid from generative AI.
@@ -19,6 +21,7 @@ url: https://www.cs.cornell.edu/courses/cs1110/2026fa/assessment/integrity
 > Note that the side effect of this principle is that you are allowed to use generative AI for code that you do not submit to us. So you can use it to create practice problems for yourself.
 
 url: https://www.cs.cornell.edu/courses/cs2110/2026fa/about/syllabus/
+source_date: 2026 "CS 2110 / ENGRD 2110, Fall 2026"
 > You may use generative AI to assist with your assignments, but this use must be transparently documented and reflected on in your assignment submission.
 
 > Submit code for graded homework assignments that has been written (wholly or in part) by a large language model or other generative AI software (ChatGPT, Copilot, Cursor, etc.) without attribution and/or submitted chat logs.
@@ -26,6 +29,7 @@ url: https://www.cs.cornell.edu/courses/cs2110/2026fa/about/syllabus/
 ## se_course
 course: CS 5150 Software Engineering, Spring 2026
 url: https://www.cs.cornell.edu/courses/cs5150/2026sp/syllabus.html
+source_date: 2026 "CS 5150 Spring 2026"
 > You may use AI tools to assist with coding, but you must clearly disclose any AI-generated content in your report and ensure that all submitted work meets the course's academic integrity standards. You may not use AI tools for any in-class exams or in-class activities unless explicitly permitted by the instructor.
 
 ## notes

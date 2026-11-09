@@ -5,6 +5,7 @@ url: not_found
 
 ## university_guidance
 url: https://aiandeducation.mit.edu/report/
+source_date: 2026 "August 13, 2026"
 > While we recommend against imposing a one-size-fits-all policy on AI use, students are anxious for clarity about AI use: in any given course, they want to feel sure about when, where, and why AI is prohibited, allowed, or required.
 
 > Therefore, instructors, and perhaps departments, should make sure that every MIT subject has a clear policy about the use of generative AI, posted prominently in the syllabus and on the course website.
@@ -12,11 +13,13 @@ url: https://aiandeducation.mit.edu/report/
 > Nevertheless, we recommend against relying on AI detectors
 
 url: https://tll.mit.edu/teaching-resources/course-design/ai-in-teaching-learning/acceptable-ai-use-policies/
+source_date: undated
 > The Committee on AI Use in Teaching, Learning, and Research Training report strongly recommends that all instructors develop a clear policy on the use of generative AI, explicitly stating which uses are permitted and which are prohibited.
 
 ## intro_course
 course: 6.100A/6.100 Introduction to Computer Science Programming in Python, Fall 2026
 url: https://introcomp.mit.edu/fall26/information
+source_date: 2026 "Course Policies for Fall 2026"
 > On finger exercises and problem sets, you may discuss solution approaches with others (including fellow students, TAs/LAs, students who have taken the course before, Generative AI), but you must think of and write your own code
 
 > Generative AI has been shown to help learning when used as a tutor. You may use it to help you understand concepts. You may NOT use it to generate code for you, just like you wouldn't use code that a friend has come up with.
@@ -26,6 +29,7 @@ url: https://introcomp.mit.edu/fall26/information
 ## se_course
 course: 6.102 (6.1020) Software Construction, Spring 2026
 url: https://web.mit.edu/6.102/www/sp26/general/collaboration.html
+source_date: 2026 "Software Construction Spring 2026"
 > Using generative AI tools to write text or code NO Forbidden.
 
 > No automatic code generation. You may not use code or text produced by advanced code-authoring tools, e.g. Claude Code, Cursor, GitHub Copilot, or other generative AI tools or chatbots, e.g. ChatGPT. If you are unsure whether a code-generation tool is appropriate for use in 6.102, please ask us before using it.

@@ -2,12 +2,14 @@
 retrieved: 2026-11-09
 ## dept_statement
 url: https://seas.harvard.edu/services-0/generative-ai
+source_date: undated
 > The Computing in Engineering Education (CEE) team is committed to supporting faculty and staff in the effective and responsible integration of Generative AI (G-AI) into SEAS courses.
 
 > We recognize the transformative potential of G-AI and believe that it can enhance the computational learning environment at SEAS.
 
 ## university_guidance
 url: https://oue.fas.harvard.edu/faculty-resources/generative-ai-guidance
+source_date: 2025 "Starting in Fall 2025"
 > All faculty are required to inform students of the policies governing generative AI use in class. Whether students in your course are forbidden from using ChatGPT or expected to explore its limits, a policy helps ensure that your expectations for appropriate interaction with generative AI tools are clear to students.
 
 > You can choose from among the below example policies to add to your Canvas site, or you can design your own to suit the needs of your course.
@@ -17,6 +19,7 @@ url: https://oue.fas.harvard.edu/faculty-resources/generative-ai-guidance
 ## intro_course
 course: CS50 Introduction to Computer Science, Fall 2026
 url: https://cs50.harvard.edu/college/2026/fall/syllabus/
+source_date: 2026 "This is Fall 2026 of CS50 at Harvard College"
 > The course recognizes that interactions with others, as well as with artificial intelligence (AI), can facilitate mastery of the course ... material. However, there remains a line between enlisting the help of another and submitting the work of another.
 
 > You may use CS50 ... own AI-based software, including the CS50 Duck (ddb) in cs50.ai and cs50.dev ... but no other AI-based software (e.g., ChatGPT, Claude, Copilot, Gemini, et al.).

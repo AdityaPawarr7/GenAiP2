@@ -2,13 +2,14 @@
 
 Matching ignores case, whitespace and curly-vs-straight quotes/dashes. A quote
 may contain "..." to mark an elision; each fragment must appear, in order.
+The evidence string of a page-kind `source_date:` line is checked the same way.
 
     .venv/bin/python scripts/check_quotes.py [slug ...]
 """
 import sys
 
 from pagetext import FetchError, fetch_text, normalise
-from raw_format import RAW_DIR, SOURCE_SECTIONS, parse_raw
+from raw_format import RAW_DIR, SOURCE_SECTIONS, parse_raw, parse_source_date
 
 
 def quote_in_text(quote, text):
@@ -37,7 +38,11 @@ def main(slugs):
                     except FetchError as exc:
                         cache[url] = exc
                 page = cache[url]
-                for q in src["quotes"]:
+                quotes = list(src["quotes"])
+                date = parse_source_date(src.get("source_date"))
+                if date and date[1] == "page":
+                    quotes.append(date[2])  # date evidence must be verbatim page text too
+                for q in quotes:
                     label = f"{path.stem}/{section}"
                     if isinstance(page, FetchError):
                         skipped += 1

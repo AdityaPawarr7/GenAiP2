@@ -2,6 +2,7 @@
 retrieved: 2026-11-09
 ## dept_statement
 url: https://www.cs.washington.edu/academics/schoolwide-policies/
+source_date: undated
 > If and when AI is used in research, it must be used responsibly
 
 > Authors are fully responsible for the accuracy and originality of their work. Generative AI tools can produce incorrect statements, fabricated citations, or content that closely resembles existing sources. If you use these tools, you are accountable for any errors they introduce, just as if you had written the material yourself.
@@ -9,6 +10,7 @@ url: https://www.cs.washington.edu/academics/schoolwide-policies/
 > We also strongly recommend disclosing all AI usage (other than minor editing) in your research outputs, and similarly in your dissertation, technical reports posted online, and drafts shared with your co-authors — especially when AI contributes to generating text, code, proofs, data, or figures.
 
 url: https://docs.google.com/document/d/e/2PACX-1vSzgvEW_lrQ1u6uGQV_wvcCqlT76MOL8vFrcMhkzdT3GkjbKpnje-2rE_uK1Y07Lf2TgYPhCMS8GVwb/pub
+source_date: undated
 > You may use AI for general course questions and ungraded work. You may also use AI on graded work when that work is specifically listed in Authorized Graded Work . AI is not allowed on any graded assignment that is not included in the authorized list.
 
 > If you utilized AI on an authorized assignment, specify the tool you used and how you utilized it in your work.
@@ -17,6 +19,7 @@ url: https://docs.google.com/document/d/e/2PACX-1vSzgvEW_lrQ1u6uGQV_wvcCqlT76MOL
 
 ## university_guidance
 url: https://teaching.washington.edu/course-design/ai/sample-ai-syllabus-statements/
+source_date: undated
 > Since there is no single university-wide UW AI policy, discussing your expectations in the syllabus and on the first day of class can help promote academic integrity and clarify how your course might differ from other courses students may be taking at the same time.
 
 > Remember: While instructors have the right to prohibit the use of AI tools, no technology can reliably identify unauthorized student use of AI.
@@ -26,6 +29,7 @@ url: https://teaching.washington.edu/course-design/ai/sample-ai-syllabus-stateme
 ## intro_course
 course: CSE 121 Introduction to Computer Programming I, Fall 2026 (26au)
 url: https://courses.cs.washington.edu/courses/cse121/26au/syllabus/
+source_date: 2026 url "26au"
 > CSE 121 will utilize the “AI for Support and Growth” Allen School AI Policy, with projects as the only authorized graded work.
 
 > Students may use AI for general questions and to support their learning through explaining concepts and generating examples. Students may use AI freely on ungraded work (e.g. practice problems in lecture and section). Students may use AI freely on projects. Students may not use AI on computer quizzes or paper quizzes.
@@ -35,6 +39,7 @@ url: https://courses.cs.washington.edu/courses/cse121/26au/syllabus/
 ## se_course
 course: CSE 331 Software Design and Implementation, Fall 2026 (26au)
 url: https://courses.cs.washington.edu/courses/cse331/26au/info/
+source_date: 2026 url "26au"
 > This course follows the Allen School's shared AI policy template 4, AI for Support and Growth ( Allen School version ), with this course's authorized graded work filled in below.
 
 > AI use is permitted only for the following graded work: Reading reflections, for light editing only: grammar, spelling, and trimming. Programming tasks whose handout explicitly authorizes AI.

@@ -5,11 +5,13 @@ url: not_found
 
 ## university_guidance
 url: https://libguides.princeton.edu/generativeAI/disclosure
+source_date: 2026 "Last Updated: Oct 14, 2026"
 > Princeton University students must confirm AI is permitted by an instructor and disclose the use of AI in any academic work.
 
 ## intro_course
 course: COS 126 Computer Science: An Interdisciplinary Approach, Fall 2026
 url: https://www.cs.princeton.edu/courses/archive/fall26/cos126/syllabus/
+source_date: 2026 "COS 126, Fall 2026"
 > You may not use generative AI for any part of a graded assessment in this course (programming assignments, the project, or exams). This includes using GAI to summarize specifications, generate solution ideas, write code, debug, add comments, or format work.
 
 > This prohibition applies to general-purpose AI systems (e.g., ChatGPT, Gemini, and Claude), AI coding assistants (e.g., Copilot, Cursor, and JetBrains Assistant), and AI-assisted web search.
@@ -18,11 +20,13 @@ url: https://www.cs.princeton.edu/courses/archive/fall26/cos126/syllabus/
 
 course: COS 226 Algorithms and Data Structures, Fall 2026
 url: https://www.cs.princeton.edu/courses/archive/fall26/cos226/policies.php
+source_date: 2026 "COS 226 Policies (Fall 2026)"
 > With the exception of the Ed COS 226 AI Bot , you may not use generative AI for graded assessments in this course (including programming assignments, exams, and quizzes). This prohibition covers both LLMs (e.g., ChatGPT, Gemini, Claude) and AI code assistants (e.g., Copilot, Cursor, and JetBrains AI Assistant).
 
 ## se_course
 course: COS 333 Advanced Programming Techniques, Fall 2026
 url: https://www.cs.princeton.edu/courses/archive/fall26/cos333/policies.html
+source_date: 2026 "COS 333 - Fall 2026"
 > While working on your semester-long project you may use any source of information that you want. In particular, you may use generative AI. In fact, you are required to use generative AI, at least to some minimal degree. We recommend using GitHub Copilot running in the VS Code IDE.
 
 > You must inform the course's instructors about the sources of information that you use. If your use of generative AI or any other source simplifies certain areas of your project, then we'll expect more expansive effort in other areas of your project.

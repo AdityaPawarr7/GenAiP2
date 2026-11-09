@@ -39,7 +39,7 @@ PROGRESS.md                 human-readable timestamped log + handoff
 
 ## Phases (update checkboxes as you go)
 - [x] Phase 0: Setup and logging check — `specs/phase-0-setup.md`
-- [ ] Phase 1: Data collection — `specs/phase-1-data.md` (in progress: batch 1 of 4 done)
+- [x] Phase 1: Data collection — `specs/phase-1-data.md` (done: 42/42 schools, AC1.7 spot check 5/5, approved by Adi 2026-11-09)
 - [ ] Phase 2: Coding and analysis — `specs/phase-2-analysis.md`
 - [ ] Phase 3: Findings dashboard — `specs/phase-3-findings-dashboard.md`
 - [ ] Phase 4: Validation pipeline and dashboard — `specs/phase-4-validation.md`

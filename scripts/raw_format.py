@@ -43,8 +43,26 @@ def parse_raw(path):
         m = re.match(r"^url:\s*(\S+)", line)
         if m:
             result[current].append({"url": m.group(1), "quotes": []})
+            continue
+        m = re.match(r"^source_date:\s*(.+?)\s*$", line)
+        if m and result[current]:
+            result[current][-1]["source_date"] = m.group(1)
     flush_quote()
     return result
+
+
+def parse_source_date(value):
+    """Parse a source_date value into (year, kind, evidence), or None if malformed.
+
+    `undated` -> ("undated", None, None); `2026 "Fall 2026"` -> (2026, "page", "Fall 2026");
+    `2026 url "fall26"` -> (2026, "url", "fall26"). Page evidence is verbatim page text.
+    """
+    if value == "undated":
+        return ("undated", None, None)
+    m = re.fullmatch(r'(\d{4})\s+(url\s+)?"(.+)"', value or "")
+    if not m:
+        return None
+    return (int(m.group(1)), "url" if m.group(2) else "page", m.group(3))
 
 
 def has_url(sources):

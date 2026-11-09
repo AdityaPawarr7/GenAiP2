@@ -12,7 +12,8 @@ import pytest
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
-from raw_format import MISSING, RAW_DIR, SECTIONS, SOURCE_SECTIONS, has_url, parse_raw  # noqa: E402
+from raw_format import (MISSING, RAW_DIR, SECTIONS, SOURCE_SECTIONS, has_url, parse_raw,  # noqa: E402
+                        parse_source_date)
 
 CSV_PATH = ROOT / "data" / "institutions.csv"
 VALID_TYPES = {"private_r1", "public_r1", "other"}
@@ -96,6 +97,31 @@ def test_AC1_4_course_sections_name_the_course(path):
         body = text.split(f"## {section}", 1)[1].split("\n## ", 1)[0]
         if "url: http" in body:
             assert re.search(r"^course:\s*\S", body, re.M), f"{section} is missing a course: line"
+
+
+@pytest.mark.parametrize("path", RAW_FILES, ids=RAW_IDS)
+def test_AC1_8_every_source_url_has_a_source_date_year_with_evidence_or_undated(path):
+    parsed = parse_raw(path)
+    for section in SOURCE_SECTIONS:
+        for src in parsed[section]:
+            if not src["url"].startswith("http"):
+                continue
+            date = parse_source_date(src.get("source_date"))
+            assert date, f"{section} url {src['url']} has missing/malformed source_date: {src.get('source_date')!r}"
+            year, kind, evidence = date
+            if year == "undated":
+                continue
+            assert 2000 <= year <= 2030, f"{section} source_date year {year} out of range"
+            assert str(year)[2:] in evidence, f"{section} evidence {evidence!r} does not show year {year}"
+            if kind == "url":
+                assert evidence.lower() in src["url"].lower(), f"{section} url evidence {evidence!r} not in {src['url']}"
+
+
+def test_AC1_8_parse_source_date_accepts_page_url_and_undated_forms():
+    assert parse_source_date("undated") == ("undated", None, None)
+    assert parse_source_date('2026 "Last Updated: August 21, 2026"') == (2026, "page", "Last Updated: August 21, 2026")
+    assert parse_source_date('2026 url "fall26"') == (2026, "url", "fall26")
+    assert parse_source_date("2026") is None and parse_source_date(None) is None
 
 
 def _share_with_url(sections):

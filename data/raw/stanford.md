@@ -5,6 +5,7 @@ url: not_found
 
 ## university_guidance
 url: https://communitystandards.stanford.edu/generative-ai-policy-guidance
+source_date: 2026 "Guidance adopted on October 15, 2026"
 > Absent course-specific or assignment-specific Artificial Intelligence (AI) policies provided in writing by the instructor, the default honor code policy on generative AI use in Stanford courses is as follows: ... Students may use generative AI tools to practice and prepare for coursework, to support learning, improve comprehension, and practice skills and concepts ... As a practical guideline: If the use of a human tutor is permitted for a given task, then it is likely that the use of generative AI as described in the examples above is similarly permitted.
 
 > Students may not use AI tools to create deliverables (e.g., assignments, projects, presentations, essays, reports), or to replace interacting with course materials themselves.
@@ -14,12 +15,15 @@ url: https://communitystandards.stanford.edu/generative-ai-policy-guidance
 ## intro_course
 course: CS106B Programming Abstractions, Autumn 2026 (archive code 1272)
 url: https://web.stanford.edu/class/archive/cs/cs106b/cs106b.1272/course/honor_code
+source_date: undated
 > Rule 3: You must treat any artificial intelligence help (e.g., ChatGPT, Claude, etc.) as if it was a real human person. In other words: you may not share any code or direct assignment questions to an AI for help. You may ask an AI for general help on programming, or general algorithms and data structures.
 
 url: https://web.stanford.edu/class/archive/cs/cs106b/cs106b.1272/course/syllabus
+source_date: 2026 "Midterm 1 (Wednesday, October 14, 2026"
 > Your programs should be your own original, independent effort and must not be based on, guided by, or jointly developed with the work of others, or with the help of Artificial Intelligence tools (e.g., Claude, ChatGPT, Github Copilot, etc.).
 
 url: https://web.stanford.edu/class/cs106a/handouts_w2021/syllabus-cs106a.html
+source_date: 2021 url "w2021"
 > For CS106A, we do not want you to use AI to solve the homework problems.
 
 > You should not be getting code help from an AI about our homework problems. The AI has seen our solution code, so this in effect is just another form of copying the solution.

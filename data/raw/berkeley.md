@@ -5,6 +5,7 @@ url: not_found
 
 ## university_guidance
 url: https://teaching.berkeley.edu/node/74
+source_date: undated
 > Some may not even realize that tools like ChatGPT can raise questions about academic integrity. A clearly stated course policy on GenAI use helps ensure that students understand not only what is allowed, but also why.
 
 > The following sample syllabus statements have been provided by UC Berkeley’s Academic Senate. They span a range of approaches, from fully integrating GenAI into coursework to prohibiting it entirely. Instructors are encouraged to adapt these to their specific course context and instructional priorities.
@@ -12,6 +13,7 @@ url: https://teaching.berkeley.edu/node/74
 ## intro_course
 course: CS 61A Structure and Interpretation of Computer Programs, Fall 2026
 url: https://cs61a.org/fa26/syllabus/
+source_date: 2026 "CS 61A has been updated for the Fall 2026 offering"
 > Do not use AI tools such as Github Copilot or ChatGPT to fill in or correct your code.
 
 > After developing a comprehensive understanding of programming, students will use AI coding agents in their final project to develop a large and complex software application.
@@ -20,6 +22,7 @@ url: https://cs61a.org/fa26/syllabus/
 
 course: CS 61B Data Structures, Fall 2026
 url: https://fa26.datastructur.es/policies/
+source_date: 2026 "CS 61B Fall 2026"
 > allow an LLM or any GenAI tool to read, analyze, or interface with your codebase or your GitHub repository in any way. This means all local and terminal-based tools (e.g., Claude Code and Codex ), GitHub Copilot, built-in IDE extensions (e.g., Cursor, IntelliJ AI Assistant), or any other agentic coding tools are outright banned
 
 > Use LLMs in the same way you might use a friend in the class who is not in your group. You may only use browser-based chatbots to ask high-level, conceptual questions.
@@ -27,6 +30,7 @@ url: https://fa26.datastructur.es/policies/
 ## se_course
 course: COMPSCI 169A Introduction to Software Engineering, Fall 2026
 url: https://cs169.org/fa26/syllabus/
+source_date: 2026 "Introduction to Software Engineering, Fall 2026"
 > If you copy-paste code from StackOverflow — or an AI assistant — without understanding it, you’re taking credit for others’ work.
 
 > An AI Policy page describing how these rules apply to AI programming assistants and chatbots will be published on this site.
