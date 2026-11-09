@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GenAI CS Policies</title>
+<meta name="description" content="How 42 US computer science departments handle generative AI: findings, validation, and how the project was built with an AI agent.">
+<script>
+  // Apply a saved theme before first paint (per-viewer convenience only).
+  try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="assets/home.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="site" href="index.html" aria-current="page">GenAI policies in CS education</a>
+    <nav class="pages" aria-label="Dashboards">
+      <a href="findings.html">Findings</a>
+      <a href="validation.html">Validation</a>
+    </nav>
+    <button class="theme-btn" id="theme-btn" type="button" aria-label="Switch color theme">Dark mode</button>
+  </header>
+
+  <main id="main">
+    <h1>How US computer science departments handle generative AI</h1>
+    <p class="dek">We read the official AI language of 42 US computer science departments, their universities, and their intro and software engineering courses, then coded it against a fixed codebook. Every code cites a quoted source. The project was built by an AI agent (Claude Code) working from specs, tests and human reviews.</p>
+
+    <section class="cards" aria-label="Dashboards">
+      <a class="card" href="findings.html" data-page="findings">
+        <p class="kicker">Findings</p>
+        <p class="big" id="findings-figure">4 of 42</p>
+        <p class="what" id="findings-text">CS departments publish their own generative AI statement. Most leave the rules to the university and the instructor.</p>
+        <span class="go">Open the findings →</span>
+      </a>
+      <a class="card" href="validation.html" data-page="validation">
+        <p class="kicker">Validation</p>
+        <p class="big" id="validation-figure">All tests pass</p>
+        <p class="what" id="validation-text">Test results, acceptance-criteria coverage, manual reviews, and human and second-AI agreement with Claude's coding.</p>
+        <span class="go">Open the validation →</span>
+      </a>
+      <div class="card soon" data-page="timeline" aria-disabled="true">
+        <p class="kicker">Timeline <span class="tag">Coming soon</span></p>
+        <p class="what">Who did what and when: Adi's prompts, decisions and reviews next to Claude's work, phase by phase.</p>
+      </div>
+      <div class="card soon" data-page="tokens" aria-disabled="true">
+        <p class="kicker">Tokens <span class="tag">Coming soon</span></p>
+        <p class="what">Token usage and cost by phase and activity, including the subagents.</p>
+      </div>
+    </section>
+
+    <section class="about" aria-labelledby="h-about">
+      <h2 id="h-about">About this project</h2>
+      <p>Built for a generative AI software development course. Adi supervised through phase specs, acceptance tests and reviews; Claude Code wrote the code, collected the sources and coded the policies. Every prompt and response was logged by hooks. Source code, data and logs: <a href="https://github.com/AdityaPawarr7/GenAiP2">github.com/AdityaPawarr7/GenAiP2</a>.</p>
+    </section>
+  </main>
+
+  <footer>Data snapshot from November 2026. Policies change each term.</footer>
+</div>
+<script src="assets/home.js"></script>
+</body>
+</html>

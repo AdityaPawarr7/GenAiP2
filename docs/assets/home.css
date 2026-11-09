@@ -1,0 +1,23 @@
+/* Landing page (page-specific). Shared tokens and components live in base.css. */
+.cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 0; }
+.card {
+  display: flex; flex-direction: column; gap: 6px; min-width: 0;
+  background: var(--surface); border: 1px solid var(--ring); border-radius: 14px; padding: 24px;
+  color: var(--ink); text-decoration: none;
+}
+a.card:hover { background: var(--wash); }
+a.card:hover .go { text-decoration: underline; }
+.card .kicker { font-size: 14px; font-weight: 600; color: var(--ink-2); margin: 0; display: flex; gap: 8px; align-items: center; }
+.card .big { font-size: 40px; line-height: 1.05; font-weight: 650; letter-spacing: -0.02em; margin: 4px 0 0; }
+.card .what { font-size: 15px; color: var(--ink-2); margin: 0; max-width: 46ch; }
+.card .go { margin-top: auto; padding-top: 12px; font-size: 14px; color: var(--accent-text); }
+.card.soon { background: transparent; border-style: dashed; border-color: var(--axis); }
+.card.soon .what { color: var(--muted); }
+.tag { font-size: 12px; font-weight: 500; color: var(--ink-2); border: 1px solid var(--axis); border-radius: 999px; padding: 0 8px; }
+.about p { color: var(--ink-2); max-width: 70ch; font-size: 15px; }
+
+@media (max-width: 640px) {
+  .cards { grid-template-columns: minmax(0, 1fr); }
+  .card { padding: 18px; }
+  .card .big { font-size: 32px; }
+}

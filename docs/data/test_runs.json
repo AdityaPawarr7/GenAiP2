@@ -54,5 +54,46 @@
     "duration": 5.98,
     "failed_tests": [],
     "note": ""
+  },
+  {
+    "run_id": "run-20261109-232523",
+    "timestamp": "2026-11-09T18:25:23-05:00",
+    "total": 669,
+    "passed": 662,
+    "failed": 1,
+    "errors": 0,
+    "skipped": 6,
+    "pass_rate": 0.9985,
+    "duration": 36.74,
+    "failed_tests": [
+      "tests/test_phase4_validation.py::test_AC4_3_phase_filter_shows_only_that_phases_tests[7]"
+    ],
+    "note": ""
+  },
+  {
+    "run_id": "run-20261109-232615",
+    "timestamp": "2026-11-09T18:26:15-05:00",
+    "total": 669,
+    "passed": 663,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 6,
+    "pass_rate": 1.0,
+    "duration": 6.8,
+    "failed_tests": [],
+    "note": ""
+  },
+  {
+    "run_id": "run-20261109-233000",
+    "timestamp": "2026-11-09T18:30:00-05:00",
+    "total": 669,
+    "passed": 663,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 6,
+    "pass_rate": 1.0,
+    "duration": 7.24,
+    "failed_tests": [],
+    "note": ""
   }
 ]
