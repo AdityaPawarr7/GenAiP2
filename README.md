@@ -2,7 +2,7 @@
 
 How do US computer science departments handle generative AI? This project reads the official AI language of 42 US CS departments, their universities, and their intro and software engineering courses, codes it against a fixed codebook, and publishes the results as static dashboards. Every code cites a verbatim quote with its source URL.
 
-**Live site:** _(added after GitHub Pages is enabled)_
+**Live site:** https://adityapawarr7.github.io/GenAiP2/ ([Findings](https://adityapawarr7.github.io/GenAiP2/findings.html) · [Validation](https://adityapawarr7.github.io/GenAiP2/validation.html))
 
 Headline findings: only 4 of 42 CS departments publish their own generative AI statement, and 32 of 42 (76%) leave the rules to each instructor.
 

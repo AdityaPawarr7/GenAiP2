@@ -99,8 +99,9 @@ def test_AC7_1_live_page_returns_http_200(page):
 # ---------- landing page (extra) ----------
 
 def test_readme_links_the_live_site_and_every_built_dashboard():
-    """extra: README.md links the landing page and each built dashboard page."""
+    """extra: README.md names the live URL and links the landing page and each built dashboard page."""
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    assert LIVE_URL in readme
     for page in ("findings.html", "validation.html", "index.html"):
         assert f"docs/{page}" in readme
 
