@@ -19,6 +19,7 @@
     <nav class="pages" aria-label="Dashboards">
       <a href="findings.html">Findings</a>
       <a href="validation.html">Validation</a>
+      <a href="timeline.html">Timeline</a>
     </nav>
     <button class="theme-btn" id="theme-btn" type="button" aria-label="Switch color theme">Dark mode</button>
   </header>
@@ -40,10 +41,12 @@
         <p class="what" id="validation-text">Test results, acceptance-criteria coverage, manual reviews, and human and second-AI agreement with Claude's coding.</p>
         <span class="go">Open the validation →</span>
       </a>
-      <div class="card soon" data-page="timeline" aria-disabled="true">
-        <p class="kicker">Timeline <span class="tag">Coming soon</span></p>
-        <p class="what">Who did what and when: Adi's prompts, decisions and reviews next to Claude's work, phase by phase.</p>
-      </div>
+      <a class="card" href="timeline.html" data-page="timeline">
+        <p class="kicker">Timeline</p>
+        <p class="big" id="timeline-figure">Adi's role</p>
+        <p class="what" id="timeline-text">Who did what and when: Adi's prompts, decisions, corrections and reviews next to Claude's work, phase by phase.</p>
+        <span class="go">Open the timeline →</span>
+      </a>
       <div class="card soon" data-page="tokens" aria-disabled="true">
         <p class="kicker">Tokens <span class="tag">Coming soon</span></p>
         <p class="what">Token usage and cost by phase and activity, including the subagents.</p>

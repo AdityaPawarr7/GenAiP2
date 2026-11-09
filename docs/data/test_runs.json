@@ -108,5 +108,33 @@
     "duration": 6.78,
     "failed_tests": [],
     "note": ""
+  },
+  {
+    "run_id": "run-20261109-235500",
+    "timestamp": "2026-11-09T18:55:00-05:00",
+    "total": 719,
+    "passed": 711,
+    "failed": 1,
+    "errors": 0,
+    "skipped": 7,
+    "pass_rate": 0.9986,
+    "duration": 8.65,
+    "failed_tests": [
+      "tests/test_phase4_validation.py::test_coverage_matrix_marks_acs_without_tests_in_red_and_later_phases_as_planned"
+    ],
+    "note": "phase 5 timeline"
+  },
+  {
+    "run_id": "run-20261109-235526",
+    "timestamp": "2026-11-09T18:55:26-05:00",
+    "total": 719,
+    "passed": 713,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 6,
+    "pass_rate": 1.0,
+    "duration": 8.6,
+    "failed_tests": [],
+    "note": "phase 5 timeline"
   }
 ]

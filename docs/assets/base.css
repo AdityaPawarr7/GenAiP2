@@ -132,4 +132,6 @@ footer { color: var(--muted); font-size: 13px; padding: 24px 0 48px; border-top:
 }
 @media (max-width: 640px) {
   .panel { padding: 18px; }
+  .top { flex-wrap: wrap; }
+  .pages { order: 3; margin-left: 0; width: 100%; }
 }

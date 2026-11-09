@@ -26,6 +26,10 @@
     load("data/tests.json").then(function (T) {
       var r = T.run, failing = r.failed + r.errors;
       byId("validation-figure").textContent = failing ? failing + " of " + r.total + " tests fail" : r.passed + " of " + (r.passed + failing) + " tests pass";
+    }),
+    load("data/timeline.json").then(function (D) {
+      var prompts = D.entries.filter(function (e) { return e.type === "prompt"; }).length;
+      byId("timeline-figure").textContent = prompts + " prompts";
     })
   ]).catch(function () { /* keep the static fallbacks */ }).then(function () {
     document.body.dataset.ready = "true";

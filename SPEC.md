@@ -43,7 +43,7 @@ PROGRESS.md                 human-readable timestamped log + handoff
 - [x] Phase 2: Coding and analysis — `specs/phase-2-analysis.md` (42/42 coded, 530 tests pass, agreement reported, committed 2026-11-09)
 - [x] Phase 3: Findings dashboard — `specs/phase-3-findings-dashboard.md` (findings.html, 76 tests, 606 total pass, reviewed by Adi, committed db469cb 2026-11-09)
 - [x] Phase 4: Validation pipeline and dashboard — `specs/phase-4-validation.md` (validation.html, 45 tests, 651 total pass, canary run recorded, approved by Adi 2026-11-09)
-- [ ] Phase 5: Contributions timeline — `specs/phase-5-timeline.md`
+- [x] Phase 5: Contributions timeline — `specs/phase-5-timeline.md` (timeline.html, 48 tests, 714 total pass, approved by Adi 2026-11-09)
 - [ ] Phase 6: Token usage dashboard — `specs/phase-6-tokens.md`
 - [ ] Phase 7: Publish (GitHub + Pages) — `specs/phase-7-publish.md`
 - [ ] Phase 8: Evaluation and reflection (Adi writes it; Claude supplies numbers) — `specs/phase-8-evaluation.md`

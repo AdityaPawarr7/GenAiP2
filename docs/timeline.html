@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contributions Timeline</title>
+<meta name="description" content="Who did what and when: Adi's prompts, decisions, corrections, reviews and manual data work next to Claude's and the subagents' work, phase by phase.">
+<script>
+  // Apply a saved theme before first paint (per-viewer convenience only).
+  try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="assets/timeline.css">
+<script src="assets/vendor/chart-4.4.1.umd.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="site" href="index.html">GenAI policies in CS education</a>
+    <nav class="pages" aria-label="Dashboards">
+      <a href="findings.html">Findings</a>
+      <a href="validation.html">Validation</a>
+      <a href="timeline.html" aria-current="page">Timeline</a>
+    </nav>
+    <button class="theme-btn" id="theme-btn" type="button" aria-label="Switch color theme">Dark mode</button>
+  </header>
+
+  <main id="main">
+    <h1 id="headline">Contributions timeline</h1>
+    <p class="dek" id="dek">Every prompt, response, subagent hand-back, /clear, logged decision and commit in this project, in order. Times come from the logging hooks; PROGRESS.md times are hand-written and are used only where no hook event records the moment.</p>
+
+    <div class="kpis five" id="kpis" aria-label="Key numbers"></div>
+
+    <section aria-labelledby="h-role">
+      <h2 id="h-role">Adi's role</h2>
+      <p class="sub">Every decision, correction, review and piece of manual data work Adi logged in PROGRESS.md. Each item is placed at the time of the prompt it records. Select "Show in timeline" to see what happened around it.</p>
+      <div class="roles" id="roles"></div>
+    </section>
+
+    <section aria-labelledby="h-summary">
+      <h2 id="h-summary">Contributions by phase</h2>
+      <p class="sub">Counts of logged events per phase. Phase 7 (publish) ran before Phase 5 so the site had a live link before the deadline. Phases with no events yet are left out.</p>
+      <div class="charts">
+        <div class="panel wide">
+          <h3>Logged events by actor</h3>
+          <p class="note">Prompts, responses, hand-backs, /clears, PROGRESS.md entries and commits. Hover a segment for the breakdown by type.</p>
+          <ul class="key" id="actor-key"></ul>
+          <div class="chart-box" id="actors-box"><canvas id="chart-actors" aria-label="Stacked bar chart of logged events by actor and phase"></canvas></div>
+          <details class="as-table" data-for="chart-actors"><summary>Show as table</summary></details>
+        </div>
+        <div class="panel">
+          <h3>Adi's prompts per phase</h3>
+          <p class="note">Messages Adi typed. Subagent hand-backs and automatic notifications are not counted.</p>
+          <div class="chart-box"><canvas id="chart-prompts" aria-label="Bar chart of Adi's prompts per phase"></canvas></div>
+          <details class="as-table" data-for="chart-prompts"><summary>Show as table</summary></details>
+        </div>
+        <div class="panel">
+          <h3>Lines changed per phase</h3>
+          <p class="note">Code and Markdown lines added plus deleted, from git. Data files, vendored libraries and logs are in the tooltip and table only.</p>
+          <div class="chart-box"><canvas id="chart-loc" aria-label="Bar chart of lines changed per phase"></canvas></div>
+          <details class="as-table" data-for="chart-loc"><summary>Show as table</summary></details>
+        </div>
+      </div>
+      <div class="panel summary-panel">
+        <h3>Counts by actor and type</h3>
+        <div class="scroll-x" tabindex="0" aria-label="Counts by phase, scrollable">
+          <table class="summary" id="summary"></table>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-timeline">
+      <h2 id="h-timeline">Timeline</h2>
+      <p class="sub">Adi's entries are highlighted. Select an entry for its full text and its source line.</p>
+      <div class="filters" role="search">
+        <input id="q" type="search" placeholder="Search the timeline" aria-label="Search the timeline">
+        <select id="f-actor" aria-label="Filter by actor"><option value="">All actors</option></select>
+        <select id="f-phase" aria-label="Filter by phase"><option value="">All phases</option></select>
+        <select id="f-type" aria-label="Filter by type"><option value="">All types</option></select>
+        <select id="f-role" aria-label="Filter by Adi's role"><option value="">All roles</option></select>
+        <button type="button" class="reset" id="reset">Reset</button>
+      </div>
+      <p class="count" id="count" aria-live="polite"></p>
+      <ol class="tl" id="tl"></ol>
+    </section>
+
+    <section aria-labelledby="h-qa">
+      <h2 id="h-qa">Q&amp;A log</h2>
+      <p class="sub">Each of Adi's prompts with what came back in the same session: Claude's responses, plus any subagent hand-backs Claude received while it worked.</p>
+      <div class="filters" role="search">
+        <input id="qa-q" type="search" placeholder="Search prompts and responses" aria-label="Search prompts and responses">
+        <select id="qa-phase" aria-label="Filter Q&amp;A by phase"><option value="">All phases</option></select>
+      </div>
+      <p class="count" id="qa-count" aria-live="polite"></p>
+      <ol class="qa" id="qa"></ol>
+    </section>
+  </main>
+
+  <footer>Data: <a href="data/timeline.json">timeline.json</a>, built by scripts/build_timeline.py from logs/events.jsonl (hook events), PROGRESS.md and git log. Local paths and email addresses are redacted.</footer>
+</div>
+<script src="assets/timeline.js"></script>
+</body>
+</html>

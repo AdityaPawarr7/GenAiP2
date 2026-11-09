@@ -1,5 +1,5 @@
 {
-  "enforced_through_phase": 4,
+  "enforced_through_phase": 5,
   "acs": [
     {
       "id": "AC0.1",
@@ -214,7 +214,7 @@
       "phase": 5,
       "text": "Every prompt in events.jsonl appears in timeline.json.",
       "manual": false,
-      "enforced": false,
+      "enforced": true,
       "spec": "specs/phase-5-timeline.md"
     },
     {
@@ -222,7 +222,7 @@
       "phase": 5,
       "text": "Timestamps are sorted, and each one parses as ISO-8601.",
       "manual": false,
-      "enforced": false,
+      "enforced": true,
       "spec": "specs/phase-5-timeline.md"
     },
     {
@@ -230,7 +230,7 @@
       "phase": 5,
       "text": "Every entry has a valid actor and phase.",
       "manual": false,
-      "enforced": false,
+      "enforced": true,
       "spec": "specs/phase-5-timeline.md"
     },
     {
@@ -238,7 +238,7 @@
       "phase": 5,
       "text": "Page loads with no console errors, and the filters work (Playwright).",
       "manual": false,
-      "enforced": false,
+      "enforced": true,
       "spec": "specs/phase-5-timeline.md"
     },
     {

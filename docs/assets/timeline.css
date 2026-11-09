@@ -1,0 +1,126 @@
+/* Contributions timeline (page-specific). Shared tokens and components live in base.css.
+   Actor colors are categorical slots 1–4 of palette.md in fixed order (Adi, Claude, Subagent,
+   Claude-Cowork), validated in both modes; System is neutral gray. Subagent and Claude-Cowork
+   are under 3:1 on the light surface, so every actor mark also carries its name in text. */
+:root {
+  --a-adi: #2a78d6; --a-claude: #eb6834; --a-subagent: #1baf7a; --a-cowork: #eda100; --a-system: #b5b4ad;
+  --mine: rgba(42, 120, 214, 0.07);
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    --a-adi: #3987e5; --a-claude: #d95926; --a-subagent: #199e70; --a-cowork: #c98500; --a-system: #5c5b57;
+    --mine: rgba(57, 135, 229, 0.12);
+  }
+}
+:root[data-theme="dark"] {
+  --a-adi: #3987e5; --a-claude: #d95926; --a-subagent: #199e70; --a-cowork: #c98500; --a-system: #5c5b57;
+  --mine: rgba(57, 135, 229, 0.12);
+}
+
+.kpis.five { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.note { font-size: 13px; color: var(--ink-2); margin: 0 0 12px; }
+.panel .key { margin: 0 0 8px; }
+.summary-panel { margin-top: 16px; }
+
+/* Adi's role: one column per role */
+.roles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.role { background: var(--surface); border: 1px solid var(--ring); border-top: 3px solid var(--a-adi); border-radius: 12px; padding: 16px 0 6px; min-width: 0; }
+.role h3 { padding: 0 16px; display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.role h3 small { font-size: 13px; font-weight: 400; color: var(--ink-2); }
+.role .what { padding: 0 16px; margin: 2px 0 8px; font-size: 13px; color: var(--ink-2); }
+.role ul { list-style: none; margin: 0; padding: 0; max-height: 420px; overflow-y: auto; overscroll-behavior: contain; }
+.role li { padding: 10px 16px; border-top: 1px solid var(--grid); font-size: 14px; }
+.role .when { font-size: 12px; color: var(--ink-2); font-variant-numeric: tabular-nums; margin: 0 0 2px; }
+.role .txt { margin: 0; }
+.role .why { margin: 4px 0 0; font-size: 12px; color: var(--ink-2); }
+.linkish {
+  font: inherit; font-size: 13px; color: var(--accent-text); background: none; border: 0; padding: 0;
+  cursor: pointer; text-decoration: underline; text-underline-offset: 2px; margin-top: 4px;
+}
+.role .empty-role { color: var(--ink-2); }
+
+/* Counts table */
+.scroll-x { overflow-x: auto; }
+table.summary { border-collapse: collapse; width: 100%; font-size: 14px; font-variant-numeric: tabular-nums; margin-top: 8px; }
+table.summary { font-size: 13px; }
+.summary th, .summary td { padding: 6px 7px; border-bottom: 1px solid var(--grid); text-align: right; white-space: nowrap; font-weight: 400; }
+.summary th:first-child, .summary td:first-child { text-align: left; }
+.summary thead th { color: var(--ink-2); font-size: 12px; vertical-align: bottom; white-space: normal; min-width: 52px; }
+.summary thead tr.grp th { border-bottom: 0; padding-bottom: 0; font-weight: 600; color: var(--ink); }
+.summary td.adi { background: var(--mine); }
+.summary tfoot td { font-weight: 600; border-bottom: 0; }
+
+/* Shared filter reset button (same as validation) */
+.filters .reset {
+  font: inherit; font-size: 14px; color: var(--ink-2); background: transparent; cursor: pointer;
+  border: 1px solid var(--ring); border-radius: 8px; padding: 8px 12px;
+}
+.filters .reset:hover { color: var(--ink); background: var(--wash); }
+
+/* Actor marks: dot + name, never color alone */
+.who { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; color: var(--ink); }
+.dot { width: 10px; height: 10px; border-radius: 999px; display: inline-block; flex: none; background: var(--a-system); }
+.dot.Adi { background: var(--a-adi); }
+.dot.Claude { background: var(--a-claude); }
+.dot.Subagent { background: var(--a-subagent); }
+.dot.Claude-Cowork { background: var(--a-cowork); }
+
+/* Vertical timeline */
+.tl { list-style: none; margin: 0; padding: 0; position: relative; max-height: min(80vh, 900px); overflow-y: auto; overscroll-behavior: contain;
+  background: var(--surface); border: 1px solid var(--ring); border-radius: 12px; }
+.tl .divider {
+  position: sticky; top: 0; z-index: 1; background: var(--surface); border-bottom: 1px solid var(--axis);
+  padding: 10px 16px 8px; font-size: 13px; font-weight: 600; color: var(--ink);
+}
+.ev { display: grid; grid-template-columns: 76px 20px minmax(0, 1fr); gap: 0 8px; padding: 0 16px 0 12px; }
+.ev .t { font-size: 12px; color: var(--ink-2); font-variant-numeric: tabular-nums; text-align: right; padding-top: 12px; white-space: nowrap; }
+.ev .rail { position: relative; }
+.ev .rail::before { content: ""; position: absolute; left: 9px; top: 0; bottom: 0; width: 2px; background: var(--grid); }
+.ev .rail .dot { position: absolute; left: 5px; top: 15px; width: 12px; height: 12px; box-shadow: 0 0 0 2px var(--surface); }
+.ev .body { padding: 10px 0; border-bottom: 1px solid var(--grid); min-width: 0; }
+.ev.mine .body { background: var(--mine); margin-left: -6px; padding-left: 6px; padding-right: 6px; border-radius: 6px; border-bottom-color: transparent; }
+.ev .meta { display: flex; flex-wrap: wrap; gap: 2px 8px; align-items: baseline; font-size: 12px; color: var(--ink-2); margin: 0 0 2px; }
+.ev .meta .who { font-size: 13px; }
+.ev .meta .tm { display: none; }
+.ev .sum { margin: 0; font-size: 14px; overflow-wrap: anywhere; }
+.ev details { margin-top: 6px; font-size: 13px; }
+.ev details summary { cursor: pointer; color: var(--ink-2); }
+.ev .src { font-size: 12px; color: var(--muted); margin: 6px 0 0; overflow-wrap: anywhere; }
+.ev.flash .body { outline: 2px solid var(--focus); outline-offset: 2px; }
+.pill { font-size: 11px; font-weight: 600; letter-spacing: 0.02em; text-transform: uppercase; color: var(--ink-2); border: 1px solid var(--axis); border-radius: 999px; padding: 0 7px; }
+.pill.role { color: var(--accent-text); border-color: var(--accent-text); }
+pre.full {
+  margin: 6px 0 0; white-space: pre-wrap; overflow-wrap: anywhere; max-height: 360px; overflow: auto;
+  font: 12px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--plane);
+  border: 1px solid var(--ring); border-radius: 8px; padding: 10px 12px; color: var(--ink);
+}
+.empty { padding: 24px 16px; color: var(--ink-2); list-style: none; }
+
+/* Q&A */
+.qa { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; max-height: min(90vh, 1100px); overflow-y: auto; overscroll-behavior: contain; }
+.qa-item { background: var(--surface); border: 1px solid var(--ring); border-radius: 12px; padding: 14px 18px; min-width: 0; }
+.qa-item header { font-size: 12px; color: var(--ink-2); margin: 0 0 8px; display: flex; flex-wrap: wrap; gap: 2px 10px; }
+.turn { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 4px 12px; padding: 8px 0; border-top: 1px solid var(--grid); }
+.turn:first-of-type { border-top: 0; }
+.turn.q { background: var(--mine); border-radius: 8px; padding: 8px 10px; margin: 0 -10px; }
+.turn .who { font-size: 13px; align-self: start; }
+.turn .txt { font-size: 14px; margin: 0; overflow-wrap: anywhere; }
+.turn details { grid-column: 2; font-size: 13px; }
+.turn details summary { cursor: pointer; color: var(--ink-2); }
+.more > summary { cursor: pointer; font-size: 13px; color: var(--ink-2); padding: 8px 0 2px; border-top: 1px solid var(--grid); }
+
+@media (max-width: 960px) {
+  .kpis.five { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 860px) {
+  .roles { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 640px) {
+  .kpis.five { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ev { grid-template-columns: 20px minmax(0, 1fr); padding: 0 12px 0 6px; }
+  .ev .t { display: none; }
+  .ev .meta .tm { display: inline; }
+  .turn { grid-template-columns: minmax(0, 1fr); }
+  .turn details { grid-column: 1; }
+  .qa-item { padding: 12px 14px; }
+}
