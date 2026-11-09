@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GenAI Policy Findings</title>
+<meta name="description" content="How 42 US computer science departments talk about generative AI, and what they let students do with it.">
+<script>
+  // Apply a saved theme before first paint (per-viewer convenience only).
+  try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<link rel="stylesheet" href="assets/findings.css">
+<script src="assets/vendor/chart-4.4.1.umd.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="site" href="index.html">GenAI policies in CS education</a>
+    <button class="theme-btn" id="theme-btn" type="button" aria-label="Switch color theme">Dark mode</button>
+  </header>
+
+  <main id="main">
+    <h1 id="headline">CS departments mostly leave generative AI to the university and the instructor</h1>
+    <p class="dek" id="dek">Findings from the official AI language of 42 US computer science departments, their universities, and their intro and software engineering courses. Every number links back to a quoted source.</p>
+
+    <section class="hero" aria-label="Headline findings">
+      <div class="panel" id="hero-dept">
+        <p class="figure" id="dept-figure">–</p>
+        <p class="fig-label">departments publish their own AI statement</p>
+        <p class="fig-note" id="dept-note"></p>
+        <div class="unit-grid" id="unit-grid" role="list" aria-label="One square per school"></div>
+        <ul class="key">
+          <li><span class="sw" style="background:var(--accent)"></span>Own department statement</li>
+          <li><span class="sw" style="background:var(--cell-off)"></span>Defers to university or syllabus</li>
+        </ul>
+        <p class="foot" id="dept-foot"></p>
+      </div>
+      <div class="panel" id="hero-instructor" data-kpi="instructor_discretion">
+        <p class="figure" id="instr-figure">–</p>
+        <p class="fig-label">Leave it to the instructor</p>
+        <p class="fig-note" id="instr-note"></p>
+        <div class="seg" id="rule-seg" role="img"></div>
+        <ul class="key" id="rule-seg-key"></ul>
+        <p class="fig-note rest" id="instr-rest"></p>
+      </div>
+    </section>
+
+    <div class="kpis" id="kpis" aria-label="Key numbers"></div>
+
+    <section aria-labelledby="h-rules">
+      <h2 id="h-rules">What the rules say</h2>
+      <p class="sub">Coded from the most specific official text available: department first, then university, then the intro course. Hover a bar for its count and share.</p>
+      <div class="charts">
+        <div class="panel">
+          <h3>Default rule for students</h3>
+          <p class="sub">What a student may do when a course says nothing more.</p>
+          <div class="chart-box"><canvas id="chart-default-rule" aria-label="Bar chart of default rules"></canvas></div>
+          <details class="as-table" data-for="chart-default-rule"><summary>Show as table</summary></details>
+        </div>
+        <div class="panel">
+          <h3>Tone of the official language</h3>
+          <p class="sub">Stance from −2 (hostile) to +2 (enthusiastic). Nobody scored +2.</p>
+          <div class="chart-box"><canvas id="chart-stance" aria-label="Bar chart of stance"></canvas></div>
+          <details class="as-table" data-for="chart-stance"><summary>Show as table</summary></details>
+        </div>
+        <div class="panel wide">
+          <h3>Tone by institution type</h3>
+          <p class="sub" id="stance-type-sub">Share of each type's schools at each stance. Groups differ in size, so bar height is a percentage and the number on each bar is its count of schools.</p>
+          <p class="sub small-n" id="stance-type-note"></p>
+          <div class="chart-box"><canvas id="chart-stance-type" aria-label="Grouped bar chart of stance by institution type"></canvas></div>
+          <details class="as-table" data-for="chart-stance-type"><summary>Show as table</summary></details>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-se">
+      <h2 id="h-se">Software engineering courses</h2>
+      <p class="sub" id="se-sub"></p>
+      <div class="charts">
+        <div class="panel">
+          <h3>SE course AI policy</h3>
+          <p class="sub">One SE course per school, most recent public syllabus.</p>
+          <div class="chart-box tall"><canvas id="chart-se" aria-label="Bar chart of SE course policies"></canvas></div>
+          <details class="as-table" data-for="chart-se"><summary>Show as table</summary></details>
+        </div>
+        <div class="panel">
+          <h3>Courses that build AI into the work</h3>
+          <p class="sub">Coded "integrated": AI use is part of the assignments, not just tolerated.</p>
+          <ul class="callout" id="integrated-list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-themes">
+      <h2 id="h-themes">What the policies talk about</h2>
+      <p class="sub">Number of schools whose quoted sources raise each theme. A school can raise several.</p>
+      <div class="panel">
+        <div class="chart-box tall"><canvas id="chart-themes" aria-label="Horizontal bar chart of theme frequency"></canvas></div>
+        <details class="as-table" data-for="chart-themes"><summary>Show as table</summary></details>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-explorer">
+      <h2 id="h-explorer">School explorer</h2>
+      <p class="sub">Select a school to read the quotes behind each code, with links to the sources.</p>
+      <div class="filters" role="search">
+        <input id="q" type="search" placeholder="Search schools" aria-label="Search schools">
+        <select id="f-type" aria-label="Filter by institution type"><option value="">All types</option></select>
+        <select id="f-rule" aria-label="Filter by default rule"><option value="">All default rules</option></select>
+        <select id="f-se" aria-label="Filter by SE course policy"><option value="">All SE policies</option></select>
+      </div>
+      <p class="count" id="count" aria-live="polite"></p>
+      <div class="table-wrap">
+        <table class="schools" id="schools">
+          <thead><tr>
+            <th scope="col" data-key="name"><button type="button">School</button></th>
+            <th scope="col" data-key="type"><button type="button">Type</button></th>
+            <th scope="col" data-key="default_rule"><button type="button">Default rule</button></th>
+            <th scope="col" data-key="stance"><button type="button">Stance</button></th>
+            <th scope="col" data-key="se_course_policy"><button type="button">SE course</button></th>
+          </tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-method">
+      <h2 id="h-method">Method and limitations</h2>
+      <div class="method">
+        <div id="method-left"></div>
+        <div id="method-right"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>Data: <a href="data/findings.json">findings.json</a> and <a href="data/policies.json">policies.json</a>. Coded by Claude against a fixed codebook; agreement checked on a sample by a human coder and a second AI.</footer>
+</div>
+<div class="tip" id="tip" role="tooltip" hidden></div>
+<script src="assets/findings.js"></script>
+</body>
+</html>
