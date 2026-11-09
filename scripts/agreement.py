@@ -1,9 +1,12 @@
-"""Human vs. Claude agreement: percent agreement and Cohen's kappa per field.
+"""Inter-rater agreement with Claude's codes: percent agreement and Cohen's kappa per field.
 
-Reads data/processed/human_coding.csv (Adi's blind codes) and policies.json.
-Themes are compared as one yes/no field per theme. Stance also gets a linearly
-weighted kappa because it is ordinal. If human_coding.csv is missing, writes a
-"pending" agreement.json.
+Two comparisons, each against policies.json (Claude Code's codes):
+  human_vs_claude: data/processed/human_coding.csv (Adi's blind codes)
+  ai2_vs_claude:   data/processed/ai2_coding.csv (independent second Claude session)
+Rows whose coded fields are all blank are skipped (not every sampled school is
+hand-coded). Themes are compared as one yes/no field per theme. Stance also gets
+a linearly weighted kappa because it is ordinal. A missing CSV gives a "pending"
+comparison.
 
 Usage: python3 scripts/agreement.py
 """
@@ -14,8 +17,14 @@ from collections import Counter
 from codebook_schema import CODED_FIELDS, STANCES, THEMES, load_policies
 from raw_format import ROOT
 
-HUMAN_PATH = ROOT / "data" / "processed" / "human_coding.csv"
-OUT_PATH = ROOT / "data" / "processed" / "agreement.json"
+PROCESSED = ROOT / "data" / "processed"
+HUMAN_PATH = PROCESSED / "human_coding.csv"
+AI2_PATH = PROCESSED / "ai2_coding.csv"
+COMPARISONS = {
+    "human_vs_claude": (HUMAN_PATH, "Adi's blind hand-coding vs. Claude Code"),
+    "ai2_vs_claude": (AI2_PATH, "independent second Claude session (did not see policies.json) vs. Claude Code"),
+}
+OUT_PATH = PROCESSED / "agreement.json"
 
 
 def percent_agreement(a, b):
@@ -82,9 +91,14 @@ def field_result(a, b, ordered=None):
     return result
 
 
-def compute(human_rows, policies):
+def is_coded(row):
+    """A row counts only if at least one coded field or themes was filled in."""
+    return any(str(row.get(f) or "").strip() for f in CODED_FIELDS + ["themes"])
+
+
+def compute(rater_rows, policies):
     claude = {p["slug"]: p for p in policies}
-    rows = [r for r in human_rows if r.get("slug") in claude]
+    rows = [r for r in rater_rows if r.get("slug") in claude and is_coded(r)]
     fields = {}
     for field in CODED_FIELDS:
         pairs = [(normalise(field, r[field]), claude[r["slug"]][field])
@@ -100,22 +114,35 @@ def compute(human_rows, policies):
         if a:
             themes[t] = field_result(a, b)
     disagreements = [
-        {"slug": r["slug"], "field": f, "human": normalise(f, r[f]), "claude": claude[r["slug"]][f]}
+        {"slug": r["slug"], "field": f, "rater": normalise(f, r[f]), "claude": claude[r["slug"]][f]}
         for r in rows for f in CODED_FIELDS
         if str(r.get(f, "")).strip() and normalise(f, r[f]) != claude[r["slug"]][f]]
+    for r in themed:
+        rater, mine = split_themes(r["themes"]), set(claude[r["slug"]]["themes"])
+        if rater != mine:
+            disagreements.append({"slug": r["slug"], "field": "themes",
+                                  "rater_only": sorted(rater - mine), "claude_only": sorted(mine - rater)})
     return {"status": "complete", "n_institutions": len(rows), "slugs": [r["slug"] for r in rows],
             "fields": fields, "themes": themes, "disagreements": disagreements}
 
 
+def compare(path, policies):
+    if not path.exists():
+        return {"status": "pending", "note": f"{path.relative_to(ROOT)} not found"}
+    with path.open(encoding="utf-8", newline="") as f:
+        return compute(list(csv.DictReader(f)), policies)
+
+
 def main():
-    if not HUMAN_PATH.exists():
-        result = {"status": "pending",
-                  "note": "data/processed/human_coding.csv not filled in yet (copy human_coding_template.csv)"}
-    else:
-        with HUMAN_PATH.open(encoding="utf-8", newline="") as f:
-            result = compute(list(csv.DictReader(f)), load_policies())
+    policies = load_policies()
+    result = {}
+    for name, (path, description) in COMPARISONS.items():
+        result[name] = dict(compare(path, policies), rater_file=str(path.relative_to(ROOT)),
+                            description=description)
     OUT_PATH.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
-    print(f"agreement: {result['status']} -> {OUT_PATH.relative_to(ROOT)}")
+    for name, r in result.items():
+        print(f"{name}: {r['status']}, n={r.get('n_institutions', 0)}")
+    print(f"wrote {OUT_PATH.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":

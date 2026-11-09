@@ -205,8 +205,39 @@ def test_AC2_4_agreement_compute_lists_each_disagreement():
     p = POLICIES[0]
     row = {f: str(p[f]) for f in CODED_FIELDS}
     row.update(slug=p["slug"], themes="", stance=str(p["stance"] + 1 if p["stance"] < 2 else 1))
+    row["themes"] = "; ".join(p["themes"])
     result = agreement.compute([row], POLICIES)
     assert [d["field"] for d in result["disagreements"]] == ["stance"]
+
+
+def test_AC2_4_agreement_lists_theme_set_differences():
+    p = POLICIES[0]
+    row = {f: str(p[f]) for f in CODED_FIELDS}
+    row.update(slug=p["slug"], themes="; ".join(p["themes"][1:] + ["equity_access"]))
+    diff = [d for d in agreement.compute([row], POLICIES)["disagreements"] if d["field"] == "themes"]
+    assert diff == [{"slug": p["slug"], "field": "themes",
+                     "rater_only": ["equity_access"], "claude_only": [p["themes"][0]]}]
+
+
+def test_AC2_4_agreement_skips_rows_left_blank_by_the_rater():
+    p = POLICIES[0]
+    filled = {f: str(p[f]) for f in CODED_FIELDS}
+    filled.update(slug=p["slug"], themes="; ".join(p["themes"]))
+    blank = {f: "" for f in CODED_FIELDS + ["themes"]}
+    blank["slug"] = POLICIES[1]["slug"]
+    result = agreement.compute([filled, blank], POLICIES)
+    assert result["slugs"] == [p["slug"]]
+    assert all(r["n"] == 1 for r in list(result["fields"].values()) + list(result["themes"].values()))
+
+
+def test_AC2_4_agreement_json_reports_human_and_ai2_comparisons_against_claude():
+    saved = json.loads(agreement.OUT_PATH.read_text(encoding="utf-8"))
+    assert set(saved) == {"human_vs_claude", "ai2_vs_claude"}
+    for name, path in (("human_vs_claude", agreement.HUMAN_PATH), ("ai2_vs_claude", agreement.AI2_PATH)):
+        if path.exists():
+            with path.open(encoding="utf-8", newline="") as f:
+                expected = agreement.compute(list(csv.DictReader(f)), POLICIES)
+            assert {k: saved[name][k] for k in expected} == expected, name
 
 
 # ---------------------------------------------------------------- AC2.5 findings counts
