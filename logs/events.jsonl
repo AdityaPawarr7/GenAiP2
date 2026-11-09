@@ -1,0 +1,2 @@
+{"ts": "2026-11-09T14:50:34-05:00", "event": "SessionStart", "session_id": "17b212db-1708-4f67-adc4-088194130ec9", "source": "startup"}
+{"ts": "2026-11-09T14:52:43-05:00", "event": "UserPromptSubmit", "session_id": "17b212db-1708-4f67-adc4-088194130ec9", "actor": "Adi", "prompt": "Read CLAUDE.md, SPEC.md, PROGRESS.md and specs/phase-0-setup.md. Restate the Phase 0 acceptance criteria and your plan, then wait for my “go”."}
