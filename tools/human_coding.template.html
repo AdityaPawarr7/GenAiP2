@@ -1,0 +1,68 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Blind Hand Coding</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+body{font:15px/1.5 -apple-system,system-ui,sans-serif;margin:0;background:#f6f7f9;color:#1a1a1a}
+header{background:#1f2937;color:#fff;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+main{display:grid;grid-template-columns:1fr 380px;gap:16px;padding:16px;max-width:1300px;margin:auto}
+@media(max-width:900px){main{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:16px}
+.src{max-height:78vh;overflow:auto}
+h3{margin:18px 0 4px;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:#4b5563}
+blockquote{margin:6px 0;padding:6px 10px;border-left:3px solid #3b82f6;background:#eff6ff}
+.meta{color:#6b7280;font-size:13px;word-break:break-all}
+label{display:block;font-weight:600;margin-top:12px}
+small{display:block;font-weight:400;color:#6b7280}
+select,textarea{width:100%;padding:6px;font:inherit;margin-top:4px}
+.themes label{font-weight:400;margin:2px 0}
+button{background:#2563eb;color:#fff;border:0;border-radius:6px;padding:8px 14px;font:inherit;cursor:pointer}
+button.sec{background:#e5e7eb;color:#111}
+.nav{display:flex;gap:8px;margin-top:16px}
+.dots span{display:inline-block;width:10px;height:10px;border-radius:50%;background:#6b7280;margin:0 2px}
+.dots span.done{background:#22c55e}.dots span.cur{outline:2px solid #fff}
+</style></head><body>
+<header><b>Blind hand coding: <span id="title"></span></b><span class="dots" id="dots"></span>
+<button onclick="exportCsv()">Download human_coding.csv</button></header>
+<main><div class="card src" id="src"></div>
+<div class="card"><form id="f">
+<label>policy_level<small>dept if dept_statement has a URL; else university; else course_only</small>
+<select name="policy_level"><option></option><option>dept</option><option>university</option><option>course_only</option><option>none_found</option></select></label>
+<label>default_rule<small>Dept text first, then university. "Not allowed unless instructor permits" = banned</small>
+<select name="default_rule"><option></option><option>banned</option><option>instructor_discretion</option><option>allowed_with_disclosure</option><option>allowed_encouraged</option><option>unclear</option></select></label>
+<label>stance<small>Tone of that same text. −2 hostile … 0 neutral … +2 enthusiastic</small>
+<select name="stance"><option></option><option>-2</option><option>-1</option><option>0</option><option>1</option><option>2</option></select></label>
+<label>collaboration_framing<small>AI called tutor/partner/teammate, or likened to a human helper to permit use</small>
+<select name="collaboration_framing"><option></option><option>true</option><option>false</option></select></label>
+<label>disclosure_required<small>yes = must cite/acknowledge AI use; "consider requiring" = unclear</small>
+<select name="disclosure_required"><option></option><option>yes</option><option>no</option><option>unclear</option></select></label>
+<label>se_course_policy<small>integrated = AI required/taught; allowed = most coding work; limited = some tasks</small>
+<select name="se_course_policy"><option></option><option>banned</option><option>limited</option><option>allowed</option><option>integrated</option><option>not_found</option></select></label>
+<label>themes<small>Explicitly present in any quote</small></label><div class="themes" id="themes"></div>
+<label>notes<textarea name="notes" rows="2"></textarea></label>
+</form>
+<div class="nav"><button class="sec" onclick="go(-1)">← Prev</button><button onclick="go(1)">Next →</button></div></div></main>
+<script>
+const DATA=/*DATA*/[];
+const ALL=["berkeley","caltech","cmu","columbia","cornell","mit","ncstate","nyu","ucla","williams"];
+const THEMES=["academic_integrity","learning_outcomes","career_readiness","specific_tools","equity_access","privacy_security","assessment_redesign","ai_literacy"];
+const FIELDS=["policy_level","default_rule","stance","collaboration_framing","disclosure_required","se_course_policy"];
+const ans=DATA.map(()=>({themes:[]}));let i=0;
+document.getElementById("themes").innerHTML=THEMES.map(t=>`<label><input type="checkbox" value="${t}"> ${t}</label>`).join("");
+const esc=s=>s.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+function render(){const d=DATA[i];document.getElementById("title").textContent=`${d.name} (${i+1}/${DATA.length})`;
+ document.getElementById("src").innerHTML=d.sections.map(s=>`<h3>${s.section}</h3>`+s.body.split("\n").filter(l=>l.trim()).map(l=>l.startsWith(">")?`<blockquote>${esc(l.slice(1).trim())}</blockquote>`:`<div class="meta">${esc(l)}</div>`).join("")).join("");
+ const f=document.getElementById("f"),a=ans[i];FIELDS.forEach(k=>f[k].value=a[k]||"");f.notes.value=a.notes||"";
+ f.querySelectorAll("#themes input").forEach(c=>c.checked=a.themes.includes(c.value));
+ document.getElementById("dots").innerHTML=DATA.map((_,j)=>`<span class="${FIELDS.every(k=>ans[j][k])?"done":""} ${j==i?"cur":""}"></span>`).join("");
+ document.getElementById("src").scrollTop=0;}
+function save(){const f=document.getElementById("f"),a=ans[i];FIELDS.forEach(k=>a[k]=f[k].value);a.notes=f.notes.value;
+ a.themes=[...f.querySelectorAll("#themes input:checked")].map(c=>c.value);}
+function go(n){save();i=Math.max(0,Math.min(DATA.length-1,i+n));render();}
+document.getElementById("f").addEventListener("change",()=>{save();render();});
+function exportCsv(){save();const q=v=>/[",\n]/.test(v)?`"${v.replace(/"/g,'""')}"`:v;
+ const rows=[["slug","name","raw_file",...FIELDS,"themes","notes"].join(",")];
+ ALL.forEach(s=>{const j=DATA.findIndex(d=>d.slug==s);const a=j>=0?ans[j]:{themes:[]};const n=j>=0?DATA[j].name:"";
+  rows.push([s,q(n),`data/raw/${s}.md`,...FIELDS.map(k=>a[k]||""),a.themes.join(";"),q(a.notes||"")].join(","));});
+ const b=new Blob([rows.join("\n")+"\n"],{type:"text/csv"});const l=document.createElement("a");
+ l.href=URL.createObjectURL(b);l.download="human_coding.csv";l.click();}
+render();
+</script></body></html>

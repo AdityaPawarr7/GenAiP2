@@ -1,0 +1,247 @@
+[
+  {
+    "slug": "mit",
+    "policy_level": "university",
+    "default_rule": "instructor_discretion",
+    "stance": 0,
+    "collaboration_framing": true,
+    "disclosure_required": "unclear",
+    "se_course_policy": "banned",
+    "themes": [
+      "learning_outcomes",
+      "specific_tools"
+    ],
+    "evidence": {
+      "default_rule": "instructors, and perhaps departments, should make sure that every MIT subject has a clear policy about the use of generative AI",
+      "stance": "While we recommend against imposing a one-size-fits-all policy on AI use",
+      "collaboration_framing": "Generative AI has been shown to help learning when used as a tutor.",
+      "se_course_policy": "Using generative AI tools to write text or code NO Forbidden.",
+      "themes:learning_outcomes": "Generative AI has been shown to help learning when used as a tutor. You may use it to help you understand concepts.",
+      "themes:specific_tools": "e.g. Claude Code, Cursor, GitHub Copilot"
+    },
+    "confidence": "high",
+    "notes": "No Institute-wide student rule; the Aug 2026 committee report recommends a per-subject policy. 6.100 allows AI as a tutor for concepts but not to generate code; 6.102 (SE) forbids AI for writing text or code."
+  },
+  {
+    "slug": "stanford",
+    "policy_level": "university",
+    "default_rule": "allowed_with_disclosure",
+    "stance": 0,
+    "collaboration_framing": true,
+    "disclosure_required": "yes",
+    "se_course_policy": "not_found",
+    "themes": [
+      "academic_integrity",
+      "learning_outcomes",
+      "specific_tools"
+    ],
+    "evidence": {
+      "default_rule": "students must document and disclose any other uses of AI related to coursework.",
+      "stance": "Students may not use AI tools to create deliverables",
+      "collaboration_framing": "If the use of a human tutor is permitted for a given task, then it is likely that the use of generative AI as described in the examples above is similarly permitted.",
+      "disclosure_required": "However, students must document and disclose any other uses of AI related to coursework.",
+      "themes:academic_integrity": "the default honor code policy on generative AI use in Stanford courses",
+      "themes:learning_outcomes": "to support learning, improve comprehension, and practice skills and concepts",
+      "themes:specific_tools": "(e.g., ChatGPT, Claude, etc.)"
+    },
+    "confidence": "medium",
+    "notes": "Stanford is one of few schools with an explicit university default: AI allowed for practice and learning support (no disclosure needed), banned for creating deliverables, all other uses must be disclosed; instructors may override. allowed_with_disclosure is the closest enum but understates the deliverables ban. Formal BCA adoption status of the guidance is unclear (raw notes). SE course CS194 syllabus is on Canvas (blocked)."
+  },
+  {
+    "slug": "cmu",
+    "policy_level": "university",
+    "default_rule": "instructor_discretion",
+    "stance": 0,
+    "collaboration_framing": false,
+    "disclosure_required": "unclear",
+    "se_course_policy": "integrated",
+    "themes": [
+      "academic_integrity",
+      "learning_outcomes",
+      "career_readiness",
+      "ai_literacy"
+    ],
+    "evidence": {
+      "default_rule": "this policy is intentionally designed to allow instructors to define what is",
+      "stance": "policy on academic integrity is not changing as a response to generative AI tools",
+      "se_course_policy": "Our goal for you in this class is that you learn to use AI in a way that helps you become a better software engineer.",
+      "themes:academic_integrity": "Use of these tools on assignments will be reported as an academic integrity violation.",
+      "themes:learning_outcomes": "even as we also strongly resist AI replacing your learning or your humanity",
+      "themes:career_readiness": "learn to use AI in a way that helps you become a better software engineer",
+      "themes:ai_literacy": "It is your responsibility to validate and verify AI-produced content before submitting it for class purposes."
+    },
+    "confidence": "high",
+    "notes": "No department statement; Eberly Center says the integrity policy already covers AI and lets instructors define authorized use. Intro courses diverge sharply: 15-112 allows/encourages AI on homework (banned on assessments), 15-122 bans AI on all graded work. 17-313 (SE) allows AI for all coding and makes learning to use AI well a course goal (coded integrated)."
+  },
+  {
+    "slug": "berkeley",
+    "policy_level": "university",
+    "default_rule": "instructor_discretion",
+    "stance": 0,
+    "collaboration_framing": true,
+    "disclosure_required": "unclear",
+    "se_course_policy": "limited",
+    "themes": [
+      "academic_integrity",
+      "learning_outcomes",
+      "specific_tools",
+      "ai_literacy"
+    ],
+    "evidence": {
+      "default_rule": "Instructors are encouraged to adapt these to their specific course context and instructional priorities.",
+      "stance": "A clearly stated course policy on GenAI use helps ensure that students understand not only what is allowed, but also why.",
+      "collaboration_framing": "Homeworks will be completed alongside an AI tutor called Preceptor",
+      "se_course_policy": "or an AI assistant — without understanding it",
+      "themes:academic_integrity": "tools like ChatGPT can raise questions about academic integrity",
+      "themes:learning_outcomes": "asks students questions to ensure they understand the code that they have written",
+      "themes:specific_tools": "Do not use AI tools such as Github Copilot or ChatGPT to fill in or correct your code.",
+      "themes:ai_literacy": "students will use AI coding agents in their final project to develop a large and complex software application"
+    },
+    "confidence": "medium",
+    "notes": "No EECS statement; CTL reproduces Academic Senate sample statements (full / some / no AI) for instructors to choose. CS 61A bans AI for writing code but uses an AI tutor (Preceptor) and AI coding agents in the final project; CS 61B bans agentic tools. SE (CS 169A) only treats unexamined AI-copied code as integrity breach; its AI Policy page is 'to be published', so 'limited' is provisional."
+  },
+  {
+    "slug": "uiuc",
+    "policy_level": "university",
+    "default_rule": "instructor_discretion",
+    "stance": 1,
+    "collaboration_framing": false,
+    "disclosure_required": "yes",
+    "se_course_policy": "not_found",
+    "themes": [
+      "academic_integrity",
+      "learning_outcomes",
+      "ai_literacy"
+    ],
+    "evidence": {
+      "default_rule": "Faculty should clearly define the boundaries for using AI in student work to maintain academic integrity",
+      "stance": "students have a right to use these tools to enhance their own learning",
+      "disclosure_required": "text and ideas generated by AI must be cited to avoid plagiarism",
+      "themes:academic_integrity": "Transparency regarding the role of AI in learning activities and academic work supports academic integrity.",
+      "themes:learning_outcomes": "students have a right to use these tools to enhance their own learning",
+      "themes:ai_literacy": "Students should be educated about the ethical use of AI tools"
+    },
+    "confidence": "high",
+    "notes": "CITL discourages blanket bans and encourages introducing AI into courses (stance +1). CS 124 bans AI-written homework code but requires directing an AI coding agent on the project; CS 128 allows AI as a learning aid with a mandatory reflection form and transcript. SE (CS 427) blocked (Coursera login)."
+  },
+  {
+    "slug": "gatech",
+    "policy_level": "university",
+    "default_rule": "instructor_discretion",
+    "stance": 1,
+    "collaboration_framing": true,
+    "disclosure_required": "unclear",
+    "se_course_policy": "limited",
+    "themes": [
+      "academic_integrity",
+      "learning_outcomes",
+      "specific_tools"
+    ],
+    "evidence": {
+      "default_rule": "Faculty members should, in the interim, communicate explicitly to their students about the acceptable use of Generative AI in classes and academic projects.",
+      "stance": "Georgia Tech encourages the thoughtful use of Gen AI technologies",
+      "collaboration_framing": "similar to how you might collaborate with peers",
+      "se_course_policy": "you may use AI tools to brainstorm, explore ideas, or clarify concepts",
+      "themes:academic_integrity": "Academic dishonesty (cheating) and AI should be addressed both in the syllabus and in class.",
+      "themes:learning_outcomes": "can support learning when used responsibly",
+      "themes:specific_tools": "such as Chat GPT and Bing Chat"
+    },
+    "confidence": "high",
+    "notes": "OIT guidance encourages thoughtful use and leaves rules to instructors; a Provost draft policy exists but was not retrieved. The Joyner College of Computing article is notes-only (Adi decision) and was not used as evidence. CS 1331 bans AI on all graded work. SE course is CS 2340 Objects and Design (Spring 2026): brainstorming/concepts allowed, embedded code-insertion tools and AI-generated submissions banned."
+  },
+  {
+    "slug": "uw",
+    "policy_level": "dept",
+    "default_rule": "instructor_discretion",
+    "stance": 0,
+    "collaboration_framing": false,
+    "disclosure_required": "yes",
+    "se_course_policy": "limited",
+    "themes": [
+      "academic_integrity",
+      "learning_outcomes",
+      "career_readiness",
+      "ai_literacy"
+    ],
+    "evidence": {
+      "default_rule": "You may also use AI on graded work when that work is specifically listed in Authorized Graded Work",
+      "stance": "If and when AI is used in research, it must be used responsibly",
+      "disclosure_required": "If you utilized AI on an authorized assignment, specify the tool you used and how you utilized it in your work.",
+      "se_course_policy": "AI use is permitted only for the following graded work:",
+      "themes:academic_integrity": "will be considered academic misconduct and referred to CSSC",
+      "themes:learning_outcomes": "to support their learning through explaining concepts and generating examples",
+      "themes:career_readiness": "Collaboration and AI will both have a place in your CS education and career",
+      "themes:ai_literacy": "Generative AI tools can produce incorrect statements, fabricated citations, or content that closely resembles existing sources."
+    },
+    "confidence": "medium",
+    "notes": "LIMITATION (Adi): dept_statement is a research-only guideline plus the opt-in Allen School template 'AI for Support and Growth', where each course lists its own authorized graded work, so the effective default is per course (instructor_discretion) with mandatory disclosure under the template. University: no single UW AI policy. SE course is CSE 331 (CSE 403 has no AI policy): AI only on listed graded work."
+  },
+  {
+    "slug": "cornell",
+    "policy_level": "university",
+    "default_rule": "instructor_discretion",
+    "stance": 0,
+    "collaboration_framing": false,
+    "disclosure_required": "unclear",
+    "se_course_policy": "allowed",
+    "themes": [
+      "academic_integrity",
+      "learning_outcomes",
+      "specific_tools"
+    ],
+    "evidence": {
+      "default_rule": "be sure to clearly communicate your policies regarding the use of generative AI in your syllabus, in assignment instructions, and verbally in class",
+      "stance": "To best support student learning and reduce violations of academic integrity",
+      "se_course_policy": "You may use AI tools to assist with coding, but you must clearly disclose any AI-generated content in your report",
+      "themes:academic_integrity": "before proceeding with academic integrity hearings",
+      "themes:learning_outcomes": "To best support student learning",
+      "themes:specific_tools": "(ChatGPT, Copilot, Cursor, etc.)"
+    },
+    "confidence": "high",
+    "notes": "CTI tells instructors to set and communicate their own policy and, when AI is permitted, their own documentation expectations (so no university-wide disclosure rule: unclear). CS 1110 bans AI aid on assignments; CS 2110 allows it with documentation and chat logs. LIMITATION (Adi): SE course is CS 5150 (Master's level)."
+  },
+  {
+    "slug": "princeton",
+    "policy_level": "university",
+    "default_rule": "banned",
+    "stance": -1,
+    "collaboration_framing": false,
+    "disclosure_required": "yes",
+    "se_course_policy": "integrated",
+    "themes": [
+      "learning_outcomes",
+      "specific_tools"
+    ],
+    "evidence": {
+      "default_rule": "Princeton University students must confirm AI is permitted by an instructor",
+      "stance": "students must confirm AI is permitted by an instructor and disclose the use of AI in any academic work.",
+      "disclosure_required": "disclose the use of AI in any academic work",
+      "se_course_policy": "In fact, you are required to use generative AI, at least to some minimal degree.",
+      "themes:learning_outcomes": "you must be able to reason about code and evaluate correctness independently",
+      "themes:specific_tools": "(e.g., ChatGPT, Gemini, and Claude)"
+    },
+    "confidence": "medium",
+    "notes": "LIMITATION (Adi): university_guidance is a Library guide paraphrasing RRR 2.4 (primary pages 403). Default ban: AI needs confirmed instructor permission and must be disclosed (coded banned under the default-prohibition convention). COS 126 and COS 226 ban AI on graded work. COS 333 (SE) requires AI on the project (integrated) but bans it on individual assignments."
+  },
+  {
+    "slug": "harvard",
+    "policy_level": "dept",
+    "default_rule": "instructor_discretion",
+    "stance": 1,
+    "collaboration_framing": false,
+    "disclosure_required": "unclear",
+    "se_course_policy": "not_found",
+    "themes": [
+      "learning_outcomes",
+      "specific_tools"
+    ],
+    "evidence": {
+      "default_rule": "All faculty are required to inform students of the policies governing generative AI use in class.",
+      "stance": "We recognize the transformative potential of G-AI and believe that it can enhance the computational learning environment at SEAS.",
+      "themes:learning_outcomes": "can facilitate mastery of the course",
+      "themes:specific_tools": "(e.g., ChatGPT, Claude, Copilot, Gemini, et al.)"
+    },
+    "confidence": "medium",
+    "notes": "dept_statement is the SEAS-wide CEE services page (school-level, faculty/staff-facing, supportive tone, no student rule); default comes from FAS OUE, which requires every instructor to state a policy (example templates only, so disclosure unclear). CS50 allows only its own AI tools (CS50 Duck). SE course COMPSCI 1060 has no public syllabus (not_found)."
+  }
+]

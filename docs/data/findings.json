@@ -1,0 +1,1617 @@
+{
+  "n": 42,
+  "n_by_type": {
+    "private_r1": 16,
+    "public_r1": 23,
+    "other": 3
+  },
+  "source": "data/processed/policies.json (Claude-coded, codebook in specs/codebook.md)",
+  "dept_statement_finding": {
+    "headline": "Only 4 of 42 CS departments/schools publish their own genAI statement; the other 38 defer to university guidance or course syllabi.",
+    "count": 4,
+    "n": 42,
+    "share": 0.0952,
+    "slugs": [
+      "uw",
+      "harvard",
+      "umd",
+      "bu"
+    ],
+    "records": [
+      {
+        "slug": "uw",
+        "name": "University of Washington",
+        "default_rule": "instructor_discretion",
+        "stance": 0,
+        "confidence": "medium",
+        "notes": "LIMITATION (Adi): dept_statement is a research-only guideline plus the opt-in Allen School template 'AI for Support and Growth', where each course lists its own authorized graded work, so the effective default is per course (instructor_discretion) with mandatory disclosure under the template. University: no single UW AI policy. SE course is CSE 331 (CSE 403 has no AI policy): AI only on listed graded work."
+      },
+      {
+        "slug": "harvard",
+        "name": "Harvard University",
+        "default_rule": "instructor_discretion",
+        "stance": 1,
+        "confidence": "medium",
+        "notes": "dept_statement is the SEAS-wide CEE services page (school-level, faculty/staff-facing, supportive tone, no student rule); default comes from FAS OUE, which requires every instructor to state a policy (example templates only, so disclosure unclear). CS50 allows only its own AI tools (CS50 Duck). SE course COMPSCI 1060 has no public syllabus (not_found)."
+      },
+      {
+        "slug": "umd",
+        "name": "University of Maryland, College Park",
+        "default_rule": "banned",
+        "stance": -2,
+        "confidence": "medium",
+        "notes": "The only school whose CS department lists AI use itself as an integrity violation 'that apply to all our courses' (default ban, stance -2); the university guideline agrees (not allowed unless the syllabus says otherwise). LIMITATION: undated single list item; some courses permit or teach AI (CMSC 389A; CMSC 435). CMSC 435 (SE): AI prohibited without prior written approval, but many projects involve AI as tasked (coded limited)."
+      },
+      {
+        "slug": "bu",
+        "name": "Boston University",
+        "default_rule": "allowed_with_disclosure",
+        "stance": 1,
+        "confidence": "medium",
+        "notes": "Decision (Adi): dept_statement is the CDS GAIA policy (Faculty of Computing & Data Sciences, adopted March 2023), treated as BU's school of computing; LIMITATION: CS itself is a CAS department. GAIA embraces AI with attribution, no AI on in-class exams unless permitted, and a lower grading baseline for declared AI use. CAS CS 111 bans genAI on homework (CS 112 bans code-assist tools without naming AI). LIMITATION: SE is MET CS 473/673 (other dept, PDF): AI only to improve self-created content, with disclosure (limited)."
+      }
+    ],
+    "without_dept_statement": {
+      "count": 38,
+      "policy_level": {
+        "dept": 0,
+        "university": 37,
+        "course_only": 1,
+        "none_found": 0
+      },
+      "default_rule": {
+        "banned": 7,
+        "instructor_discretion": 30,
+        "allowed_with_disclosure": 1,
+        "allowed_encouraged": 0,
+        "unclear": 0
+      }
+    }
+  },
+  "source_coverage": {
+    "dept_statement": {
+      "count": 4,
+      "share": 0.0952,
+      "slugs": [
+        "uw",
+        "harvard",
+        "umd",
+        "bu"
+      ]
+    },
+    "university_guidance": {
+      "count": 41,
+      "share": 0.9762,
+      "slugs": [
+        "mit",
+        "stanford",
+        "cmu",
+        "berkeley",
+        "uiuc",
+        "gatech",
+        "uw",
+        "cornell",
+        "princeton",
+        "harvard",
+        "utaustin",
+        "umich",
+        "ucsd",
+        "ucla",
+        "columbia",
+        "caltech",
+        "purdue",
+        "umd",
+        "uwmadison",
+        "nyu",
+        "northeastern",
+        "vt",
+        "ncstate",
+        "osu",
+        "psu",
+        "umn",
+        "rutgers",
+        "umass",
+        "asu",
+        "ufl",
+        "tamu",
+        "uci",
+        "duke",
+        "brown",
+        "yale",
+        "rice",
+        "jhu",
+        "bu",
+        "utah",
+        "hmc",
+        "calpoly"
+      ]
+    },
+    "intro_course": {
+      "count": 33,
+      "share": 0.7857,
+      "slugs": [
+        "mit",
+        "stanford",
+        "cmu",
+        "berkeley",
+        "uiuc",
+        "gatech",
+        "uw",
+        "cornell",
+        "princeton",
+        "harvard",
+        "utaustin",
+        "umich",
+        "ucsd",
+        "ucla",
+        "caltech",
+        "umd",
+        "uwmadison",
+        "nyu",
+        "northeastern",
+        "ncstate",
+        "osu",
+        "rutgers",
+        "asu",
+        "ufl",
+        "uci",
+        "duke",
+        "brown",
+        "yale",
+        "jhu",
+        "bu",
+        "hmc",
+        "williams",
+        "calpoly"
+      ]
+    },
+    "se_course": {
+      "count": 23,
+      "share": 0.5476,
+      "slugs": [
+        "mit",
+        "cmu",
+        "berkeley",
+        "gatech",
+        "uw",
+        "cornell",
+        "princeton",
+        "utaustin",
+        "umich",
+        "ucsd",
+        "ucla",
+        "umd",
+        "nyu",
+        "northeastern",
+        "vt",
+        "ncstate",
+        "umn",
+        "umass",
+        "ufl",
+        "duke",
+        "brown",
+        "jhu",
+        "bu"
+      ]
+    }
+  },
+  "distributions": {
+    "policy_level": {
+      "dept": 4,
+      "university": 37,
+      "course_only": 1,
+      "none_found": 0
+    },
+    "default_rule": {
+      "banned": 8,
+      "instructor_discretion": 32,
+      "allowed_with_disclosure": 2,
+      "allowed_encouraged": 0,
+      "unclear": 0
+    },
+    "stance": {
+      "-2": 1,
+      "-1": 10,
+      "0": 24,
+      "1": 7,
+      "2": 0
+    },
+    "collaboration_framing": {
+      "true": 11,
+      "false": 31
+    },
+    "disclosure_required": {
+      "yes": 21,
+      "no": 0,
+      "unclear": 21
+    },
+    "se_course_policy": {
+      "banned": 2,
+      "limited": 12,
+      "allowed": 3,
+      "integrated": 6,
+      "not_found": 19
+    },
+    "confidence": {
+      "high": 11,
+      "medium": 29,
+      "low": 2
+    }
+  },
+  "crosstabs_by_type": {
+    "policy_level": {
+      "private_r1": {
+        "dept": 2,
+        "university": 14,
+        "course_only": 0,
+        "none_found": 0
+      },
+      "public_r1": {
+        "dept": 2,
+        "university": 21,
+        "course_only": 0,
+        "none_found": 0
+      },
+      "other": {
+        "dept": 0,
+        "university": 2,
+        "course_only": 1,
+        "none_found": 0
+      }
+    },
+    "default_rule": {
+      "private_r1": {
+        "banned": 1,
+        "instructor_discretion": 13,
+        "allowed_with_disclosure": 2,
+        "allowed_encouraged": 0,
+        "unclear": 0
+      },
+      "public_r1": {
+        "banned": 6,
+        "instructor_discretion": 17,
+        "allowed_with_disclosure": 0,
+        "allowed_encouraged": 0,
+        "unclear": 0
+      },
+      "other": {
+        "banned": 1,
+        "instructor_discretion": 2,
+        "allowed_with_disclosure": 0,
+        "allowed_encouraged": 0,
+        "unclear": 0
+      }
+    },
+    "stance": {
+      "private_r1": {
+        "-2": 0,
+        "-1": 2,
+        "0": 12,
+        "1": 2,
+        "2": 0
+      },
+      "public_r1": {
+        "-2": 1,
+        "-1": 7,
+        "0": 10,
+        "1": 5,
+        "2": 0
+      },
+      "other": {
+        "-2": 0,
+        "-1": 1,
+        "0": 2,
+        "1": 0,
+        "2": 0
+      }
+    },
+    "collaboration_framing": {
+      "private_r1": {
+        "true": 6,
+        "false": 10
+      },
+      "public_r1": {
+        "true": 4,
+        "false": 19
+      },
+      "other": {
+        "true": 1,
+        "false": 2
+      }
+    },
+    "disclosure_required": {
+      "private_r1": {
+        "yes": 8,
+        "no": 0,
+        "unclear": 8
+      },
+      "public_r1": {
+        "yes": 12,
+        "no": 0,
+        "unclear": 11
+      },
+      "other": {
+        "yes": 1,
+        "no": 0,
+        "unclear": 2
+      }
+    },
+    "se_course_policy": {
+      "private_r1": {
+        "banned": 1,
+        "limited": 4,
+        "allowed": 2,
+        "integrated": 3,
+        "not_found": 6
+      },
+      "public_r1": {
+        "banned": 1,
+        "limited": 8,
+        "allowed": 1,
+        "integrated": 3,
+        "not_found": 10
+      },
+      "other": {
+        "banned": 0,
+        "limited": 0,
+        "allowed": 0,
+        "integrated": 0,
+        "not_found": 3
+      }
+    }
+  },
+  "stance": {
+    "mean": -0.119,
+    "mean_by_type": {
+      "private_r1": 0.0,
+      "public_r1": -0.174,
+      "other": -0.333
+    }
+  },
+  "themes": {
+    "overall": {
+      "academic_integrity": 37,
+      "learning_outcomes": 31,
+      "career_readiness": 6,
+      "specific_tools": 34,
+      "equity_access": 4,
+      "privacy_security": 3,
+      "assessment_redesign": 2,
+      "ai_literacy": 15
+    },
+    "by_type": {
+      "private_r1": {
+        "academic_integrity": 13,
+        "learning_outcomes": 11,
+        "career_readiness": 2,
+        "specific_tools": 12,
+        "equity_access": 2,
+        "privacy_security": 2,
+        "assessment_redesign": 1,
+        "ai_literacy": 6
+      },
+      "public_r1": {
+        "academic_integrity": 22,
+        "learning_outcomes": 17,
+        "career_readiness": 3,
+        "specific_tools": 19,
+        "equity_access": 2,
+        "privacy_security": 1,
+        "assessment_redesign": 1,
+        "ai_literacy": 9
+      },
+      "other": {
+        "academic_integrity": 2,
+        "learning_outcomes": 3,
+        "career_readiness": 1,
+        "specific_tools": 3,
+        "equity_access": 0,
+        "privacy_security": 0,
+        "assessment_redesign": 0,
+        "ai_literacy": 0
+      }
+    },
+    "share": {
+      "academic_integrity": 0.881,
+      "learning_outcomes": 0.7381,
+      "career_readiness": 0.1429,
+      "specific_tools": 0.8095,
+      "equity_access": 0.0952,
+      "privacy_security": 0.0714,
+      "assessment_redesign": 0.0476,
+      "ai_literacy": 0.3571
+    }
+  },
+  "collaboration_framing": {
+    "count": 11,
+    "n": 42,
+    "share": 0.2619,
+    "by_type": {
+      "private_r1": {
+        "count": 6,
+        "n": 16,
+        "share": 0.375
+      },
+      "public_r1": {
+        "count": 4,
+        "n": 23,
+        "share": 0.1739
+      },
+      "other": {
+        "count": 1,
+        "n": 3,
+        "share": 0.3333
+      }
+    },
+    "examples": [
+      {
+        "slug": "mit",
+        "name": "Massachusetts Institute of Technology",
+        "quote": "Generative AI has been shown to help learning when used as a tutor."
+      },
+      {
+        "slug": "stanford",
+        "name": "Stanford University",
+        "quote": "If the use of a human tutor is permitted for a given task, then it is likely that the use of generative AI as described in the examples above is similarly permitted."
+      },
+      {
+        "slug": "berkeley",
+        "name": "University of California, Berkeley",
+        "quote": "Homeworks will be completed alongside an AI tutor called Preceptor"
+      },
+      {
+        "slug": "gatech",
+        "name": "Georgia Institute of Technology",
+        "quote": "similar to how you might collaborate with peers"
+      },
+      {
+        "slug": "umich",
+        "name": "University of Michigan",
+        "quote": "is permitted only in the same contexts where collaboration with another person is allowed"
+      },
+      {
+        "slug": "nyu",
+        "name": "New York University",
+        "quote": "AI as a Partner in Peer Programming"
+      },
+      {
+        "slug": "northeastern",
+        "name": "Northeastern University",
+        "quote": "Treat it like a very junior (but over-eager) engineer, who needs constant supervision and frequent correction."
+      },
+      {
+        "slug": "asu",
+        "name": "Arizona State University",
+        "quote": "and generally serve as a tutor"
+      },
+      {
+        "slug": "brown",
+        "name": "Brown University",
+        "quote": "using generative AI output that is beyond help that a TA would provide you is considered a violation of this policy."
+      },
+      {
+        "slug": "jhu",
+        "name": "Johns Hopkins University",
+        "quote": "All collaboration (including internet/AI-assistance) must be clearly documented in your submission"
+      },
+      {
+        "slug": "hmc",
+        "name": "Harvey Mudd College",
+        "quote": "is equivalent to turning to a friend who has already taken the class and asking them for help"
+      }
+    ]
+  },
+  "se_course": {
+    "n_with_policy": 23,
+    "n_not_found": 19,
+    "distribution": {
+      "banned": 2,
+      "limited": 12,
+      "allowed": 3,
+      "integrated": 6,
+      "not_found": 19
+    },
+    "distribution_found_only": {
+      "banned": 2,
+      "limited": 12,
+      "allowed": 3,
+      "integrated": 6
+    },
+    "by_type": {
+      "private_r1": {
+        "banned": 1,
+        "limited": 4,
+        "allowed": 2,
+        "integrated": 3,
+        "not_found": 6
+      },
+      "public_r1": {
+        "banned": 1,
+        "limited": 8,
+        "allowed": 1,
+        "integrated": 3,
+        "not_found": 10
+      },
+      "other": {
+        "banned": 0,
+        "limited": 0,
+        "allowed": 0,
+        "integrated": 0,
+        "not_found": 3
+      }
+    },
+    "courses": [
+      {
+        "slug": "mit",
+        "name": "Massachusetts Institute of Technology",
+        "type": "private_r1",
+        "policy": "banned",
+        "quote": "Using generative AI tools to write text or code NO Forbidden.",
+        "source_date": 2026
+      },
+      {
+        "slug": "cmu",
+        "name": "Carnegie Mellon University",
+        "type": "private_r1",
+        "policy": "integrated",
+        "quote": "Our goal for you in this class is that you learn to use AI in a way that helps you become a better software engineer.",
+        "source_date": 2026
+      },
+      {
+        "slug": "berkeley",
+        "name": "University of California, Berkeley",
+        "type": "public_r1",
+        "policy": "limited",
+        "quote": "or an AI assistant — without understanding it",
+        "source_date": 2026
+      },
+      {
+        "slug": "gatech",
+        "name": "Georgia Institute of Technology",
+        "type": "public_r1",
+        "policy": "limited",
+        "quote": "you may use AI tools to brainstorm, explore ideas, or clarify concepts",
+        "source_date": 2026
+      },
+      {
+        "slug": "uw",
+        "name": "University of Washington",
+        "type": "public_r1",
+        "policy": "limited",
+        "quote": "AI use is permitted only for the following graded work:",
+        "source_date": 2026
+      },
+      {
+        "slug": "cornell",
+        "name": "Cornell University",
+        "type": "private_r1",
+        "policy": "allowed",
+        "quote": "You may use AI tools to assist with coding, but you must clearly disclose any AI-generated content in your report",
+        "source_date": 2026
+      },
+      {
+        "slug": "princeton",
+        "name": "Princeton University",
+        "type": "private_r1",
+        "policy": "integrated",
+        "quote": "In fact, you are required to use generative AI, at least to some minimal degree.",
+        "source_date": 2026
+      },
+      {
+        "slug": "utaustin",
+        "name": "The University of Texas at Austin",
+        "type": "public_r1",
+        "policy": "integrated",
+        "quote": "projects: AI is required",
+        "source_date": 2026
+      },
+      {
+        "slug": "umich",
+        "name": "University of Michigan",
+        "type": "public_r1",
+        "policy": "allowed",
+        "quote": "Students can us free AI tools and support for all assignments (but not examinations) in this course.",
+        "source_date": 2026
+      },
+      {
+        "slug": "ucsd",
+        "name": "University of California, San Diego",
+        "type": "public_r1",
+        "policy": "limited",
+        "quote": "You may only use generative AI tools, such as Copilot, in your team programming project and labs unless otherwise specified.",
+        "source_date": "undated"
+      },
+      {
+        "slug": "ucla",
+        "name": "University of California, Los Angeles",
+        "type": "public_r1",
+        "policy": "limited",
+        "quote": "to use search engines like Google or generative AI tools like Claude Code to learn and discuss general problem-solving techniques that are useful on assignments.",
+        "source_date": 2026
+      },
+      {
+        "slug": "umd",
+        "name": "University of Maryland, College Park",
+        "type": "public_r1",
+        "policy": "limited",
+        "quote": "without prior permission of the instructor is prohibited",
+        "source_date": "undated"
+      },
+      {
+        "slug": "nyu",
+        "name": "New York University",
+        "type": "private_r1",
+        "policy": "limited",
+        "quote": "Students are welcome to use generative AI tools, such as ChatGPT, Gemini, GitHub Copilot, etc to assist with researching and understanding the material covered in this course.",
+        "source_date": "undated"
+      },
+      {
+        "slug": "northeastern",
+        "name": "Northeastern University",
+        "type": "private_r1",
+        "policy": "limited",
+        "quote": "For IP1, IP2, and Activities: The use of Artificial Intelligence (AI) tools is forbidden .",
+        "source_date": 2026
+      },
+      {
+        "slug": "vt",
+        "name": "Virginia Tech",
+        "type": "public_r1",
+        "policy": "integrated",
+        "quote": "However, certain assignments will require students to use popular AI programming assistants.",
+        "source_date": 2026
+      },
+      {
+        "slug": "ncstate",
+        "name": "North Carolina State University",
+        "type": "public_r1",
+        "policy": "integrated",
+        "quote": "You will be asked to use AI deliberately on some tasks, to work without it on others, and to reflect on the difference with every major assignment deadline.",
+        "source_date": 2026
+      },
+      {
+        "slug": "umn",
+        "name": "University of Minnesota",
+        "type": "public_r1",
+        "policy": "banned",
+        "quote": "Using AI to brainstorm, formulate arguments, or template ideas for assignments",
+        "source_date": 2024
+      },
+      {
+        "slug": "umass",
+        "name": "University of Massachusetts Amherst",
+        "type": "public_r1",
+        "policy": "limited",
+        "quote": "Use generative AI tools to write non-test code, set up infrastructure, or aid in other dev-ops tasks.",
+        "source_date": 2026
+      },
+      {
+        "slug": "ufl",
+        "name": "University of Florida",
+        "type": "public_r1",
+        "policy": "limited",
+        "quote": "AI tools may be used for learning concepts or subtasks, but not to produce solutions for quizzes, exams, or projects.",
+        "source_date": 2027
+      },
+      {
+        "slug": "duke",
+        "name": "Duke University",
+        "type": "private_r1",
+        "policy": "limited",
+        "quote": "You are encouraged to use small pieces of properly attributed code",
+        "source_date": 2026
+      },
+      {
+        "slug": "brown",
+        "name": "Brown University",
+        "type": "private_r1",
+        "policy": "integrated",
+        "quote": "be able to use agentic tools, judge and modify their output, and take ownership of the results;",
+        "source_date": 2026
+      },
+      {
+        "slug": "jhu",
+        "name": "Johns Hopkins University",
+        "type": "private_r1",
+        "policy": "allowed",
+        "quote": "to explore the use of AI-assisted coding tools as part of their software development process.",
+        "source_date": 2026
+      },
+      {
+        "slug": "bu",
+        "name": "Boston University",
+        "type": "private_r1",
+        "policy": "limited",
+        "quote": "You are allowed to use AI tools to improve any content that you have first created yourself.",
+        "source_date": 2026
+      }
+    ]
+  },
+  "recency": {
+    "dept_statement": {
+      "by_year": {
+        "2023": 1
+      },
+      "undated": 3,
+      "with_url": 4
+    },
+    "university_guidance": {
+      "by_year": {
+        "2023": 3,
+        "2024": 1,
+        "2025": 4,
+        "2026": 18
+      },
+      "undated": 15,
+      "with_url": 41
+    },
+    "intro_course": {
+      "by_year": {
+        "2023": 1,
+        "2026": 30
+      },
+      "undated": 2,
+      "with_url": 33
+    },
+    "se_course": {
+      "by_year": {
+        "2024": 1,
+        "2026": 18,
+        "2027": 1
+      },
+      "undated": 3,
+      "with_url": 23
+    }
+  },
+  "examples": {
+    "default_rule": {
+      "banned": [
+        {
+          "slug": "princeton",
+          "name": "Princeton University",
+          "quote": "Princeton University students must confirm AI is permitted by an instructor"
+        },
+        {
+          "slug": "umd",
+          "name": "University of Maryland, College Park",
+          "quote": "Use of AI (Artificial Intelligence) tools (e.g., ChatGPT, Bing AI, etc.) for the completion of class work."
+        },
+        {
+          "slug": "osu",
+          "name": "The Ohio State University",
+          "quote": "these generative AI tools should not be used in the completion of course assignments unless an instructor for a given course specifically authorizes their use."
+        }
+      ],
+      "instructor_discretion": [
+        {
+          "slug": "mit",
+          "name": "Massachusetts Institute of Technology",
+          "quote": "instructors, and perhaps departments, should make sure that every MIT subject has a clear policy about the use of generative AI"
+        },
+        {
+          "slug": "cmu",
+          "name": "Carnegie Mellon University",
+          "quote": "this policy is intentionally designed to allow instructors to define what is"
+        },
+        {
+          "slug": "berkeley",
+          "name": "University of California, Berkeley",
+          "quote": "Instructors are encouraged to adapt these to their specific course context and instructional priorities."
+        }
+      ],
+      "allowed_with_disclosure": [
+        {
+          "slug": "stanford",
+          "name": "Stanford University",
+          "quote": "students must document and disclose any other uses of AI related to coursework."
+        },
+        {
+          "slug": "bu",
+          "name": "Boston University",
+          "quote": "Give credit to AI tools whenever used, even if only to generate ideas rather than usable text or illustrations."
+        }
+      ]
+    },
+    "stance": {
+      "-2": [
+        {
+          "slug": "umd",
+          "name": "University of Maryland, College Park",
+          "quote": "The following are examples of academic integrity violations that apply to all our courses."
+        }
+      ],
+      "-1": [
+        {
+          "slug": "princeton",
+          "name": "Princeton University",
+          "quote": "students must confirm AI is permitted by an instructor and disclose the use of AI in any academic work."
+        },
+        {
+          "slug": "ucsd",
+          "name": "University of California, San Diego",
+          "quote": "You can be reported for an integrity violation, which can be an egregious violation leading to suspension and possibly an F in the class."
+        },
+        {
+          "slug": "ucla",
+          "name": "University of California, Los Angeles",
+          "quote": "raises the same concern that work is not the student’s own"
+        }
+      ],
+      "0": [
+        {
+          "slug": "mit",
+          "name": "Massachusetts Institute of Technology",
+          "quote": "While we recommend against imposing a one-size-fits-all policy on AI use"
+        },
+        {
+          "slug": "stanford",
+          "name": "Stanford University",
+          "quote": "Students may not use AI tools to create deliverables"
+        },
+        {
+          "slug": "cmu",
+          "name": "Carnegie Mellon University",
+          "quote": "policy on academic integrity is not changing as a response to generative AI tools"
+        }
+      ],
+      "1": [
+        {
+          "slug": "uiuc",
+          "name": "University of Illinois Urbana-Champaign",
+          "quote": "students have a right to use these tools to enhance their own learning"
+        },
+        {
+          "slug": "gatech",
+          "name": "Georgia Institute of Technology",
+          "quote": "Georgia Tech encourages the thoughtful use of Gen AI technologies"
+        },
+        {
+          "slug": "harvard",
+          "name": "Harvard University",
+          "quote": "We recognize the transformative potential of G-AI and believe that it can enhance the computational learning environment at SEAS."
+        }
+      ]
+    },
+    "disclosure_required": {
+      "yes": [
+        {
+          "slug": "stanford",
+          "name": "Stanford University",
+          "quote": "However, students must document and disclose any other uses of AI related to coursework."
+        },
+        {
+          "slug": "uiuc",
+          "name": "University of Illinois Urbana-Champaign",
+          "quote": "text and ideas generated by AI must be cited to avoid plagiarism"
+        },
+        {
+          "slug": "uw",
+          "name": "University of Washington",
+          "quote": "If you utilized AI on an authorized assignment, specify the tool you used and how you utilized it in your work."
+        }
+      ]
+    }
+  },
+  "institutions": [
+    {
+      "slug": "mit",
+      "name": "Massachusetts Institute of Technology",
+      "type": "private_r1",
+      "policy_level": "university",
+      "default_rule": "instructor_discretion",
+      "stance": 0,
+      "collaboration_framing": true,
+      "disclosure_required": "unclear",
+      "se_course_policy": "banned",
+      "themes": [
+        "learning_outcomes",
+        "specific_tools"
+      ],
+      "confidence": "high"
+    },
+    {
+      "slug": "stanford",
+      "name": "Stanford University",
+      "type": "private_r1",
+      "policy_level": "university",
+      "default_rule": "allowed_with_disclosure",
+      "stance": 0,
+      "collaboration_framing": true,
+      "disclosure_required": "yes",
+      "se_course_policy": "not_found",
+      "themes": [
+        "academic_integrity",
+        "learning_outcomes",
+        "specific_tools"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "slug": "cmu",
+      "name": "Carnegie Mellon University",
+      "type": "private_r1",
+      "policy_level": "university",
+      "default_rule": "instructor_discretion",
+      "stance": 0,
+      "collaboration_framing": false,
+      "disclosure_required": "unclear",
+      "se_course_policy": "integrated",
+      "themes": [
+        "academic_integrity",
+        "learning_outcomes",
+        "career_readiness",
+        "ai_literacy"
+      ],
+      "confidence": "high"
+    },
+    {
+      "slug": "berkeley",
+      "name": "University of California, Berkeley",
+      "type": "public_r1",
+      "policy_level": "university",
+      "default_rule": "instructor_discretion",
+      "stance": 0,
+      "collaboration_framing": true,
+      "disclosure_required": "unclear",
+      "se_course_policy": "limited",
+      "themes": [
+        "academic_integrity",
+        "learning_outcomes",
+        "specific_tools",
+        "ai_literacy"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "slug": "uiuc",
+      "name": "University of Illinois Urbana-Champaign",
+      "type": "public_r1",
+      "policy_level": "university",
+      "default_rule": "instructor_discretion",
+      "stance": 1,
+      "collaboration_framing": false,
+      "disclosure_required": "yes",
+      "se_course_policy": "not_found",
+      "themes": [
+        "academic_integrity",
+        "learning_outcomes",
+        "ai_literacy"
+      ],
+      "confidence": "high"
+    },
+    {
+      "slug": "gatech",
+      "name": "Georgia Institute of Technology",
+      "type": "public_r1",
+      "policy_level": "university",
+      "default_rule": "instructor_discretion",
+      "stance": 1,
+      "collaboration_framing": true,
+      "disclosure_required": "unclear",
+      "se_course_policy": "limited",
+      "themes": [
+        "academic_integrity",
+        "learning_outcomes",
+        "specific_tools"
+      ],
+      "confidence": "high"
+    },
+    {
+      "slug": "uw",
+      "name": "University of Washington",
+      "type": "public_r1",
+      "policy_level": "dept",
+      "default_rule": "instructor_discretion",
+      "stance": 0,
+      "collaboration_framing": false,
+      "disclosure_required": "yes",
+      "se_course_policy": "limited",
+      "themes": [
+        "academic_integrity",
+        "learning_outcomes",
+        "career_readiness",
+        "ai_literacy"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "slug": "cornell",
+      "name": "Cornell University",
+      "type": "private_r1",
+      "policy_level": "university",
+      "default_rule": "instructor_discretion",
+      "stance": 0,
+      "collaboration_framing": false,
+      "disclosure_required": "unclear",
+      "se_course_policy": "allowed",
+      "themes": [
+        "academic_integrity",
+        "learning_outcomes",
+        "specific_tools"
+      ],
+      "confidence": "high"
+    },
+    {
+      "slug": "princeton",
+      "name": "Princeton University",
+      "type": "private_r1",
+      "policy_level": "university",
+      "default_rule": "banned",
+      "stance": -1,
+      "collaboration_framing": false,
+      "disclosure_required": "yes",
+      "se_course_policy": "integrated",
+      "themes": [
+        "learning_outcomes",
+        "specific_tools"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "slug": "harvard",
+      "name": "Harvard University",
+      "type": "private_r1",
+      "policy_level": "dept",
+      "default_rule": "instructor_discretion",
+      "stance": 1,
+      "collaboration_framing": false,
+      "disclosure_required": "unclear",
+      "se_course_policy": "not_found",
+      "themes": [
+        "learning_outcomes",
+        "specific_tools"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "slug": "utaustin",
+      "name": "The University of Texas at Austin",
+      "type": "public_r1",
+      "policy_level": "university",
+      "default_rule": "instructor_discretion",
+      "stance": 0,
+      "collaboration_framing": false,
+      "disclosure_required": "yes",
+      "se_course_policy": "integrated",
+      "themes": [
+        "academic_integrity",
+        "learning_outcomes",
+        "specific_tools"
+      ],
+      "confidence": "high"
+    },
+    {
+      "slug": "umich",
+      "name": "University of Michigan",
+      "type": "public_r1",
+      "policy_level": "university",
+      "default_rule": "instructor_discretion",
+      "stance": 1,
+      "collaboration_framing": true,
+      "disclosure_required": "unclear",
+      "se_course_policy": "allowed",
+      "themes": [
+        "academic_integrity",
+        "specific_tools",
+        "equity_access",
+        "ai_literacy"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "slug": "ucsd",
+      "name": "University of California, San Diego",
+      "type": "public_r1",
+      "policy_level": "university",
+      "default_rule": "instructor_discretion",
+      "stance": -1,
+      "collaboration_framing": false,
+      "disclosure_required": "yes",
+      "se_course_policy": "limited",
+      "themes": [
+        "academic_integrity",
+        "learning_outcomes",
+        "specific_tools",
+        "ai_literacy"
+      ],
+      "confidence": "high"
+    },
+    {
+      "slug": "ucla",
+      "name": "University of California, Los Angeles",
+      "type": "public_r1",
+      "policy_level": "university",
+      "default_rule": "instructor_discretion",
+      "stance": -1,
+      "collaboration_framing": false,
+      "disclosure_required": "yes",
+      "se_course_policy": "limited",
+      "themes": [
+        "academic_integrity",
+        "learning_outcomes",
+        "specific_tools"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "slug": "columbia",
+      "name": "Columbia University",
+      "type": "private_r1",
+      "policy_level": "university",
+      "default_rule": "instructor_discretion",
+      "stance": 0,
+      "collaboration_framing": false,
+      "disclosure_required": "unclear",
+      "se_course_policy": "not_found",
+      "themes": [
+        "academic_integrity"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "slug": "caltech",
+      "name": "California Institute of Technology",
+      "type": "private_r1",
+      "policy_level": "university",
+      "default_rule": "instructor_discretion",
+      "stance": 0,
+      "collaboration_framing": false,
+      "disclosure_required": "yes",
+      "se_course_policy": "not_found",
+      "themes": [
+        "academic_integrity",
+        "specific_tools",
+        "privacy_security"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "slug": "purdue",
+      "name": "Purdue University",
+      "type": "public_r1",
+      "policy_level": "university",
+      "default_rule": "instructor_discretion",
+      "stance": 0,
+      "collaboration_framing": false,
+      "disclosure_required": "unclear",
+      "se_course_policy": "not_found",
+      "themes": [
+        "academic_integrity"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "slug": "umd",
+      "name": "University of Maryland, College Park",
+      "type": "public_r1",
+      "policy_level": "dept",
+      "default_rule": "banned",
+      "stance": -2,
+      "collaboration_framing": false,
+      "disclosure_required": "unclear",
+      "se_course_policy": "limited",
+      "themes": [
+        "academic_integrity",
+        "learning_outcomes",
+        "specific_tools"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "slug": "uwmadison",
+      "name": "University of Wisconsin-Madison",
+      "type": "public_r1",
+      "policy_level": "university",
+      "default_rule": "instructor_discretion",
+      "stance": 0,
+      "collaboration_framing": false,
+      "disclosure_required": "unclear",
+      "se_course_policy": "not_found",
+      "themes": [
+        "academic_integrity",
+        "learning_outcomes",
+        "specific_tools",
+        "equity_access"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "slug": "nyu",
+      "name": "New York University",
+      "type": "private_r1",
+      "policy_level": "university",
+      "default_rule": "instructor_discretion",
+      "stance": 0,
+      "collaboration_framing": true,
+      "disclosure_required": "yes",
+      "se_course_policy": "limited",
+      "themes": [
+        "academic_integrity",
+        "learning_outcomes",
+        "specific_tools",
+        "ai_literacy"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "slug": "northeastern",
+      "name": "Northeastern University",
+      "type": "private_r1",
+      "policy_level": "university",
+      "default_rule": "instructor_discretion",
+      "stance": 0,
+      "collaboration_framing": true,
+      "disclosure_required": "unclear",
+      "se_course_policy": "limited",
+      "themes": [
+        "academic_integrity",
+        "learning_outcomes",
+        "career_readiness",
+        "specific_tools",
+        "ai_literacy"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "slug": "vt",
+      "name": "Virginia Tech",
+      "type": "public_r1",
+      "policy_level": "university",
+      "default_rule": "instructor_discretion",
+      "stance": 1,
+      "collaboration_framing": false,
+      "disclosure_required": "unclear",
+      "se_course_policy": "integrated",
+      "themes": [
+        "academic_integrity",
+        "learning_outcomes",
+        "career_readiness",
+        "specific_tools",
+        "ai_literacy"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "slug": "ncstate",
+      "name": "North Carolina State University",
+      "type": "public_r1",
+      "policy_level": "university",
+      "default_rule": "instructor_discretion",
+      "stance": 0,
+      "collaboration_framing": false,
+      "disclosure_required": "yes",
+      "se_course_policy": "integrated",
+      "themes": [
+        "academic_integrity",
+        "learning_outcomes",
+        "career_readiness",
+        "specific_tools",
+        "ai_literacy"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "slug": "osu",
+      "name": "The Ohio State University",
+      "type": "public_r1",
+      "policy_level": "university",
+      "default_rule": "banned",
+      "stance": -1,
+      "collaboration_framing": false,
+      "disclosure_required": "unclear",
+      "se_course_policy": "not_found",
+      "themes": [
+        "academic_integrity",
+        "learning_outcomes",
+        "specific_tools"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "slug": "psu",
+      "name": "The Pennsylvania State University",
+      "type": "public_r1",
+      "policy_level": "university",
+      "default_rule": "instructor_discretion",
+      "stance": 0,
+      "collaboration_framing": false,
+      "disclosure_required": "yes",
+      "se_course_policy": "not_found",
+      "themes": [
+        "academic_integrity",
+        "specific_tools"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "slug": "umn",
+      "name": "University of Minnesota",
+      "type": "public_r1",
+      "policy_level": "university",
+      "default_rule": "banned",
+      "stance": -1,
+      "collaboration_framing": false,
+      "disclosure_required": "unclear",
+      "se_course_policy": "banned",
+      "themes": [
+        "learning_outcomes",
+        "specific_tools"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "slug": "rutgers",
+      "name": "Rutgers University-New Brunswick",
+      "type": "public_r1",
+      "policy_level": "university",
+      "default_rule": "banned",
+      "stance": -1,
+      "collaboration_framing": false,
+      "disclosure_required": "unclear",
+      "se_course_policy": "not_found",
+      "themes": [
+        "academic_integrity",
+        "learning_outcomes",
+        "specific_tools"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "slug": "umass",
+      "name": "University of Massachusetts Amherst",
+      "type": "public_r1",
+      "policy_level": "university",
+      "default_rule": "banned",
+      "stance": -1,
+      "collaboration_framing": false,
+      "disclosure_required": "unclear",
+      "se_course_policy": "limited",
+      "themes": [
+        "academic_integrity",
+        "learning_outcomes",
+        "specific_tools",
+        "ai_literacy"
+      ],
+      "confidence": "high"
+    },
+    {
+      "slug": "asu",
+      "name": "Arizona State University",
+      "type": "public_r1",
+      "policy_level": "university",
+      "default_rule": "instructor_discretion",
+      "stance": 1,
+      "collaboration_framing": true,
+      "disclosure_required": "yes",
+      "se_course_policy": "not_found",
+      "themes": [
+        "academic_integrity",
+        "learning_outcomes",
+        "specific_tools",
+        "privacy_security"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "slug": "ufl",
+      "name": "University of Florida",
+      "type": "public_r1",
+      "policy_level": "university",
+      "default_rule": "instructor_discretion",
+      "stance": 0,
+      "collaboration_framing": false,
+      "disclosure_required": "yes",
+      "se_course_policy": "limited",
+      "themes": [
+        "academic_integrity",
+        "specific_tools",
+        "assessment_redesign"
+      ],
+      "confidence": "high"
+    },
+    {
+      "slug": "tamu",
+      "name": "Texas A&M University",
+      "type": "public_r1",
+      "policy_level": "university",
+      "default_rule": "banned",
+      "stance": -1,
+      "collaboration_framing": false,
+      "disclosure_required": "yes",
+      "se_course_policy": "not_found",
+      "themes": [
+        "academic_integrity"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "slug": "uci",
+      "name": "University of California, Irvine",
+      "type": "public_r1",
+      "policy_level": "university",
+      "default_rule": "instructor_discretion",
+      "stance": 0,
+      "collaboration_framing": false,
+      "disclosure_required": "yes",
+      "se_course_policy": "not_found",
+      "themes": [
+        "academic_integrity",
+        "learning_outcomes",
+        "specific_tools"
+      ],
+      "confidence": "high"
+    },
+    {
+      "slug": "duke",
+      "name": "Duke University",
+      "type": "private_r1",
+      "policy_level": "university",
+      "default_rule": "instructor_discretion",
+      "stance": 0,
+      "collaboration_framing": false,
+      "disclosure_required": "yes",
+      "se_course_policy": "limited",
+      "themes": [
+        "academic_integrity",
+        "learning_outcomes",
+        "specific_tools",
+        "equity_access"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "slug": "brown",
+      "name": "Brown University",
+      "type": "private_r1",
+      "policy_level": "university",
+      "default_rule": "instructor_discretion",
+      "stance": 0,
+      "collaboration_framing": true,
+      "disclosure_required": "unclear",
+      "se_course_policy": "integrated",
+      "themes": [
+        "academic_integrity",
+        "learning_outcomes",
+        "specific_tools",
+        "ai_literacy"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "slug": "yale",
+      "name": "Yale University",
+      "type": "private_r1",
+      "policy_level": "university",
+      "default_rule": "instructor_discretion",
+      "stance": 0,
+      "collaboration_framing": false,
+      "disclosure_required": "yes",
+      "se_course_policy": "not_found",
+      "themes": [
+        "academic_integrity",
+        "specific_tools",
+        "privacy_security"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "slug": "rice",
+      "name": "Rice University",
+      "type": "private_r1",
+      "policy_level": "university",
+      "default_rule": "instructor_discretion",
+      "stance": -1,
+      "collaboration_framing": false,
+      "disclosure_required": "unclear",
+      "se_course_policy": "not_found",
+      "themes": [
+        "academic_integrity"
+      ],
+      "confidence": "low"
+    },
+    {
+      "slug": "jhu",
+      "name": "Johns Hopkins University",
+      "type": "private_r1",
+      "policy_level": "university",
+      "default_rule": "instructor_discretion",
+      "stance": 0,
+      "collaboration_framing": true,
+      "disclosure_required": "yes",
+      "se_course_policy": "allowed",
+      "themes": [
+        "academic_integrity",
+        "ai_literacy"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "slug": "bu",
+      "name": "Boston University",
+      "type": "private_r1",
+      "policy_level": "dept",
+      "default_rule": "allowed_with_disclosure",
+      "stance": 1,
+      "collaboration_framing": false,
+      "disclosure_required": "yes",
+      "se_course_policy": "limited",
+      "themes": [
+        "academic_integrity",
+        "learning_outcomes",
+        "specific_tools",
+        "equity_access",
+        "assessment_redesign",
+        "ai_literacy"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "slug": "utah",
+      "name": "University of Utah",
+      "type": "public_r1",
+      "policy_level": "university",
+      "default_rule": "instructor_discretion",
+      "stance": 0,
+      "collaboration_framing": false,
+      "disclosure_required": "yes",
+      "se_course_policy": "not_found",
+      "themes": [
+        "academic_integrity",
+        "specific_tools",
+        "ai_literacy"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "slug": "hmc",
+      "name": "Harvey Mudd College",
+      "type": "other",
+      "policy_level": "university",
+      "default_rule": "instructor_discretion",
+      "stance": 0,
+      "collaboration_framing": true,
+      "disclosure_required": "unclear",
+      "se_course_policy": "not_found",
+      "themes": [
+        "academic_integrity",
+        "learning_outcomes",
+        "career_readiness",
+        "specific_tools"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "slug": "williams",
+      "name": "Williams College",
+      "type": "other",
+      "policy_level": "course_only",
+      "default_rule": "banned",
+      "stance": -1,
+      "collaboration_framing": false,
+      "disclosure_required": "unclear",
+      "se_course_policy": "not_found",
+      "themes": [
+        "learning_outcomes",
+        "specific_tools"
+      ],
+      "confidence": "low"
+    },
+    {
+      "slug": "calpoly",
+      "name": "California Polytechnic State University, San Luis Obispo",
+      "type": "other",
+      "policy_level": "university",
+      "default_rule": "instructor_discretion",
+      "stance": 0,
+      "collaboration_framing": false,
+      "disclosure_required": "yes",
+      "se_course_policy": "not_found",
+      "themes": [
+        "academic_integrity",
+        "learning_outcomes",
+        "specific_tools"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

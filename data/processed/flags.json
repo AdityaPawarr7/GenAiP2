@@ -1,0 +1,544 @@
+{
+  "lexicon": {
+    "prohibit": "\\bprohibit\\w*|\\bforbid\\w*|\\bforbidden\\b|\\bbann?(ed|s)?\\b|\\bnot (be )?(allowed|permitted)\\b|\\bmay not use\\b",
+    "encourage": "\\bencourag\\w*|\\bwelcome\\b|\\bembrac\\w*",
+    "collaborat": "\\bcollaborat\\w*|\\bpartner\\w*|\\btutor\\w*|\\bpair[- ]?program\\w*|\\bpeer programming\\b|\\bteammate\\w*",
+    "disclose": "\\bdisclos\\w*|\\bcite\\b|\\bciting\\b|\\bcitation\\w*|\\backnowledg\\w*|\\battribut\\w*",
+    "require": "\\brequired?\\b|\\brequires\\b"
+  },
+  "counts": {
+    "mit": {
+      "prohibit": 5,
+      "encourage": 1,
+      "collaborat": 1,
+      "disclose": 0,
+      "require": 1
+    },
+    "stanford": {
+      "prohibit": 1,
+      "encourage": 0,
+      "collaborat": 1,
+      "disclose": 2,
+      "require": 0
+    },
+    "cmu": {
+      "prohibit": 2,
+      "encourage": 3,
+      "collaborat": 0,
+      "disclose": 0,
+      "require": 1
+    },
+    "berkeley": {
+      "prohibit": 2,
+      "encourage": 1,
+      "collaborat": 1,
+      "disclose": 0,
+      "require": 0
+    },
+    "uiuc": {
+      "prohibit": 0,
+      "encourage": 0,
+      "collaborat": 0,
+      "disclose": 0,
+      "require": 0
+    },
+    "gatech": {
+      "prohibit": 1,
+      "encourage": 1,
+      "collaborat": 1,
+      "disclose": 0,
+      "require": 1
+    },
+    "uw": {
+      "prohibit": 5,
+      "encourage": 0,
+      "collaborat": 1,
+      "disclose": 3,
+      "require": 0
+    },
+    "cornell": {
+      "prohibit": 2,
+      "encourage": 0,
+      "collaborat": 0,
+      "disclose": 3,
+      "require": 0
+    },
+    "princeton": {
+      "prohibit": 5,
+      "encourage": 0,
+      "collaborat": 0,
+      "disclose": 1,
+      "require": 1
+    },
+    "harvard": {
+      "prohibit": 1,
+      "encourage": 1,
+      "collaborat": 0,
+      "disclose": 1,
+      "require": 1
+    },
+    "utaustin": {
+      "prohibit": 7,
+      "encourage": 1,
+      "collaborat": 0,
+      "disclose": 1,
+      "require": 1
+    },
+    "umich": {
+      "prohibit": 3,
+      "encourage": 1,
+      "collaborat": 1,
+      "disclose": 2,
+      "require": 0
+    },
+    "ucsd": {
+      "prohibit": 1,
+      "encourage": 1,
+      "collaborat": 0,
+      "disclose": 3,
+      "require": 0
+    },
+    "ucla": {
+      "prohibit": 1,
+      "encourage": 1,
+      "collaborat": 0,
+      "disclose": 1,
+      "require": 0
+    },
+    "columbia": {
+      "prohibit": 1,
+      "encourage": 0,
+      "collaborat": 0,
+      "disclose": 0,
+      "require": 0
+    },
+    "caltech": {
+      "prohibit": 2,
+      "encourage": 0,
+      "collaborat": 0,
+      "disclose": 4,
+      "require": 1
+    },
+    "purdue": {
+      "prohibit": 0,
+      "encourage": 0,
+      "collaborat": 0,
+      "disclose": 0,
+      "require": 0
+    },
+    "umd": {
+      "prohibit": 2,
+      "encourage": 2,
+      "collaborat": 0,
+      "disclose": 0,
+      "require": 0
+    },
+    "uwmadison": {
+      "prohibit": 3,
+      "encourage": 0,
+      "collaborat": 0,
+      "disclose": 0,
+      "require": 0
+    },
+    "nyu": {
+      "prohibit": 3,
+      "encourage": 1,
+      "collaborat": 3,
+      "disclose": 1,
+      "require": 0
+    },
+    "northeastern": {
+      "prohibit": 1,
+      "encourage": 0,
+      "collaborat": 0,
+      "disclose": 2,
+      "require": 0
+    },
+    "vt": {
+      "prohibit": 1,
+      "encourage": 2,
+      "collaborat": 0,
+      "disclose": 1,
+      "require": 2
+    },
+    "ncstate": {
+      "prohibit": 7,
+      "encourage": 0,
+      "collaborat": 0,
+      "disclose": 1,
+      "require": 0
+    },
+    "osu": {
+      "prohibit": 1,
+      "encourage": 0,
+      "collaborat": 0,
+      "disclose": 0,
+      "require": 0
+    },
+    "psu": {
+      "prohibit": 2,
+      "encourage": 0,
+      "collaborat": 0,
+      "disclose": 0,
+      "require": 0
+    },
+    "umn": {
+      "prohibit": 2,
+      "encourage": 1,
+      "collaborat": 0,
+      "disclose": 0,
+      "require": 1
+    },
+    "rutgers": {
+      "prohibit": 2,
+      "encourage": 2,
+      "collaborat": 2,
+      "disclose": 0,
+      "require": 0
+    },
+    "umass": {
+      "prohibit": 2,
+      "encourage": 0,
+      "collaborat": 0,
+      "disclose": 0,
+      "require": 0
+    },
+    "asu": {
+      "prohibit": 1,
+      "encourage": 4,
+      "collaborat": 1,
+      "disclose": 1,
+      "require": 1
+    },
+    "ufl": {
+      "prohibit": 1,
+      "encourage": 0,
+      "collaborat": 0,
+      "disclose": 3,
+      "require": 0
+    },
+    "tamu": {
+      "prohibit": 0,
+      "encourage": 0,
+      "collaborat": 0,
+      "disclose": 3,
+      "require": 0
+    },
+    "uci": {
+      "prohibit": 2,
+      "encourage": 0,
+      "collaborat": 0,
+      "disclose": 1,
+      "require": 1
+    },
+    "duke": {
+      "prohibit": 1,
+      "encourage": 3,
+      "collaborat": 0,
+      "disclose": 2,
+      "require": 0
+    },
+    "brown": {
+      "prohibit": 0,
+      "encourage": 0,
+      "collaborat": 0,
+      "disclose": 0,
+      "require": 3
+    },
+    "yale": {
+      "prohibit": 0,
+      "encourage": 0,
+      "collaborat": 0,
+      "disclose": 2,
+      "require": 0
+    },
+    "rice": {
+      "prohibit": 0,
+      "encourage": 0,
+      "collaborat": 0,
+      "disclose": 0,
+      "require": 0
+    },
+    "jhu": {
+      "prohibit": 1,
+      "encourage": 1,
+      "collaborat": 3,
+      "disclose": 0,
+      "require": 0
+    },
+    "bu": {
+      "prohibit": 3,
+      "encourage": 1,
+      "collaborat": 0,
+      "disclose": 1,
+      "require": 0
+    },
+    "utah": {
+      "prohibit": 0,
+      "encourage": 0,
+      "collaborat": 1,
+      "disclose": 1,
+      "require": 0
+    },
+    "hmc": {
+      "prohibit": 3,
+      "encourage": 3,
+      "collaborat": 0,
+      "disclose": 3,
+      "require": 1
+    },
+    "williams": {
+      "prohibit": 3,
+      "encourage": 0,
+      "collaborat": 1,
+      "disclose": 0,
+      "require": 0
+    },
+    "calpoly": {
+      "prohibit": 5,
+      "encourage": 1,
+      "collaborat": 0,
+      "disclose": 3,
+      "require": 0
+    }
+  },
+  "n_flags": 29,
+  "flags": [
+    {
+      "slug": "gatech",
+      "rule": "prohibit_words_but_positive_stance",
+      "detail": "prohibition words appear but stance is +1",
+      "matched": [
+        "prohibited"
+      ]
+    },
+    {
+      "slug": "uw",
+      "rule": "collaboration_words_but_framing_false",
+      "detail": "collaboration/tutor words appear but collaboration_framing is false",
+      "matched": [
+        "collaboration"
+      ]
+    },
+    {
+      "slug": "cornell",
+      "rule": "disclosure_words_but_disclosure_unclear",
+      "detail": "disclosure/citation words appear but disclosure_required is unclear",
+      "matched": [
+        "attribution",
+        "disclose"
+      ]
+    },
+    {
+      "slug": "cornell",
+      "rule": "se_prohibit_words_but_se_permissive",
+      "detail": "SE-course quotes contain prohibition words but se_course_policy is allowed",
+      "matched": [
+        "may not use"
+      ]
+    },
+    {
+      "slug": "princeton",
+      "rule": "se_prohibit_words_but_se_permissive",
+      "detail": "SE-course quotes contain prohibition words but se_course_policy is integrated",
+      "matched": [
+        "may not use"
+      ]
+    },
+    {
+      "slug": "harvard",
+      "rule": "prohibit_words_but_positive_stance",
+      "detail": "prohibition words appear but stance is +1",
+      "matched": [
+        "forbidden"
+      ]
+    },
+    {
+      "slug": "harvard",
+      "rule": "disclosure_words_but_disclosure_unclear",
+      "detail": "disclosure/citation words appear but disclosure_required is unclear",
+      "matched": [
+        "acknowledged"
+      ]
+    },
+    {
+      "slug": "utaustin",
+      "rule": "se_prohibit_words_but_se_permissive",
+      "detail": "SE-course quotes contain prohibition words but se_course_policy is integrated",
+      "matched": [
+        "prohibited"
+      ]
+    },
+    {
+      "slug": "umich",
+      "rule": "prohibit_words_but_positive_stance",
+      "detail": "prohibition words appear but stance is +1",
+      "matched": [
+        "prohibited",
+        "prohibiting"
+      ]
+    },
+    {
+      "slug": "umich",
+      "rule": "disclosure_words_but_disclosure_unclear",
+      "detail": "disclosure/citation words appear but disclosure_required is unclear",
+      "matched": [
+        "acknowledged",
+        "attributes"
+      ]
+    },
+    {
+      "slug": "ucsd",
+      "rule": "encourage_words_but_negative_stance",
+      "detail": "encouragement words appear but stance is -1",
+      "matched": [
+        "encourage"
+      ]
+    },
+    {
+      "slug": "ucla",
+      "rule": "encourage_words_but_negative_stance",
+      "detail": "encouragement words appear but stance is -1",
+      "matched": [
+        "encouraged"
+      ]
+    },
+    {
+      "slug": "umd",
+      "rule": "encourage_words_but_negative_stance",
+      "detail": "encouragement words appear but stance is -2",
+      "matched": [
+        "encouraged",
+        "encourages"
+      ]
+    },
+    {
+      "slug": "northeastern",
+      "rule": "framing_true_without_collaboration_words",
+      "detail": "collaboration_framing is true but no collaboration/tutor word appears",
+      "matched": []
+    },
+    {
+      "slug": "northeastern",
+      "rule": "disclosure_words_but_disclosure_unclear",
+      "detail": "disclosure/citation words appear but disclosure_required is unclear",
+      "matched": [
+        "attribution",
+        "disclose"
+      ]
+    },
+    {
+      "slug": "vt",
+      "rule": "prohibit_words_but_positive_stance",
+      "detail": "prohibition words appear but stance is +1",
+      "matched": [
+        "prohibiting"
+      ]
+    },
+    {
+      "slug": "vt",
+      "rule": "disclosure_words_but_disclosure_unclear",
+      "detail": "disclosure/citation words appear but disclosure_required is unclear",
+      "matched": [
+        "disclose"
+      ]
+    },
+    {
+      "slug": "ncstate",
+      "rule": "se_prohibit_words_but_se_permissive",
+      "detail": "SE-course quotes contain prohibition words but se_course_policy is integrated",
+      "matched": [
+        "may not use",
+        "not permitted"
+      ]
+    },
+    {
+      "slug": "umn",
+      "rule": "encourage_words_but_negative_stance",
+      "detail": "encouragement words appear but stance is -1",
+      "matched": [
+        "encouraged"
+      ]
+    },
+    {
+      "slug": "rutgers",
+      "rule": "encourage_words_but_negative_stance",
+      "detail": "encouragement words appear but stance is -1",
+      "matched": [
+        "encourage",
+        "encouraged"
+      ]
+    },
+    {
+      "slug": "rutgers",
+      "rule": "collaboration_words_but_framing_false",
+      "detail": "collaboration/tutor words appear but collaboration_framing is false",
+      "matched": [
+        "collaborate",
+        "collaboration"
+      ]
+    },
+    {
+      "slug": "asu",
+      "rule": "prohibit_words_but_positive_stance",
+      "detail": "prohibition words appear but stance is +1",
+      "matched": [
+        "ban"
+      ]
+    },
+    {
+      "slug": "brown",
+      "rule": "framing_true_without_collaboration_words",
+      "detail": "collaboration_framing is true but no collaboration/tutor word appears",
+      "matched": []
+    },
+    {
+      "slug": "jhu",
+      "rule": "se_prohibit_words_but_se_permissive",
+      "detail": "SE-course quotes contain prohibition words but se_course_policy is allowed",
+      "matched": [
+        "may not use"
+      ]
+    },
+    {
+      "slug": "bu",
+      "rule": "prohibit_words_but_positive_stance",
+      "detail": "prohibition words appear but stance is +1",
+      "matched": [
+        "prohibited"
+      ]
+    },
+    {
+      "slug": "utah",
+      "rule": "collaboration_words_but_framing_false",
+      "detail": "collaboration/tutor words appear but collaboration_framing is false",
+      "matched": [
+        "collaborating"
+      ]
+    },
+    {
+      "slug": "hmc",
+      "rule": "framing_true_without_collaboration_words",
+      "detail": "collaboration_framing is true but no collaboration/tutor word appears",
+      "matched": []
+    },
+    {
+      "slug": "hmc",
+      "rule": "disclosure_words_but_disclosure_unclear",
+      "detail": "disclosure/citation words appear but disclosure_required is unclear",
+      "matched": [
+        "acknowledge",
+        "citation",
+        "cite"
+      ]
+    },
+    {
+      "slug": "williams",
+      "rule": "collaboration_words_but_framing_false",
+      "detail": "collaboration/tutor words appear but collaboration_framing is false",
+      "matched": [
+        "collaboration"
+      ]
+    }
+  ]
+}

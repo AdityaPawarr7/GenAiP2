@@ -1,0 +1,11 @@
+slug,name,raw_file,policy_level,default_rule,stance,collaboration_framing,disclosure_required,se_course_policy,themes,notes
+berkeley,"University of California, Berkeley",data/raw/berkeley.md,,,,,,,,
+caltech,California Institute of Technology,data/raw/caltech.md,,,,,,,,
+cmu,Carnegie Mellon University,data/raw/cmu.md,,,,,,,,
+columbia,Columbia University,data/raw/columbia.md,,,,,,,,
+cornell,Cornell University,data/raw/cornell.md,,,,,,,,
+mit,Massachusetts Institute of Technology,data/raw/mit.md,,,,,,,,
+ncstate,North Carolina State University,data/raw/ncstate.md,,,,,,,,
+nyu,New York University,data/raw/nyu.md,,,,,,,,
+ucla,"University of California, Los Angeles",data/raw/ucla.md,,,,,,,,
+williams,Williams College,data/raw/williams.md,,,,,,,,
