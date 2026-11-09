@@ -1,0 +1,43 @@
+slug,name,type,state,cs_dept_url
+mit,Massachusetts Institute of Technology,private_r1,MA,https://www.eecs.mit.edu/
+stanford,Stanford University,private_r1,CA,https://www.cs.stanford.edu/
+cmu,Carnegie Mellon University,private_r1,PA,https://www.csd.cs.cmu.edu/
+berkeley,"University of California, Berkeley",public_r1,CA,https://eecs.berkeley.edu/
+uiuc,University of Illinois Urbana-Champaign,public_r1,IL,https://siebelschool.illinois.edu/
+gatech,Georgia Institute of Technology,public_r1,GA,https://www.cc.gatech.edu/
+uw,University of Washington,public_r1,WA,https://www.cs.washington.edu/
+cornell,Cornell University,private_r1,NY,https://www.cs.cornell.edu/
+princeton,Princeton University,private_r1,NJ,https://www.cs.princeton.edu/
+harvard,Harvard University,private_r1,MA,https://seas.harvard.edu/computer-science
+utaustin,The University of Texas at Austin,public_r1,TX,https://www.cs.utexas.edu/
+umich,University of Michigan,public_r1,MI,https://cse.engin.umich.edu/
+ucsd,"University of California, San Diego",public_r1,CA,https://cse.ucsd.edu/
+ucla,"University of California, Los Angeles",public_r1,CA,https://www.cs.ucla.edu/
+columbia,Columbia University,private_r1,NY,https://www.cs.columbia.edu/
+caltech,California Institute of Technology,private_r1,CA,https://www.cms.caltech.edu/
+purdue,Purdue University,public_r1,IN,https://www.cs.purdue.edu/
+umd,"University of Maryland, College Park",public_r1,MD,https://www.cs.umd.edu/
+uwmadison,University of Wisconsin-Madison,public_r1,WI,https://www.cs.wisc.edu/
+nyu,New York University,private_r1,NY,https://cs.nyu.edu/
+northeastern,Northeastern University,private_r1,MA,https://www.khoury.northeastern.edu/
+vt,Virginia Tech,public_r1,VA,https://cs.vt.edu/
+ncstate,North Carolina State University,public_r1,NC,https://www.csc.ncsu.edu/
+osu,The Ohio State University,public_r1,OH,https://cse.osu.edu/
+psu,The Pennsylvania State University,public_r1,PA,https://www.eecs.psu.edu/
+umn,University of Minnesota,public_r1,MN,https://cse.umn.edu/cs
+rutgers,"Rutgers University-New Brunswick",public_r1,NJ,https://www.cs.rutgers.edu/
+umass,University of Massachusetts Amherst,public_r1,MA,https://www.cics.umass.edu/
+asu,Arizona State University,public_r1,AZ,https://scai.engineering.asu.edu/
+ufl,University of Florida,public_r1,FL,https://www.cise.ufl.edu/
+tamu,Texas A&M University,public_r1,TX,https://engineering.tamu.edu/cse/
+uci,"University of California, Irvine",public_r1,CA,https://www.ics.uci.edu/
+duke,Duke University,private_r1,NC,https://cs.duke.edu/
+brown,Brown University,private_r1,RI,https://cs.brown.edu/
+yale,Yale University,private_r1,CT,https://cpsc.yale.edu/
+rice,Rice University,private_r1,TX,https://csweb.rice.edu/
+jhu,Johns Hopkins University,private_r1,MD,https://www.cs.jhu.edu/
+bu,Boston University,private_r1,MA,https://www.bu.edu/cs/
+utah,University of Utah,public_r1,UT,https://www.cs.utah.edu/
+hmc,Harvey Mudd College,other,CA,https://www.cs.hmc.edu/
+williams,Williams College,other,MA,https://csci.williams.edu/
+calpoly,"California Polytechnic State University, San Luis Obispo",other,CA,https://csc.calpoly.edu/

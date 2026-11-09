@@ -41,7 +41,11 @@ def main():
     rec = {"ts": datetime.datetime.now().astimezone().isoformat(timespec="seconds"),
            "event": ev, "session_id": data.get("session_id")}
     if ev == "UserPromptSubmit":
-        rec["actor"] = "Adi"; rec["prompt"] = data.get("prompt", "")
+        prompt = data.get("prompt", "")
+        auto = prompt.lstrip().startswith(("<agent-message", "<task-notification", "<system-reminder"))
+        rec["actor"] = "Subagent" if auto else "Adi"
+        rec["prompt_kind"] = "subagent_handback" if auto else "human"
+        rec["prompt"] = prompt if not auto else prompt[:1000]
     elif ev == "Stop":
         txt, usage, n = last_turn(data.get("transcript_path", ""))
         rec.update(actor="Claude", response=txt[:4000], usage=usage, assistant_msgs=n)
