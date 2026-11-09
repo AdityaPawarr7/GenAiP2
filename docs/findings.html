@@ -9,6 +9,7 @@
   // Apply a saved theme before first paint (per-viewer convenience only).
   try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
 </script>
+<link rel="stylesheet" href="assets/base.css">
 <link rel="stylesheet" href="assets/findings.css">
 <script src="assets/vendor/chart-4.4.1.umd.js"></script>
 </head>
@@ -16,6 +17,10 @@
 <div class="wrap">
   <header class="top">
     <a class="site" href="index.html">GenAI policies in CS education</a>
+    <nav class="pages" aria-label="Dashboards">
+      <a href="findings.html" aria-current="page">Findings</a>
+      <a href="validation.html">Validation</a>
+    </nav>
     <button class="theme-btn" id="theme-btn" type="button" aria-label="Switch color theme">Dark mode</button>
   </header>
 

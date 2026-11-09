@@ -1,0 +1,86 @@
+[
+  {
+    "id": "R1",
+    "date": "2026-11-09T15:03:00-05:00",
+    "phase": 0,
+    "actor": "Adi",
+    "reviewed": "Phase 0 deliverables and PROGRESS.md",
+    "method": "Read PROGRESS.md while reviewing Phase 0",
+    "outcome": "Caught that PROGRESS.md had not been updated (stale handoff block). Claude rewrote the handoff and ticked Phase 0 in SPEC.md; Phase 0 approved.",
+    "notes": "First correction of the logging process: the handoff block is now updated at every prepare-to-clear.",
+    "acs": [],
+    "progress_refs": ["[2026-11-09 15:03 ET] [phase-0] [Adi]", "[2026-11-09 15:03 ET] [phase-0] [Claude]"]
+  },
+  {
+    "id": "R2",
+    "date": "2026-11-09T15:35:00-05:00",
+    "phase": 1,
+    "actor": "Claude-Cowork",
+    "reviewed": "Batch 1 of the data collection and the event log it produced",
+    "method": "Second-agent review of logs/events.jsonl against the batch-1 run",
+    "outcome": "Found 5 subagent hand-backs (15:17–15:21) logged as UserPromptSubmit with actor=Adi. Hook patched to tag them actor=Subagent, prompt_kind=subagent_handback.",
+    "notes": "Existing mislogged entries are fixed at parse time in Phase 5: any prompt starting with \"<agent-message\" is a subagent hand-back.",
+    "acs": [],
+    "progress_refs": ["[2026-11-09 15:35 ET] [phase-1] [Claude-Cowork]"]
+  },
+  {
+    "id": "R3",
+    "date": "2026-11-09T15:47:00-05:00",
+    "phase": 1,
+    "actor": "Adi",
+    "reviewed": "University of Michigan sources (umich.edu returned 403 to the scraper)",
+    "method": "Opened U-M's GenAI faculty guidance in a browser and pasted its text; supplied the PDF \"Getting Started with Generative AI: U-M Instructor Guide\" (9/23)",
+    "outcome": "Pasted text and PDF accepted as sources. At 16:00 Adi deferred both follow-ups: the faculty-guidance URL stays unconfirmed, and cse.engin.umich.edu was not checked, so dept_statement stays not_found.",
+    "notes": "Both recorded as limitations; the 2023-era sources are a dating limitation.",
+    "acs": [],
+    "progress_refs": ["[2026-11-09 15:47 ET] [phase-1] [Adi]", "[2026-11-09 16:00 ET] [phase-1] [Adi]"]
+  },
+  {
+    "id": "R4",
+    "date": "2026-11-09T15:50:00-05:00",
+    "phase": 1,
+    "actor": "Claude",
+    "reviewed": "Adi's umich follow-up message before logging it",
+    "method": "Claude Code checked the message's values before applying them",
+    "outcome": "The message contained two unfilled placeholders (\"<actual URL>\" for the umich guidance page, \"<nothing / X>\" for the cse.engin.umich.edu check). Claude Code neither applied nor logged them as results and asked Adi for the real answers.",
+    "notes": "Good-behavior evidence: the agent refused to record a review outcome Adi had not actually supplied.",
+    "acs": [],
+    "progress_refs": ["[2026-11-09 15:50 ET] [phase-1] [Adi]"]
+  },
+  {
+    "id": "R5",
+    "date": "2026-11-09T16:46:00-05:00",
+    "phase": 1,
+    "actor": "Adi",
+    "reviewed": "AC1.7 quote spot check: 5 random quotes (seed 7, different schools)",
+    "method": "Opened each sampled URL (uci, utah, ucla, mit, utaustin) in a browser and compared the quote to the live page",
+    "outcome": "5/5 quotes matched. Phase 1 approved.",
+    "notes": "",
+    "acs": ["AC1.7"],
+    "progress_refs": ["[2026-11-09 16:44 ET] [phase-1] [Adi]", "[2026-11-09 16:46 ET] [phase-1] [Adi]"]
+  },
+  {
+    "id": "R6",
+    "date": "2026-11-09T17:20:00-05:00",
+    "phase": 2,
+    "actor": "Adi",
+    "reviewed": "Claude's coding of 5 sampled schools (berkeley, cmu, columbia, nyu, williams)",
+    "method": "Blind coding with tools/human_coding.html before opening policies.json; agreement computed by scripts/agreement.py",
+    "outcome": "Human vs Claude: stance 0% agreement (linear-weighted κ 0.17), disclosure 40% (κ 0.06); policy level 100%. At 18:00 Adi decided to keep all codes unchanged and report the stance/disclosure disagreement as a finding, since tone is subjective.",
+    "notes": "n=5, so kappas are unstable. Claude anchors stance on neutral \"instructor decides\" language; Adi reads the overall tone.",
+    "acs": [],
+    "progress_refs": ["[2026-11-09 17:20 ET] [phase-2] [Adi]", "[2026-11-09 18:00 ET] [phase-4] [Adi]"]
+  },
+  {
+    "id": "R7",
+    "date": "2026-11-09T17:46:00-05:00",
+    "phase": 3,
+    "actor": "Adi",
+    "reviewed": "Findings dashboard (docs/findings.html) and the 1280px light-mode screenshot",
+    "method": "Visual review of the page and screenshot",
+    "outcome": "Approved with changes: add playwright to requirements.txt, vendor Chart.js locally, show n on the tone-by-type bars with a small-n note, add the hook-timestamp authority note to the Phase 5 spec, and produce the disagreement table. Committed as db469cb.",
+    "notes": "",
+    "acs": [],
+    "progress_refs": ["[2026-11-09 17:46 ET] [phase-3] [Adi]"]
+  }
+]

@@ -1,0 +1,342 @@
+{
+  "human_vs_claude": {
+    "status": "complete",
+    "n_institutions": 5,
+    "slugs": [
+      "berkeley",
+      "cmu",
+      "columbia",
+      "nyu",
+      "williams"
+    ],
+    "fields": {
+      "policy_level": {
+        "n": 5,
+        "percent_agreement": 1.0,
+        "cohens_kappa": 1.0
+      },
+      "default_rule": {
+        "n": 5,
+        "percent_agreement": 0.8,
+        "cohens_kappa": 0.5455
+      },
+      "stance": {
+        "n": 5,
+        "percent_agreement": 0.0,
+        "cohens_kappa": 0.0,
+        "weighted_kappa_linear": 0.1667
+      },
+      "collaboration_framing": {
+        "n": 5,
+        "percent_agreement": 0.8,
+        "cohens_kappa": 0.6154
+      },
+      "disclosure_required": {
+        "n": 5,
+        "percent_agreement": 0.4,
+        "cohens_kappa": 0.0625
+      },
+      "se_course_policy": {
+        "n": 5,
+        "percent_agreement": 0.6,
+        "cohens_kappa": 0.4118
+      }
+    },
+    "themes": {
+      "academic_integrity": {
+        "n": 5,
+        "percent_agreement": 0.8,
+        "cohens_kappa": 0.0
+      },
+      "learning_outcomes": {
+        "n": 5,
+        "percent_agreement": 0.6,
+        "cohens_kappa": 0.2857
+      },
+      "career_readiness": {
+        "n": 5,
+        "percent_agreement": 0.6,
+        "cohens_kappa": 0.2857
+      },
+      "specific_tools": {
+        "n": 5,
+        "percent_agreement": 0.4,
+        "cohens_kappa": 0.0
+      },
+      "equity_access": {
+        "n": 5,
+        "percent_agreement": 1.0,
+        "cohens_kappa": null,
+        "note": "kappa undefined: both coders used one identical category"
+      },
+      "privacy_security": {
+        "n": 5,
+        "percent_agreement": 1.0,
+        "cohens_kappa": null,
+        "note": "kappa undefined: both coders used one identical category"
+      },
+      "assessment_redesign": {
+        "n": 5,
+        "percent_agreement": 1.0,
+        "cohens_kappa": null,
+        "note": "kappa undefined: both coders used one identical category"
+      },
+      "ai_literacy": {
+        "n": 5,
+        "percent_agreement": 0.6,
+        "cohens_kappa": 0.2857
+      }
+    },
+    "disagreements": [
+      {
+        "slug": "berkeley",
+        "field": "default_rule",
+        "rater": "banned",
+        "claude": "instructor_discretion"
+      },
+      {
+        "slug": "berkeley",
+        "field": "stance",
+        "rater": -2,
+        "claude": 0
+      },
+      {
+        "slug": "cmu",
+        "field": "stance",
+        "rater": 1,
+        "claude": 0
+      },
+      {
+        "slug": "cmu",
+        "field": "se_course_policy",
+        "rater": "limited",
+        "claude": "integrated"
+      },
+      {
+        "slug": "columbia",
+        "field": "stance",
+        "rater": 1,
+        "claude": 0
+      },
+      {
+        "slug": "columbia",
+        "field": "collaboration_framing",
+        "rater": true,
+        "claude": false
+      },
+      {
+        "slug": "columbia",
+        "field": "disclosure_required",
+        "rater": "yes",
+        "claude": "unclear"
+      },
+      {
+        "slug": "nyu",
+        "field": "stance",
+        "rater": 1,
+        "claude": 0
+      },
+      {
+        "slug": "nyu",
+        "field": "disclosure_required",
+        "rater": "no",
+        "claude": "yes"
+      },
+      {
+        "slug": "williams",
+        "field": "stance",
+        "rater": -2,
+        "claude": -1
+      },
+      {
+        "slug": "williams",
+        "field": "disclosure_required",
+        "rater": "no",
+        "claude": "unclear"
+      },
+      {
+        "slug": "williams",
+        "field": "se_course_policy",
+        "rater": "banned",
+        "claude": "not_found"
+      },
+      {
+        "slug": "berkeley",
+        "field": "themes",
+        "rater_only": [],
+        "claude_only": [
+          "ai_literacy",
+          "learning_outcomes",
+          "specific_tools"
+        ]
+      },
+      {
+        "slug": "cmu",
+        "field": "themes",
+        "rater_only": [],
+        "claude_only": [
+          "ai_literacy"
+        ]
+      },
+      {
+        "slug": "nyu",
+        "field": "themes",
+        "rater_only": [
+          "career_readiness"
+        ],
+        "claude_only": [
+          "learning_outcomes",
+          "specific_tools"
+        ]
+      },
+      {
+        "slug": "williams",
+        "field": "themes",
+        "rater_only": [
+          "academic_integrity",
+          "career_readiness"
+        ],
+        "claude_only": [
+          "specific_tools"
+        ]
+      }
+    ],
+    "rater_file": "data/processed/human_coding.csv",
+    "description": "Adi's blind hand-coding vs. Claude Code"
+  },
+  "ai2_vs_claude": {
+    "status": "complete",
+    "n_institutions": 10,
+    "slugs": [
+      "berkeley",
+      "caltech",
+      "cmu",
+      "columbia",
+      "cornell",
+      "mit",
+      "ncstate",
+      "nyu",
+      "ucla",
+      "williams"
+    ],
+    "fields": {
+      "policy_level": {
+        "n": 10,
+        "percent_agreement": 1.0,
+        "cohens_kappa": 1.0
+      },
+      "default_rule": {
+        "n": 10,
+        "percent_agreement": 0.9,
+        "cohens_kappa": 0.6296
+      },
+      "stance": {
+        "n": 10,
+        "percent_agreement": 1.0,
+        "cohens_kappa": 1.0,
+        "weighted_kappa_linear": 1.0
+      },
+      "collaboration_framing": {
+        "n": 10,
+        "percent_agreement": 1.0,
+        "cohens_kappa": 1.0
+      },
+      "disclosure_required": {
+        "n": 10,
+        "percent_agreement": 1.0,
+        "cohens_kappa": 1.0
+      },
+      "se_course_policy": {
+        "n": 10,
+        "percent_agreement": 1.0,
+        "cohens_kappa": 1.0
+      }
+    },
+    "themes": {
+      "academic_integrity": {
+        "n": 10,
+        "percent_agreement": 1.0,
+        "cohens_kappa": 1.0
+      },
+      "learning_outcomes": {
+        "n": 10,
+        "percent_agreement": 0.7,
+        "cohens_kappa": 0.4
+      },
+      "career_readiness": {
+        "n": 10,
+        "percent_agreement": 0.9,
+        "cohens_kappa": 0.6154
+      },
+      "specific_tools": {
+        "n": 10,
+        "percent_agreement": 1.0,
+        "cohens_kappa": 1.0
+      },
+      "equity_access": {
+        "n": 10,
+        "percent_agreement": 1.0,
+        "cohens_kappa": null,
+        "note": "kappa undefined: both coders used one identical category"
+      },
+      "privacy_security": {
+        "n": 10,
+        "percent_agreement": 1.0,
+        "cohens_kappa": 1.0
+      },
+      "assessment_redesign": {
+        "n": 10,
+        "percent_agreement": 1.0,
+        "cohens_kappa": null,
+        "note": "kappa undefined: both coders used one identical category"
+      },
+      "ai_literacy": {
+        "n": 10,
+        "percent_agreement": 1.0,
+        "cohens_kappa": 1.0
+      }
+    },
+    "disagreements": [
+      {
+        "slug": "caltech",
+        "field": "default_rule",
+        "rater": "allowed_with_disclosure",
+        "claude": "instructor_discretion"
+      },
+      {
+        "slug": "berkeley",
+        "field": "themes",
+        "rater_only": [],
+        "claude_only": [
+          "learning_outcomes"
+        ]
+      },
+      {
+        "slug": "cmu",
+        "field": "themes",
+        "rater_only": [],
+        "claude_only": [
+          "career_readiness"
+        ]
+      },
+      {
+        "slug": "cornell",
+        "field": "themes",
+        "rater_only": [],
+        "claude_only": [
+          "learning_outcomes"
+        ]
+      },
+      {
+        "slug": "ncstate",
+        "field": "themes",
+        "rater_only": [],
+        "claude_only": [
+          "learning_outcomes"
+        ]
+      }
+    ],
+    "rater_file": "data/processed/ai2_coding.csv",
+    "description": "independent second Claude session (did not see policies.json) vs. Claude Code"
+  }
+}

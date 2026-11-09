@@ -1,0 +1,293 @@
+{
+  "enforced_through_phase": 4,
+  "acs": [
+    {
+      "id": "AC0.1",
+      "phase": 0,
+      "text": "All files listed in SPEC.md's architecture exist (dirs + spec files).",
+      "manual": false,
+      "enforced": true,
+      "spec": "specs/phase-0-setup.md"
+    },
+    {
+      "id": "AC0.2",
+      "phase": 0,
+      "text": "`logs/events.jsonl` exists, and every line is valid JSON with `ts` and `event` keys.",
+      "manual": false,
+      "enforced": true,
+      "spec": "specs/phase-0-setup.md"
+    },
+    {
+      "id": "AC0.3",
+      "phase": 0,
+      "text": "At least one `UserPromptSubmit` event has been logged.",
+      "manual": false,
+      "enforced": true,
+      "spec": "specs/phase-0-setup.md"
+    },
+    {
+      "id": "AC0.4",
+      "phase": 0,
+      "text": "`.claude/settings.json` registers the UserPromptSubmit, Stop, PreCompact and SessionStart hooks.",
+      "manual": false,
+      "enforced": true,
+      "spec": "specs/phase-0-setup.md"
+    },
+    {
+      "id": "AC1.1",
+      "phase": 1,
+      "text": "`institutions.csv` has 35 or more rows, unique slugs, and a valid `type`.",
+      "manual": false,
+      "enforced": true,
+      "spec": "specs/phase-1-data.md"
+    },
+    {
+      "id": "AC1.2",
+      "phase": 1,
+      "text": "Every slug has a `data/raw/<slug>.md` file with all 5 section headers.",
+      "manual": false,
+      "enforced": true,
+      "spec": "specs/phase-1-data.md"
+    },
+    {
+      "id": "AC1.3",
+      "phase": 1,
+      "text": "Every section has a `url:` line that is either an http(s) URL or `not_found`/`blocked`.",
+      "manual": false,
+      "enforced": true,
+      "spec": "specs/phase-1-data.md"
+    },
+    {
+      "id": "AC1.4",
+      "phase": 1,
+      "text": "Every section with a URL has at least one `>` quote block.",
+      "manual": false,
+      "enforced": true,
+      "spec": "specs/phase-1-data.md"
+    },
+    {
+      "id": "AC1.5",
+      "phase": 1,
+      "text": "At least 70% of institutions have a URL for at least one of the dept_statement/university_guidance sections.",
+      "manual": false,
+      "enforced": true,
+      "spec": "specs/phase-1-data.md"
+    },
+    {
+      "id": "AC1.6",
+      "phase": 1,
+      "text": "At least 50% of institutions have a URL for se_course.",
+      "manual": false,
+      "enforced": true,
+      "spec": "specs/phase-1-data.md"
+    },
+    {
+      "id": "AC1.7",
+      "phase": 1,
+      "text": "Adi opens 5 random URLs and confirms that the quotes match. Log the result in PROGRESS.md.",
+      "manual": true,
+      "enforced": true,
+      "spec": "specs/phase-1-data.md"
+    },
+    {
+      "id": "AC1.8",
+      "phase": 1,
+      "text": "Every source with a URL has a `source_date:` line: `undated`, or a year whose evidence shows that year (page evidence is verified verbatim by check_quotes; url evidence must be a substring of the URL).",
+      "manual": false,
+      "enforced": true,
+      "spec": "specs/phase-1-data.md"
+    },
+    {
+      "id": "AC2.1",
+      "phase": 2,
+      "text": "`policies.json` validates against the schema (all required fields present, enums valid).",
+      "manual": false,
+      "enforced": true,
+      "spec": "specs/phase-2-analysis.md"
+    },
+    {
+      "id": "AC2.2",
+      "phase": 2,
+      "text": "Every `evidence` string is an exact substring of the matching raw file (anti-hallucination test).",
+      "manual": false,
+      "enforced": true,
+      "spec": "specs/phase-2-analysis.md"
+    },
+    {
+      "id": "AC2.3",
+      "phase": 2,
+      "text": "Every institution in the CSV has exactly one record.",
+      "manual": false,
+      "enforced": true,
+      "spec": "specs/phase-2-analysis.md"
+    },
+    {
+      "id": "AC2.4",
+      "phase": 2,
+      "text": "The kappa function matches a hand-computed textbook example (unit test).",
+      "manual": false,
+      "enforced": true,
+      "spec": "specs/phase-2-analysis.md"
+    },
+    {
+      "id": "AC2.5",
+      "phase": 2,
+      "text": "The counts in `findings.json` equal counts recomputed directly from `policies.json`.",
+      "manual": false,
+      "enforced": true,
+      "spec": "specs/phase-2-analysis.md"
+    },
+    {
+      "id": "AC2.6",
+      "phase": 2,
+      "text": "The lexicon check runs, and its flags are listed for Adi's review.",
+      "manual": false,
+      "enforced": true,
+      "spec": "specs/phase-2-analysis.md"
+    },
+    {
+      "id": "AC3.1",
+      "phase": 3,
+      "text": "The page loads with no console errors (headless Playwright test).",
+      "manual": false,
+      "enforced": true,
+      "spec": "specs/phase-3-findings-dashboard.md"
+    },
+    {
+      "id": "AC3.2",
+      "phase": 3,
+      "text": "Every chart total equals the matching count in findings.json (Playwright reads the DOM/chart data).",
+      "manual": false,
+      "enforced": true,
+      "spec": "specs/phase-3-findings-dashboard.md"
+    },
+    {
+      "id": "AC3.3",
+      "phase": 3,
+      "text": "The table row count equals the number of institutions. Search filters the rows correctly.",
+      "manual": false,
+      "enforced": true,
+      "spec": "specs/phase-3-findings-dashboard.md"
+    },
+    {
+      "id": "AC3.4",
+      "phase": 3,
+      "text": "Works at 375px width with no horizontal scrolling.",
+      "manual": false,
+      "enforced": true,
+      "spec": "specs/phase-3-findings-dashboard.md"
+    },
+    {
+      "id": "AC4.1",
+      "phase": 4,
+      "text": "Every AC in specs/phase-*.md has at least one test or a manual review entry (checked by a test that parses the specs).",
+      "manual": false,
+      "enforced": true,
+      "spec": "specs/phase-4-validation.md"
+    },
+    {
+      "id": "AC4.2",
+      "phase": 4,
+      "text": "tests.json matches the actual pytest run (same count, same statuses).",
+      "manual": false,
+      "enforced": true,
+      "spec": "specs/phase-4-validation.md"
+    },
+    {
+      "id": "AC4.3",
+      "phase": 4,
+      "text": "Filters work (Playwright test).",
+      "manual": false,
+      "enforced": true,
+      "spec": "specs/phase-4-validation.md"
+    },
+    {
+      "id": "AC4.4",
+      "phase": 4,
+      "text": "Includes at least one deliberately failing \"canary\" test, run once and shown in the history, to prove that the pipeline reports failures. Then remove it.",
+      "manual": false,
+      "enforced": true,
+      "spec": "specs/phase-4-validation.md"
+    },
+    {
+      "id": "AC5.1",
+      "phase": 5,
+      "text": "Every prompt in events.jsonl appears in timeline.json.",
+      "manual": false,
+      "enforced": false,
+      "spec": "specs/phase-5-timeline.md"
+    },
+    {
+      "id": "AC5.2",
+      "phase": 5,
+      "text": "Timestamps are sorted, and each one parses as ISO-8601.",
+      "manual": false,
+      "enforced": false,
+      "spec": "specs/phase-5-timeline.md"
+    },
+    {
+      "id": "AC5.3",
+      "phase": 5,
+      "text": "Every entry has a valid actor and phase.",
+      "manual": false,
+      "enforced": false,
+      "spec": "specs/phase-5-timeline.md"
+    },
+    {
+      "id": "AC5.4",
+      "phase": 5,
+      "text": "Page loads with no console errors, and the filters work (Playwright).",
+      "manual": false,
+      "enforced": false,
+      "spec": "specs/phase-5-timeline.md"
+    },
+    {
+      "id": "AC6.1",
+      "phase": 6,
+      "text": "Token totals in tokens.json equal an independent recomputation from the raw jsonl (test).",
+      "manual": false,
+      "enforced": false,
+      "spec": "specs/phase-6-tokens.md"
+    },
+    {
+      "id": "AC6.2",
+      "phase": 6,
+      "text": "No duplicate message IDs are counted.",
+      "manual": false,
+      "enforced": false,
+      "spec": "specs/phase-6-tokens.md"
+    },
+    {
+      "id": "AC6.3",
+      "phase": 6,
+      "text": "Every message has a phase and an activity.",
+      "manual": false,
+      "enforced": false,
+      "spec": "specs/phase-6-tokens.md"
+    },
+    {
+      "id": "AC6.4",
+      "phase": 6,
+      "text": "Page loads with no console errors (Playwright).",
+      "manual": false,
+      "enforced": false,
+      "spec": "specs/phase-6-tokens.md"
+    },
+    {
+      "id": "AC7.1",
+      "phase": 7,
+      "text": "The live URL returns 200 for all 5 pages (checked with curl).",
+      "manual": false,
+      "enforced": false,
+      "spec": "specs/phase-7-publish.md"
+    },
+    {
+      "id": "AC7.2",
+      "phase": 7,
+      "text": "Every relative link on the site resolves (link-checker test).",
+      "manual": false,
+      "enforced": false,
+      "spec": "specs/phase-7-publish.md"
+    }
+  ]
+}

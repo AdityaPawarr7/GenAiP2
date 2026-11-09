@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Validation Dashboard</title>
+<meta name="description" content="Test results, acceptance-criteria coverage, manual reviews and coder agreement for the GenAI policies project.">
+<script>
+  // Apply a saved theme before first paint (per-viewer convenience only).
+  try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="assets/validation.css">
+<script src="assets/vendor/chart-4.4.1.umd.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="site" href="index.html">GenAI policies in CS education</a>
+    <nav class="pages" aria-label="Dashboards">
+      <a href="findings.html">Findings</a>
+      <a href="validation.html" aria-current="page">Validation</a>
+    </nav>
+    <button class="theme-btn" id="theme-btn" type="button" aria-label="Switch color theme">Dark mode</button>
+  </header>
+
+  <main id="main">
+    <h1 id="headline">Validation</h1>
+    <p class="dek" id="dek">Every acceptance criterion in the phase specs, the tests that check it, the manual reviews behind the ones a test cannot check, and how well an independent human and a second AI agree with Claude's coding.</p>
+
+    <div class="kpis five" id="kpis" aria-label="Key numbers"></div>
+
+    <section aria-labelledby="h-runs">
+      <h2 id="h-runs">Pass rate over runs</h2>
+      <p class="sub">Share of tests that ran and passed, per pipeline run. The axis starts near the lowest rate so a single failure is visible. Hover a point for the run's details.</p>
+      <div class="panel">
+        <div class="chart-box"><canvas id="chart-runs" aria-label="Line chart of pass rate per run"></canvas></div>
+        <ul class="key" id="runs-key"></ul>
+        <details class="as-table" data-for="chart-runs"><summary>Show as table</summary></details>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-cov">
+      <h2 id="h-cov">Acceptance criteria coverage</h2>
+      <p class="sub" id="cov-sub"></p>
+      <ul class="key status-key" id="cov-key"></ul>
+      <div class="cov" id="cov"></div>
+    </section>
+
+    <section aria-labelledby="h-tests">
+      <h2 id="h-tests">Test results</h2>
+      <p class="sub">One row per test case, parametrized cases included. Select a row for its failure message and source file.</p>
+      <div class="filters" role="search">
+        <input id="q" type="search" placeholder="Search tests" aria-label="Search tests">
+        <select id="f-phase" aria-label="Filter by phase"><option value="">All phases</option></select>
+        <select id="f-status" aria-label="Filter by status"><option value="">All statuses</option></select>
+        <select id="f-ac" aria-label="Filter by acceptance criterion"><option value="">All ACs</option></select>
+        <button type="button" class="reset" id="reset">Reset</button>
+      </div>
+      <p class="count" id="count" aria-live="polite"></p>
+      <div class="table-wrap" id="tests-wrap" tabindex="0" aria-label="Test results, scrollable">
+        <table class="tests" id="tests">
+          <thead><tr>
+            <th scope="col">Status</th>
+            <th scope="col">Test</th>
+            <th scope="col">Phase</th>
+            <th scope="col">AC</th>
+            <th scope="col" class="num">Time</th>
+          </tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-reviews">
+      <h2 id="h-reviews">Manual review log</h2>
+      <p class="sub">Reviews and catches that no automated test makes, each traced to its entry in PROGRESS.md.</p>
+      <ol class="reviews" id="reviews"></ol>
+    </section>
+
+    <section aria-labelledby="h-agree">
+      <h2 id="h-agree">Agreement with Claude's coding</h2>
+      <p class="sub">Percent of sampled schools where each coder gave the same code as Claude. Hover a bar for Cohen's κ (linear-weighted κ for stance).</p>
+      <div class="charts">
+        <div class="panel">
+          <h3>Agreement by field</h3>
+          <div class="chart-box tall"><canvas id="chart-agree" aria-label="Grouped bar chart of agreement by field"></canvas></div>
+          <details class="as-table" data-for="chart-agree"><summary>Show as table</summary></details>
+        </div>
+        <div class="panel finding" id="agree-finding">
+          <h3>Finding: tone is where coders split</h3>
+          <div id="agree-note"></div>
+          <table class="dis" id="dis"></table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>Data: <a href="data/tests.json">tests.json</a>, <a href="data/test_runs.json">test_runs.json</a>, <a href="data/acceptance_criteria.json">acceptance_criteria.json</a>, <a href="data/reviews.json">reviews.json</a> and <a href="data/agreement.json">agreement.json</a>. Built by scripts/run_validation.py from a pytest run.</footer>
+</div>
+<script src="assets/validation.js"></script>
+</body>
+</html>

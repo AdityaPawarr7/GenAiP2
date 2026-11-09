@@ -1,0 +1,58 @@
+[
+  {
+    "run_id": "run-20261109-231659",
+    "timestamp": "2026-11-09T18:16:59-05:00",
+    "total": 652,
+    "passed": 648,
+    "failed": 1,
+    "errors": 0,
+    "skipped": 3,
+    "pass_rate": 0.9985,
+    "duration": 5.66,
+    "failed_tests": [
+      "tests/test_phase4_canary.py::test_AC4_4_canary_deliberately_fails"
+    ],
+    "note": "canary run"
+  },
+  {
+    "run_id": "run-20261109-231709",
+    "timestamp": "2026-11-09T18:17:09-05:00",
+    "total": 651,
+    "passed": 649,
+    "failed": 1,
+    "errors": 0,
+    "skipped": 1,
+    "pass_rate": 0.9985,
+    "duration": 5.48,
+    "failed_tests": [
+      "tests/test_phase4_validation.py::test_AC4_4_canary_test_was_removed_after_its_run"
+    ],
+    "note": ""
+  },
+  {
+    "run_id": "run-20261109-231737",
+    "timestamp": "2026-11-09T18:17:37-05:00",
+    "total": 651,
+    "passed": 650,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 1,
+    "pass_rate": 1.0,
+    "duration": 5.57,
+    "failed_tests": [],
+    "note": ""
+  },
+  {
+    "run_id": "run-20261109-231936",
+    "timestamp": "2026-11-09T18:19:36-05:00",
+    "total": 651,
+    "passed": 650,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 1,
+    "pass_rate": 1.0,
+    "duration": 5.98,
+    "failed_tests": [],
+    "note": ""
+  }
+]
