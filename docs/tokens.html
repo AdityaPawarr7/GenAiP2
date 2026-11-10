@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Usage</title>
+<meta name="description" content="Where this project's Claude Code tokens went: by step (gathering, processing, code, validation), by phase, through /clear and /compact, and in the Phase 1 subagents.">
+<script>
+  // Apply a saved theme before first paint (per-viewer convenience only).
+  try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="assets/tokens.css">
+<script src="assets/vendor/chart-4.4.1.umd.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="site" href="index.html">GenAI policies in CS education</a>
+    <nav class="pages" aria-label="Dashboards">
+      <a href="findings.html">Findings</a>
+      <a href="validation.html">Validation</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="tokens.html" aria-current="page">Tokens</a>
+    </nav>
+    <button class="theme-btn" id="theme-btn" type="button" aria-label="Switch color theme">Dark mode</button>
+  </header>
+
+  <main id="main">
+    <h1 id="headline">Token usage</h1>
+    <p class="dek" id="dek">Every Claude Code API call in this project, read from the session transcripts, including the subagents' own transcripts.</p>
+
+    <div class="kpis five" id="kpis" aria-label="Key numbers"></div>
+    <h3 class="types-h">Tokens by type</h3>
+    <div class="kpis types" id="types" aria-label="Tokens by type"></div>
+
+    <section aria-labelledby="h-steps">
+      <h2 id="h-steps">Which steps cost the most</h2>
+      <p class="sub" id="steps-sub">Each API call is labelled with one step, based on the tools it called. Calls that only read files or reply in text take the step of the next action in the same turn.</p>
+      <div class="filters" role="group" aria-label="Measure">
+        <span class="seg" id="metric">
+          <button type="button" data-metric="total" aria-pressed="true">Tokens</button>
+          <button type="button" data-metric="cost_usd" aria-pressed="false">Est. API cost ($)</button>
+        </span>
+        <span class="hint" id="metric-hint"></span>
+      </div>
+      <div class="charts">
+        <div class="panel">
+          <h3>By step</h3>
+          <p class="note">All phases together, largest first.</p>
+          <div class="chart-box"><canvas id="chart-activity" aria-label="Bar chart of token usage by step"></canvas></div>
+          <details class="as-table" data-for="chart-activity"><summary>Show as table</summary></details>
+        </div>
+        <div class="panel">
+          <h3>Average per call, by step</h3>
+          <p class="note">How heavy one call is. Calls late in a long session re-read a large context.</p>
+          <div class="chart-box"><canvas id="chart-percall" aria-label="Bar chart of average tokens per call by step"></canvas></div>
+          <details class="as-table" data-for="chart-percall"><summary>Show as table</summary></details>
+        </div>
+        <div class="panel wide">
+          <h3>By phase and step</h3>
+          <p class="note">Hover a segment for its tokens, cost and number of calls.</p>
+          <ul class="key" id="act-key"></ul>
+          <div class="chart-box" id="phase-box"><canvas id="chart-phase" aria-label="Stacked bar chart of token usage by phase and step"></canvas></div>
+          <details class="as-table" data-for="chart-phase"><summary>Show as table</summary></details>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-context">
+      <h2 id="h-context">How /clear and /compact changed context size</h2>
+      <p class="sub">Context size is what the model reads on each main-thread call: new input plus cache writes plus cache reads. Each call is one point, in order. Dashed lines mark each /clear and /compact. The overnight gap between Nov 9 and Nov 10 is not to scale.</p>
+      <div class="kpis three" id="ctx-kpis"></div>
+      <div class="panel ctx-panel">
+        <ul class="key" id="ctx-key"></ul>
+        <div class="chart-box tall"><canvas id="chart-context" aria-label="Line chart of context size per call, with /clear and /compact markers"></canvas></div>
+        <details class="as-table" data-for="chart-context"><summary>Show as table</summary></details>
+      </div>
+      <h3 class="tbl-h">Before and after each event</h3>
+      <p class="note" id="ctx-note"></p>
+      <div class="table-wrap scroll-x" tabindex="0" aria-label="Context size before and after each event, scrollable">
+        <table class="data" id="ctx-table"></table>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-sub">
+      <h2 id="h-sub">What subagents cost in Phase 1</h2>
+      <p class="sub" id="sub-sub"></p>
+      <div class="charts">
+        <div class="panel">
+          <h3>Phase 1: main thread vs. subagents</h3>
+          <p class="note">The main thread planned the batches, checked the results and logged progress.</p>
+          <div class="chart-box short"><canvas id="chart-p1" aria-label="Bar chart of Phase 1 tokens, main thread vs subagents"></canvas></div>
+          <details class="as-table" data-for="chart-p1"><summary>Show as table</summary></details>
+        </div>
+        <div class="panel">
+          <h3>Why subagents read so much</h3>
+          <ul class="facts" id="sub-facts"></ul>
+        </div>
+        <div class="panel wide">
+          <h3>Each subagent</h3>
+          <p class="note">In launch order. Each one collected sources for two institutions. Hover a bar for its searches and shell commands.</p>
+          <div class="chart-box" id="agents-box"><canvas id="chart-agents" aria-label="Bar chart of tokens per subagent"></canvas></div>
+          <details class="as-table" data-for="chart-agents"><summary>Show as table</summary></details>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-sessions">
+      <h2 id="h-sessions">Sessions</h2>
+      <p class="sub">One row per Claude Code session. Each /clear starts a new one. Subagent calls count toward the session that launched them.</p>
+      <div class="table-wrap scroll-x" tabindex="0" aria-label="Sessions, scrollable">
+        <table class="data" id="sessions"></table>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-insights">
+      <h2 id="h-insights">Insights</h2>
+      <ul class="insights" id="insights"></ul>
+    </section>
+
+    <section aria-labelledby="h-method">
+      <h2 id="h-method">Method and limits</h2>
+      <ul class="facts method" id="method"></ul>
+    </section>
+  </main>
+
+  <footer>Data: <a href="data/tokens.json">tokens.json</a>, built by scripts/tokens.py from the Claude Code transcripts (main sessions and subagents) and logs/events.jsonl. Each message is counted once by its message id. Local paths are redacted.</footer>
+</div>
+<div class="tip" id="tip" hidden></div>
+<script src="assets/tokens.js"></script>
+</body>
+</html>

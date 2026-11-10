@@ -20,6 +20,7 @@
       <a href="findings.html">Findings</a>
       <a href="validation.html">Validation</a>
       <a href="timeline.html">Timeline</a>
+      <a href="tokens.html">Tokens</a>
     </nav>
     <button class="theme-btn" id="theme-btn" type="button" aria-label="Switch color theme">Dark mode</button>
   </header>
@@ -47,10 +48,12 @@
         <p class="what" id="timeline-text">Who did what and when: Adi's prompts, decisions, corrections and reviews next to Claude's work, phase by phase.</p>
         <span class="go">Open the timeline →</span>
       </a>
-      <div class="card soon" data-page="tokens" aria-disabled="true">
-        <p class="kicker">Tokens <span class="tag">Coming soon</span></p>
-        <p class="what">Token usage and cost by phase and activity, including the subagents.</p>
-      </div>
+      <a class="card" href="tokens.html" data-page="tokens">
+        <p class="kicker">Tokens</p>
+        <p class="big" id="tokens-figure">Token usage</p>
+        <p class="what" id="tokens-text">Which steps cost the most, how /clear reset the context, and what the Phase 1 subagents cost.</p>
+        <span class="go">Open the token usage →</span>
+      </a>
     </section>
 
     <section class="about" aria-labelledby="h-about">

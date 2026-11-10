@@ -33,7 +33,7 @@ REVIEWS = OUT / "reviews.json"
 
 # AC4.1 coverage is enforced for phases up to this one (Adi, Phase 4 "go"). ACs of later
 # phases are listed as "planned" on the dashboard. Bump this as each phase ships.
-ENFORCED_THROUGH_PHASE = 5
+ENFORCED_THROUGH_PHASE = 6
 
 MESSAGE_LIMIT = 4000
 AC_LINE = re.compile(r"^- (AC(\d+)\.(\d+))\b[^:]*:\s*(.+)$")

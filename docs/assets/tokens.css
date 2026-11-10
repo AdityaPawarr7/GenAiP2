@@ -1,0 +1,71 @@
+/* Token usage dashboard (page-specific). Shared tokens and components live in base.css.
+   Step colors are categorical slots 1–5 of palette.md in fixed order (gathering, processing,
+   code, validation, planning/docs), validated with validate_palette.js in both modes
+   (light: all checks pass, slots 3–5 under 3:1 so every bar is labelled on its axis and has a
+   table view; dark: all pass). Subagents use the accent (highlight); the main thread is gray. */
+:root {
+  --act-gather: #2a78d6; --act-process: #eb6834; --act-code: #1baf7a; --act-valid: #eda100; --act-plan: #e87ba4;
+  --main-thread: #b5b4ad; --clear-mark: #52514e; --compact-mark: #eb6834;
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    --act-gather: #3987e5; --act-process: #d95926; --act-code: #199e70; --act-valid: #c98500; --act-plan: #d55181;
+    --main-thread: #5c5b57; --clear-mark: #c3c2b7; --compact-mark: #d95926;
+  }
+}
+:root[data-theme="dark"] {
+  --act-gather: #3987e5; --act-process: #d95926; --act-code: #199e70; --act-valid: #c98500; --act-plan: #d55181;
+  --main-thread: #5c5b57; --clear-mark: #c3c2b7; --compact-mark: #d95926;
+}
+
+.kpis.five { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.kpis.three { grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0 0 16px; }
+.kpis.types { margin-top: 8px; }
+.kpis.types .value { font-size: 24px; }
+.types-h { margin: 24px 0 0; color: var(--ink-2); font-weight: 500; font-size: 14px; }
+.note { font-size: 13px; color: var(--ink-2); margin: 0 0 12px; }
+.panel .key { margin: 0 0 8px; }
+.chart-box.short { height: 180px; }
+.ctx-panel { margin-bottom: 24px; }
+.tbl-h { margin: 0 0 2px; }
+
+/* Measure toggle */
+.seg { display: inline-flex; border: 1px solid var(--axis); border-radius: 999px; padding: 2px; background: var(--surface); }
+.seg button {
+  font: inherit; font-size: 14px; color: var(--ink-2); background: transparent; border: 0;
+  border-radius: 999px; padding: 6px 14px; cursor: pointer;
+}
+.seg button[aria-pressed="true"] { background: var(--wash); color: var(--ink); font-weight: 600; }
+.hint { font-size: 13px; color: var(--ink-2); }
+
+/* Tables */
+.scroll-x { overflow-x: auto; }
+table.data { width: 100%; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
+table.data th, table.data td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--grid); white-space: nowrap; }
+table.data th { color: var(--ink-2); font-weight: 500; font-size: 13px; }
+table.data td.num, table.data th.num { text-align: right; }
+table.data tbody tr:last-child td { border-bottom: 0; }
+table.data tfoot td { font-weight: 600; border-top: 1px solid var(--axis); border-bottom: 0; }
+.tag { display: inline-flex; align-items: center; gap: 6px; }
+.tag .ln { width: 14px; height: 0; border-top: 2px dashed currentColor; display: inline-block; }
+.tag.clear { color: var(--clear-mark); }
+.tag.compact { color: var(--compact-mark); }
+.tag span.t { color: var(--ink); }
+.down { color: var(--ink); font-weight: 600; }
+
+.key .dash { width: 14px; height: 0; border-top: 2px dashed; display: inline-block; }
+.key .line { width: 14px; height: 0; border-top: 2px solid; display: inline-block; }
+
+.facts { margin: 0; padding: 0 0 0 18px; font-size: 14px; color: var(--ink); }
+.facts li { margin: 0 0 8px; }
+.facts li span { color: var(--ink-2); }
+.insights { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+.insights li { background: var(--surface); border: 1px solid var(--ring); border-left: 3px solid var(--accent); border-radius: 10px; padding: 14px 18px; max-width: 80ch; }
+.insights strong { display: block; margin-bottom: 2px; }
+.method { color: var(--ink-2); max-width: 90ch; }
+.empty { color: var(--ink-2); }
+
+@media (max-width: 860px) {
+  .kpis.five { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .kpis.three { grid-template-columns: minmax(0, 1fr); }
+}

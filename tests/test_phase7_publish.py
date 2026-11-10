@@ -156,8 +156,8 @@ def test_landing_page_loads_without_errors_and_fills_headline_numbers(browser, b
         pg.close()
 
 
-def test_landing_page_cards_link_live_dashboards_and_mark_the_rest_coming_soon(browser, base_url):
-    """extra: Findings, Validation and Timeline cards are links; Tokens shows "Coming soon" with no link."""
+def test_landing_page_cards_link_all_four_live_dashboards(browser, base_url):
+    """extra: all four dashboard cards (Findings, Validation, Timeline, Tokens) are links; none is marked "Coming soon"."""
     pg = open_page(browser, base_url + "index.html")
     try:
         cards = pg.eval_on_selector_all(".card", "els => els.map(e => [e.dataset.page, e.tagName, e.getAttribute('href'), e.textContent])")
@@ -165,8 +165,8 @@ def test_landing_page_cards_link_live_dashboards_and_mark_the_rest_coming_soon(b
         assert by["findings"][1:3] == ["A", "findings.html"]
         assert by["validation"][1:3] == ["A", "validation.html"]
         assert by["timeline"][1:3] == ["A", "timeline.html"]
-        for k in ("tokens",):
-            assert by[k][1] == "DIV" and by[k][2] is None and "Coming soon" in by[k][3]
+        assert by["tokens"][1:3] == ["A", "tokens.html"]
+        assert not any("Coming soon" in c[3] for c in cards)
     finally:
         pg.close()
 

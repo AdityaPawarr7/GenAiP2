@@ -30,6 +30,10 @@
     load("data/timeline.json").then(function (D) {
       var prompts = D.entries.filter(function (e) { return e.type === "prompt"; }).length;
       byId("timeline-figure").textContent = prompts + " prompts";
+    }),
+    load("data/tokens.json").then(function (K) {
+      var t = K.totals.total;
+      byId("tokens-figure").textContent = (t >= 1e6 ? (t / 1e6).toFixed(0) + "M" : Math.round(t / 1e3) + "k") + " tokens";
     })
   ]).catch(function () { /* keep the static fallbacks */ }).then(function () {
     document.body.dataset.ready = "true";

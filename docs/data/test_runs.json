@@ -136,5 +136,46 @@
     "duration": 8.6,
     "failed_tests": [],
     "note": "phase 5 timeline"
+  },
+  {
+    "run_id": "run-20261110-214405",
+    "timestamp": "2026-11-10T16:44:05-05:00",
+    "total": 765,
+    "passed": 757,
+    "failed": 1,
+    "errors": 0,
+    "skipped": 7,
+    "pass_rate": 0.9987,
+    "duration": 10.15,
+    "failed_tests": [
+      "tests/test_phase4_validation.py::test_coverage_matrix_marks_acs_without_tests_in_red_and_later_phases_as_planned"
+    ],
+    "note": "phase 6 tokens"
+  },
+  {
+    "run_id": "run-20261110-214415",
+    "timestamp": "2026-11-10T16:44:15-05:00",
+    "total": 765,
+    "passed": 759,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 6,
+    "pass_rate": 1.0,
+    "duration": 10.13,
+    "failed_tests": [],
+    "note": "phase 6 tokens (second run, includes phase 6 tests)"
+  },
+  {
+    "run_id": "run-20261110-214721",
+    "timestamp": "2026-11-10T16:47:21-05:00",
+    "total": 765,
+    "passed": 759,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 6,
+    "pass_rate": 1.0,
+    "duration": 10.53,
+    "failed_tests": [],
+    "note": "phase 6 approved, pre-commit"
   }
 ]

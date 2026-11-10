@@ -1,5 +1,5 @@
 {
-  "enforced_through_phase": 5,
+  "enforced_through_phase": 6,
   "acs": [
     {
       "id": "AC0.1",
@@ -246,7 +246,7 @@
       "phase": 6,
       "text": "Token totals in tokens.json equal an independent recomputation from the raw jsonl (test).",
       "manual": false,
-      "enforced": false,
+      "enforced": true,
       "spec": "specs/phase-6-tokens.md"
     },
     {
@@ -254,7 +254,7 @@
       "phase": 6,
       "text": "No duplicate message IDs are counted.",
       "manual": false,
-      "enforced": false,
+      "enforced": true,
       "spec": "specs/phase-6-tokens.md"
     },
     {
@@ -262,7 +262,7 @@
       "phase": 6,
       "text": "Every message has a phase and an activity.",
       "manual": false,
-      "enforced": false,
+      "enforced": true,
       "spec": "specs/phase-6-tokens.md"
     },
     {
@@ -270,7 +270,7 @@
       "phase": 6,
       "text": "Page loads with no console errors (Playwright).",
       "manual": false,
-      "enforced": false,
+      "enforced": true,
       "spec": "specs/phase-6-tokens.md"
     },
     {
