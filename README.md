@@ -12,8 +12,9 @@ Headline findings: only 4 of 42 CS departments publish their own generative AI s
 |---|---|---|
 | Findings | [`docs/findings.html`](docs/findings.html) | Live |
 | Validation | [`docs/validation.html`](docs/validation.html) | Live |
-| Contributions timeline | `docs/timeline.html` | Coming soon (Phase 5) |
-| Token usage | `docs/tokens.html` | Coming soon (Phase 6) |
+| Contributions timeline | [`docs/timeline.html`](docs/timeline.html) | Live |
+| Token usage | [`docs/tokens.html`](docs/tokens.html) | Live |
+| Reflection (Phase 8, by Adi) | [`docs/reflection.html`](docs/reflection.html) | Live |
 
 The landing page is [`docs/index.html`](docs/index.html). The site is plain HTML, CSS and JavaScript with Chart.js 4.4.1 vendored in `docs/assets/vendor/`; each page reads JSON from `docs/data/`.
 

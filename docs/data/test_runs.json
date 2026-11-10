@@ -177,5 +177,44 @@
     "duration": 10.53,
     "failed_tests": [],
     "note": "phase 6 approved, pre-commit"
+  },
+  {
+    "run_id": "run-20261110-215409",
+    "timestamp": "2026-11-10T16:54:09-05:00",
+    "total": 765,
+    "passed": 759,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 6,
+    "pass_rate": 1.0,
+    "duration": 10.35,
+    "failed_tests": [],
+    "note": "phase 8 facts"
+  },
+  {
+    "run_id": "run-20261110-222042",
+    "timestamp": "2026-11-10T17:20:42-05:00",
+    "total": 777,
+    "passed": 770,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 7,
+    "pass_rate": 1.0,
+    "duration": 11.1,
+    "failed_tests": [],
+    "note": "phase 8 reflection page"
+  },
+  {
+    "run_id": "run-20261110-222346",
+    "timestamp": "2026-11-10T17:23:46-05:00",
+    "total": 777,
+    "passed": 771,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 6,
+    "pass_rate": 1.0,
+    "duration": 11.58,
+    "failed_tests": [],
+    "note": "phase 8 reflection, pre-commit"
   }
 ]

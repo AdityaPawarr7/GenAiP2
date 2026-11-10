@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project Reflection</title>
+<meta name="description" content="Adi's Phase 8 reflection on building this project with an AI agent, with the project's own numbers and outside research beside each point.">
+<script>
+  // Apply a saved theme before first paint (per-viewer convenience only).
+  try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="assets/reflection.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="site" href="index.html">GenAI policies in CS education</a>
+    <nav class="pages" aria-label="Dashboards">
+      <a href="findings.html">Findings</a>
+      <a href="validation.html">Validation</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="tokens.html">Tokens</a>
+      <a href="reflection.html" aria-current="page">Reflection</a>
+    </nav>
+    <button class="theme-btn" id="theme-btn" type="button" aria-label="Switch color theme">Dark mode</button>
+  </header>
+
+  <main id="main">
+    <header class="intro">
+      <p class="eyebrow">Phase 8 · Reflection · Written by Adi</p>
+      <h1>I expected a two-hour sprint. I got a spec-driven project.</h1>
+      <blockquote class="prompt">
+        <p>“Evaluating the project for how well it meets the initial goals. This step will be completed primarily by you, not Claude. But you can use Claude to get you information you need for this evaluation.”</p>
+        <cite>The Phase 8 assignment</cite>
+      </blockquote>
+      <p class="how">The essay is Adi's own text. The side notes beside each section were added on request. They show the project's own numbers, loaded live from the dashboards' data files, and published research that backs the point.</p>
+    </header>
+
+    <article class="essay">
+      <section class="beat" id="expectations" aria-labelledby="h-expectations">
+        <div class="text">
+          <p class="num">01</p>
+          <h2 id="h-expectations">Expectations vs. reality</h2>
+          <p class="body" data-para="1">Going into this project, I was expecting it to be an easy 2 hour sprint where I gather data and then Claude does the rest for me as that's how I approach vibe coding but gosh it was so much different than I could have imagined. My approach to vibe coding is having a final target layout and then building towards it. I don't usually build with principles and groundwork laid out first and then following that to go to a final product. This approach, however- does have its benefits. I noticed that because of how detailed my Acceptance Criteria was, the output that Claude provided me with at the end had an amazing amount of data and trends that we can draw from it. On the flip side, we did end up using a 147M tokens which is a lot for this as I ran out of limits once as well.</p>
+        </div>
+        <aside class="note" aria-label="Side notes for section 1">
+          <p class="note-h">From the project data</p>
+          <dl class="facts">
+            <div><dt id="f-tokens">152M</dt><dd>tokens in total, about <span id="f-cost">$69</span> at API list prices (an estimate, not the plan's bill)</dd></div>
+            <div><dt id="f-p1">66%</dt><dd>of all tokens were spent in Phase 1 (data collection), mostly by <span id="f-subagents">21</span> parallel subagents</dd></div>
+            <div><dt id="f-sessions">11</dt><dd>sessions and <span id="f-clears">10</span> /clears across two days</dd></div>
+          </dl>
+          <p class="note-h">Research</p>
+          <a class="source" href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/">
+            <span class="src-q">“when developers use AI tools, they take 19% longer than without—AI makes them slower.”</span>
+            <span class="src-m">METR, randomized trial with experienced open-source developers, July 2025</span>
+          </a>
+          <a class="source" href="https://code.claude.com/docs/en/best-practices">
+            <span class="src-q">“/clear between unrelated tasks. It costs nothing, and it means the next task doesn’t keep paying for the previous one’s history.”</span>
+            <span class="src-m">Anthropic, Best practices for Claude Code</span>
+          </a>
+        </aside>
+      </section>
+
+      <section class="beat" id="tests" aria-labelledby="h-tests">
+        <div class="text">
+          <p class="num">02</p>
+          <h2 id="h-tests">Detailed criteria, and 700+ tests</h2>
+          <p class="body" data-para="2">The final product was a culmination of me going back and forth with Claude and the detailed criteria resulted in Claude writing 700+ tests. This number to me feels unnecessary as it started writing tests for everything that could go wrong which I feel is hoping for the worst kind of mindset but it is a lot of bloat and tokens wasted too.</p>
+        </div>
+        <aside class="note" aria-label="Side notes for section 2">
+          <p class="note-h">From the project data</p>
+          <dl class="facts">
+            <div><dt id="f-tests">765</dt><dd>tests in the final suite: <span id="f-passed">759</span> pass, <span id="f-failed">0</span> fail, the rest are skipped by design</dd></div>
+            <div><dt id="f-extra">86</dt><dd>tests check no acceptance criterion at all (“extra” on the validation page)</dd></div>
+            <div><dt id="f-val">29%</dt><dd>of all tokens went to running validation, second only to gathering data</dd></div>
+            <div><dt id="f-prompts">40</dt><dd>prompts from Adi steered the whole build</dd></div>
+          </dl>
+        </aside>
+      </section>
+
+      <section class="beat" id="browser" aria-labelledby="h-browser">
+        <div class="text">
+          <p class="num">03</p>
+          <h2 id="h-browser">Where Claude struggled: the browser</h2>
+          <p class="body" data-para="3">Claude does struggle a lot with browser use at times and maybe with future updates, that experience can be smoother but definitely a WIP for now.</p>
+        </div>
+        <aside class="note" aria-label="Side notes for section 3">
+          <p class="note-h">From the project data</p>
+          <dl class="facts">
+            <div><dt>21</dt><dd>of 168 source sections ended as “blocked”: 403 errors, login-only Canvas pages or JavaScript-only syllabi</dd></div>
+            <div><dt>3</dt><dd>times Adi opened pages by hand instead: the Michigan guidance paste, the Ohio State and NC State 403 checks, and the 5-quote spot check</dd></div>
+          </dl>
+        </aside>
+      </section>
+
+      <section class="beat" id="ui" aria-labelledby="h-ui">
+        <div class="text">
+          <p class="num">04</p>
+          <h2 id="h-ui">The UI still looks “AI-like”</h2>
+          <p class="body" data-para="4">I feel that the UI aspect of Claude is something that needs to be personalized to a user's personality and I tried importing a skill to help with that but my UI ended up being pretty 'AI- like'</p>
+        </div>
+        <aside class="note" aria-label="Side notes for section 4">
+          <p class="note-h">Research</p>
+          <a class="source" href="https://claude.com/blog/improving-frontend-design-through-skills">
+            <span class="src-q">“this generic aesthetic undermines brand identity and makes AI-generated interfaces immediately recognizable—and dismissible.”</span>
+            <span class="src-m">Anthropic, Improving frontend design through Skills</span>
+          </a>
+        </aside>
+      </section>
+
+      <section class="beat" id="education" aria-labelledby="h-education">
+        <div class="text">
+          <p class="num">05</p>
+          <h2 id="h-education">What the findings say about school</h2>
+          <p class="body" data-para="5">My final product is a great example of how change is needed in this space for how AI is being used in school as with this technology- either we need rethink the entire system of education or have guard rails in place to use it efficiently. Because seeing it in black and white is dangerous- not using AI at all is silly as you're rejecting the advancement of technology and abstraction but at the flip side- you don't want to use AI when you don't know the concepts at all.</p>
+        </div>
+        <aside class="note" aria-label="Side notes for section 5">
+          <p class="note-h">From the findings</p>
+          <dl class="facts">
+            <div><dt id="f-dept">4 of 42</dt><dd>CS departments publish their own generative AI statement</dd></div>
+            <div><dt id="f-instr">32 of 42</dt><dd>leave the rule to each instructor; <span id="f-ban">8</span> ban AI by default and <span id="f-enc">0</span> encourage it</dd></div>
+          </dl>
+          <p class="note-h">Research</p>
+          <a class="source" href="https://knowledge.wharton.upenn.edu/article/without-guardrails-generative-ai-can-harm-education/">
+            <span class="src-q">“when AI assistance was taken away from the Base group and they were given an exam on the material, they performed 17% worse than the control group.”</span>
+            <span class="src-m">Knowledge at Wharton on Bastani et al., PNAS 2025: a guarded “GPT Tutor” largely avoided the harm</span>
+          </a>
+          <a class="source" href="https://arxiv.org/abs/2405.17739">
+            <span class="src-q">“thought they performed better than they did, and finished with an illusion of competence.”</span>
+            <span class="src-m">Prather et al., The Widening Gap, ICER 2024: novice programmers using GenAI</span>
+          </a>
+          <a class="source" href="https://www.media.mit.edu/publications/your-brain-on-chatgpt/">
+            <span class="src-q">“Brain-to-LLM users exhibited higher memory recall” than students who had used the LLM from the start.</span>
+            <span class="src-m">Kosmyna et al., MIT Media Lab, Your Brain on ChatGPT (preprint, 2025)</span>
+          </a>
+        </aside>
+      </section>
+
+      <figure class="closer">
+        <blockquote><p>“With great power comes great responsibility”</p></blockquote>
+        <figcaption>Adi's closing line</figcaption>
+      </figure>
+    </article>
+
+    <section class="reading" aria-labelledby="h-reading">
+      <h2 id="h-reading">Further reading</h2>
+      <ol class="refs">
+        <li><a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/">Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity</a> <span>METR, 2025. Developers expected AI to speed them up but took 19% longer.</span></li>
+        <li><a href="https://code.claude.com/docs/en/best-practices">Best practices for Claude Code</a> <span>Anthropic. Context management, /clear, and working in small, verified steps.</span></li>
+        <li><a href="https://claude.com/blog/improving-frontend-design-through-skills">Improving frontend design through Skills</a> <span>Anthropic. Why AI-generated interfaces converge on one generic look.</span></li>
+        <li><a href="https://knowledge.wharton.upenn.edu/article/without-guardrails-generative-ai-can-harm-education/">Without Guardrails, Generative AI Can Harm Education</a> <span>Knowledge at Wharton, on Bastani et al., PNAS 2025. A field experiment with about 1,000 high school math students.</span></li>
+        <li><a href="https://arxiv.org/abs/2405.17739">The Widening Gap: The Benefits and Harms of Generative AI for Novice Programmers</a> <span>Prather et al., ICER 2024. GenAI helped strong students and hid gaps for struggling ones.</span></li>
+        <li><a href="https://www.media.mit.edu/publications/your-brain-on-chatgpt/">Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task</a> <span>Kosmyna et al., MIT Media Lab, 2025 preprint. 54 participants; EEG and essay analysis.</span></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>Reflection written by Adi, November 2026. Side-note numbers are read from docs/data/ when the page loads.</footer>
+</div>
+<script src="assets/reflection.js"></script>
+</body>
+</html>
