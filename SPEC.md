@@ -45,7 +45,7 @@ PROGRESS.md                 human-readable timestamped log + handoff
 - [x] Phase 4: Validation pipeline and dashboard — `specs/phase-4-validation.md` (validation.html, 45 tests, 651 total pass, canary run recorded, approved by Adi 2026-11-09)
 - [x] Phase 5: Contributions timeline — `specs/phase-5-timeline.md` (timeline.html, 48 tests, 714 total pass, approved by Adi 2026-11-09)
 - [x] Phase 6: Token usage dashboard — `specs/phase-6-tokens.md` (tokens.html, 44 tests, approved by Adi 2026-11-10; no /compact was run, so the page shows 0 compacts)
-- [ ] Phase 7: Publish (GitHub + Pages) — `specs/phase-7-publish.md` (live at adityapawarr7.github.io/GenAiP2 from repo GenAiP2; index/findings/validation/timeline return 200; tokens.html 404 until Phase 6)
+- [x] Phase 7: Publish (GitHub + Pages) — `specs/phase-7-publish.md` (live at adityapawarr7.github.io/GenAiP2 from repo GenAiP2; AC7.1: all 5 pages + root return 200 and CHECK_LIVE=1 suite 19/19 pass, 2026-11-10)
 - [ ] Phase 8: Evaluation and reflection (Adi writes it; Claude supplies numbers) — `specs/phase-8-evaluation.md`
 
 ## Deadlines
